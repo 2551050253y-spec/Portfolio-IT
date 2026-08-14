@@ -20,6 +20,7 @@
     --default-mono-font-family: var(--font-mono);
     --color-brand-600: #26D9B5;
     --color-brand-700: #188B74;
+    --color-accent-300: #8B5CF6;
     --color-ink: #12211d;
     --color-ink-invert: #eaf2ee;
     --color-muted: #5c6f69;
@@ -363,7 +364,7 @@ main {
   margin: 0;
 }
 .blog2-thumb {
-  width: 100%;
+  width: auto;
   height: 300px;
   object-fit: cover;
   display: block;
@@ -382,15 +383,15 @@ main {
   margin: 25px 0 10px;
 }
 .blog2-subheading {
-  color: var(--color-brand-600);
+  color: var(--color-accent-300);
   font-size: 20px;
   line-height: 1.4;
   margin: 20px 0 8px;
 }
 .blog2-text {
   color: var(--color-text );
-  font-size: 20px;
-  line-height: 1.6;
+  font-size: 10px;
+  line-height: 1.5;
   margin: 0 0 15px;
 }
 .blog2-list {
