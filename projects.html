@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Các dự án nổi bật của Nhựt Nam." />
+    <title>Dự án — Nhựt Nam</title>
+    <link rel="stylesheet" href="css/components.css" />
+    <style>
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 4rem 0;
+      }
+      .item {
+        min-height: 270px;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+      .item p {
+        color: var(--muted);
+      }
+      .item a {
+        color: var(--accent);
+        font-weight: 800;
+      }
+      @media (max-width: 600px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="shell site-header">
+      <a class="brand" href="index.html"
+        ><span class="brand-mark">N</span>NHỰT NAM</a
+      >
+      <nav class="site-nav">
+        <a href="index.html">Trang chủ</a
+        ><a aria-current="page" href="projects.html">Dự án</a
+        ><a href="blogs.html">Blogs</a><a href="resume.html">Resume</a
+        ><button class="icon-button" data-theme-toggle>◐</button>
+      </nav>
+    </header>
+    <main>
+      <section class="shell page-hero">
+        <p class="eyebrow">Selected work</p>
+        <h1>Dự án nổi bật.</h1>
+        <p>
+          Mỗi dự án là một cơ hội để làm rõ vấn đề trước khi chọn giải pháp.
+        </p>
+      </section>
+      <section class="shell grid">
+        <article class="card item">
+          <span class="tag">WEB / 2026</span>
+          <h2>Developer Portfolio</h2>
+          <p>
+            Hệ portfolio responsive với blog JSON, dark mode, tìm kiếm và
+            accessibility cơ bản.
+          </p>
+          <a href="project-detail.html?id=portfolio">Xem case study →</a>
+        </article>
+        <article class="card item">
+          <span class="tag">C++ / 2026</span>
+          <h2>Data Manager</h2>
+          <p>
+            Quản lý dữ liệu trên console với thao tác thêm, tìm kiếm và sắp xếp.
+          </p>
+          <a href="project-detail.html?id=data-manager">Xem case study →</a>
+        </article>
+        <article class="card item">
+          <span class="tag">LAB / 2026</span>
+          <h2>A11y Components</h2>
+          <p>Thử nghiệm các thành phần tương tác có thể dùng bằng bàn phím.</p>
+          <a href="project-detail.html?id=a11y">Xem case study →</a>
+        </article>
+      </section>
+    </main>
+    <footer class="shell footer"><span>© 2026 Nhựt Nam</span></footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>

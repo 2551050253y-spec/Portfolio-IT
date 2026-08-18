@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Resume của Web Developer Nhựt Nam." />
+    <title>Resume — Nhựt Nam</title>
+    <link rel="stylesheet" href="css/components.css" />
+    <style>
+      .resume {
+        display: grid;
+        grid-template-columns: 0.7fr 1.3fr;
+        gap: 4rem;
+        padding: 5rem 0;
+      }
+      .resume h1 {
+        font-size: clamp(3rem, 8vw, 7rem);
+        line-height: 0.9;
+        letter-spacing: -0.08em;
+      }
+      .resume h2 {
+        font-size: 1rem;
+        color: var(--accent);
+        font-family: var(--mono);
+        letter-spacing: 0.08em;
+      }
+      .resume section {
+        padding: 1.5rem 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .resume p,
+      .resume li {
+        color: var(--muted);
+      }
+      @media (max-width: 700px) {
+        .resume {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="shell site-header">
+      <a class="brand" href="index.html"
+        ><span class="brand-mark">N</span>NHỰT NAM</a
+      >
+      <nav class="site-nav">
+        <a href="index.html">Trang chủ</a><a href="projects.html">Dự án</a
+        ><a href="blogs.html">Blogs</a
+        ><a aria-current="page" href="resume.html">Resume</a
+        ><button class="icon-button" data-theme-toggle>◐</button>
+      </nav>
+    </header>
+    <main class="shell resume">
+      <aside>
+        <p class="eyebrow">Resume / 2026</p>
+        <h1>Nhựt<br />Nam.</h1>
+        <p>
+          Web developer tập trung vào trải nghiệm giao diện rõ ràng, nhanh và dễ
+          tiếp cận.
+        </p>
+      </aside>
+      <div>
+        <section>
+          <h2>GIỚI THIỆU</h2>
+          <p>
+            Sinh viên Công nghệ Thông tin, quan tâm đến phát triển giao diện web
+            và chất lượng sản phẩm.
+          </p>
+        </section>
+        <section>
+          <h2>KỸ NĂNG</h2>
+          <p>
+            HTML5 Semantic · CSS3 · JavaScript ES6+ · C++ · Git/GitHub · Figma
+            Dev Mode · Lighthouse
+          </p>
+        </section>
+        <section>
+          <h2>ĐỊNH HƯỚNG</h2>
+          <p>
+            Xây dựng sản phẩm web có cấu trúc tốt, responsive và thân thiện với
+            người dùng.
+          </p>
+        </section>
+        <section>
+          <h2>LIÊN HỆ</h2>
+          <p>
+            <a href="mailto:nam@example.com">nam@example.com</a><br />TP. Hồ Chí
+            Minh, Việt Nam
+          </p>
+        </section>
+      </div>
+    </main>
+    <footer class="shell footer"><span>© 2026 Nhựt Nam</span></footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>

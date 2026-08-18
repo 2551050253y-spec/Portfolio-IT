@@ -1,36 +1,54 @@
-// js/search.js
 document.addEventListener("DOMContentLoaded", () => {
-  const searchBtn = document.getElementById("search-btn");
-  const overlay = document.getElementById("search-overlay");
-  const searchInput = document.getElementById("search-input");
-  let isOpen = false;
-
-  function toggleSearch() {
-    isOpen = !isOpen;
-    if (isOpen) {
-      overlay.classList.add("open");
-      searchBtn.textContent = "✕ Đóng";
-      searchBtn.setAttribute("aria-expanded", "true");
-      setTimeout(() => searchInput.focus(), 100);
-    } else {
-      overlay.classList.remove("open");
-      searchBtn.textContent = "🔍 Tìm kiếm";
-      searchBtn.setAttribute("aria-expanded", "false");
-      searchBtn.focus(); // Trả focus về nút bấm chuẩn A11y
-    }
-  }
-
-  searchBtn.addEventListener("click", toggleSearch);
-
-  // Nhấn Esc để đóng
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && isOpen) {
-      toggleSearch();
-    }
-  });
-
-  // Click ra ngoài vùng search-box cũng đóng
-  overlay.addEventListener("click", (e) => {
-    if (e.target === overlay) toggleSearch();
-  });
+  const b = document.querySelector("#search-button"),
+    o = document.querySelector("#search-overlay"),
+    i = document.querySelector("#search-input"),
+    r = document.querySelector("#search-results");
+  if (!b) return;
+  const data = [
+      [
+        "Dự án Portfolio",
+        "project-detail.html?id=portfolio",
+        "Web / Case study",
+      ],
+      [
+        "Data Manager",
+        "project-detail.html?id=data-manager",
+        "C++ / Case study",
+      ],
+      [
+        "Accessibility Components",
+        "project-detail.html?id=a11y",
+        "Lab / Case study",
+      ],
+      ["Bài viết", "blogs.html", "Performance · Frontend · Accessibility"],
+      ["Resume", "resume.html", "Kỹ năng và kinh nghiệm"],
+    ],
+    close = () => {
+      o.classList.remove("is-open");
+      document.body.classList.remove("modal-open");
+      b.focus();
+    },
+    render = () => {
+      let q = i.value.toLowerCase();
+      r.innerHTML =
+        data
+          .filter((x) => x.join(" ").toLowerCase().includes(q))
+          .map(
+            (x) =>
+              `<li><a href="${x[1]}">${x[0]}<br><small>${x[2]}</small></a></li>`,
+          )
+          .join("") ||
+        "<li><small>Không tìm thấy kết quả phù hợp.</small></li>";
+    };
+  b.onclick = () => {
+    o.classList.add("is-open");
+    document.body.classList.add("modal-open");
+    i.value = "";
+    render();
+    i.focus();
+  };
+  i.oninput = render;
+  o.onclick = (e) => e.target === o && close();
+  document.onkeydown = (e) =>
+    e.key === "Escape" && o.classList.contains("is-open") && close();
 });
