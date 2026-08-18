@@ -1,0 +1,43 @@
+/* css/tokens.css - Bảng màu chuẩn Figma Web Developer Portfolio */
+:root {
+  /* Colors */
+  --c-bg: #ffffff;
+  --c-surface: #f8fafc;
+  --c-card: #ffffff;
+  --c-text-main: #0f172a;       /* Đen xanh đậm thanh lịch */
+  --c-text-muted: #64748b;      /* Xám trung tính */
+  --c-accent: #2563eb;          /* Xanh dương công nghệ chuẩn */
+  --c-accent-hover: #1d4ed8;
+  --c-border: #e2e8f0;
+  
+  /* Buttons theo đặc tả Figma: Solid, Stroke, White */
+  --btn-solid-bg: var(--c-accent);
+  --btn-solid-text: #ffffff;
+  --btn-stroke-border: #0f172a;
+  --btn-white-bg: #ffffff;
+
+  /* Typography */
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  
+  /* Radius & Shadows */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+  --shadow-md: 0 10px 25px -5px rgba(0,0,0,0.05);
+}
+
+/* Dark theme tự dựng theo yêu cầu điểm cộng */
+[data-theme="dark"] {
+  --c-bg: #0b0f19;
+  --c-surface: #111827;
+  --c-card: #1f2937;
+  --c-text-main: #f8fafc;
+  --c-text-muted: #94a3b8;
+  --c-accent: #3b82f6;
+  --c-accent-hover: #60a5fa;
+  --c-border: #374151;
+  --btn-stroke-border: #f8fafc;
+  --btn-white-bg: #1f2937;
+  --shadow-md: 0 10px 25px -5px rgba(0,0,0,0.3);
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi tiết bài viết - DevPortfolio</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body style="background-color: var(--bg-body); color: var(--text-primary); font-family: var(--font-family); margin: 0; padding: 0 40px;">
+
+  <!-- Thanh tiến trình đọc -->
+  <div id="progress-bar" class="reading-progress-bar"></div>
+
+  <header style="padding: 20px 0; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color);">
+    <div class="logo"><a href="index.html" style="color: inherit; text-decoration: none;"><strong>DevPortfolio.</strong></a></div>
+    <nav>
+      <a href="index.html" style="margin-right: 15px; color: inherit; text-decoration: none;">Trang chủ</a>
+      <a href="blogs.html" style="margin-right: 15px; color: inherit; text-decoration: none;">Blogs</a>
+      <button id="theme-toggle">🌓 Theme</button>
+    </nav>
+  </header>
+
+  <main id="blog-content-area" style="max-width: 800px; margin: 40px auto; line-height: 1.8;">
+    <!-- Dữ liệu được nạp tự động qua JavaScript -->
+    <p>Đang tải bài viết...</p>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/blog-detail.js"></script>
+</body>
+</html>

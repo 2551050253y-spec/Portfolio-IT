@@ -1,172 +1,345 @@
 <!DOCTYPE html>
-<html lang="vn">
+<html lang="vi" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Lập Trình Viên</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="dist/output.css">
-</head> 
-<body style="background-color: var(--color-surface-dark); color: var(--color-ink-invert);">
- 
-  <header class="blog-header">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio Lập Trình Viên - Hồ sơ năng lực, dự án và bài viết chuyên môn.">
+  <title>Nguyễn Lâm Nhựt Nam | Web Developer Portfolio</title>
+  
+  <!-- CSS Design Tokens & Components -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
 
-  <!-- Logo/tên nhóm nằm bên trái -->
-  <div class="logo">
-    <span class="code-icon">Nhom 4: </span>
-    Nam, Y, Gia
-  </div>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--c-bg, #ffffff);
+      color: var(--c-text-main, #0f172a);
+      font-family: var(--font-family, system-ui, -apple-system, sans-serif);
+      line-height: 1.6;
+      padding: 0 6%;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
 
-  <!-- Menu nằm ở giữa -->
-  <nav class="nav-links">
-    <a href="#" class="nav-link">Home</a>
-    <a href="index.html" class="nav-link active">Blogs</a>
+    /* HEADER */
+    header {
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      background-color: var(--c-bg, #ffffff);
+      border-bottom: 1px solid var(--c-border, #e2e8f0);
+      z-index: 100;
+    }
+    .logo { font-size: 1.3rem; font-weight: 800; color: var(--c-text-main, #0f172a); }
+    .logo span { color: var(--c-accent, #2563eb); }
+    .nav-actions { display: flex; align-items: center; gap: 16px; }
+    .nav-actions a { color: var(--c-text-main, #0f172a); text-decoration: none; font-weight: 500; font-size: 14px; }
+    .nav-actions a:hover { color: var(--c-accent, #2563eb); }
+
+    /* BUTTONS */
+    .btn {
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+    .btn-solid { background-color: var(--c-accent, #2563eb); color: #ffffff; border: 2px solid var(--c-accent, #2563eb); }
+    .btn-solid:hover { background-color: var(--c-accent-hover, #1d4ed8); }
+    .btn-stroke { background: transparent; color: var(--c-text-main, #0f172a); border: 2px solid var(--c-border, #e2e8f0); }
+    .btn-stroke:hover { border-color: var(--c-text-main, #0f172a); }
+
+    /* SECTIONS */
+    section { min-height: 85vh; padding: 80px 0; display: flex; flex-direction: column; justify-content: center; border-bottom: 1px solid var(--c-border, #e2e8f0); }
+    .section-eyebrow { color: var(--c-accent, #2563eb); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; display: block; }
+    .section-heading { font-size: 2.4rem; font-weight: 800; margin-bottom: 16px; letter-spacing: -0.5px; }
+
+    /* HERO */
+    .hero-container { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }
+    .hero-text h1 { font-size: 3.2rem; font-weight: 900; line-height: 1.15; margin: 12px 0 16px 0; letter-spacing: -1px; }
+    .hero-text p { color: var(--c-text-muted, #64748b); font-size: 1.1rem; margin-bottom: 28px; max-width: 520px; }
+    .hero-buttons { display: flex; gap: 14px; }
+    .hero-avatar-box {
+      width: 280px;
+      height: 320px;
+      background: var(--c-surface, #f8fafc);
+      border: 1px solid var(--c-border, #e2e8f0);
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
+      margin: 0 auto;
+    }
+    .hero-avatar-circle {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 44px;
+      border: 3px solid var(--c-accent, #2563eb);
+      margin-bottom: 14px;
+    }
+
+    /* CARDS */
+    .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 20px; }
+    .card {
+      background: var(--c-card, #ffffff);
+      border: 1px solid var(--c-border, #e2e8f0);
+      padding: 28px;
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      background: var(--c-surface, #f8fafc);
+      color: var(--c-accent, #2563eb);
+      border: 1px solid var(--c-border, #e2e8f0);
+      margin: 4px 4px 4px 0;
+    }
+
+    /* FORM */
+    .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 8px;
+      border: 1.5px solid var(--c-border, #e2e8f0);
+      background-color: var(--c-surface, #f8fafc);
+      color: var(--c-text-main, #0f172a);
+      font-size: 15px;
+      margin-top: 6px;
+      outline: none;
+    }
+    .form-control:focus { border-color: var(--c-accent, #2563eb); background-color: var(--c-card, #ffffff); }
+
+    /* DOT NAV */
+    .dot-nav {
+      position: fixed;
+      right: 28px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      z-index: 99;
+      list-style: none;
+    }
+    .dot-item {
+      position: relative;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: #cbd5e1;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .dot-item.active { background-color: var(--c-accent, #2563eb); transform: scale(1.3); }
+    .dot-tooltip {
+      position: absolute;
+      right: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: var(--c-text-main, #0f172a);
+      color: var(--c-bg, #ffffff);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+    .dot-tooltip.show { opacity: 1; }
+
+    /* BREAKPOINTS (1920, 1280, 768, 390) */
+    @media (max-width: 768px) {
+      .hero-container { grid-template-columns: 1fr; text-align: center; }
+      .hero-buttons { justify-content: center; }
+      .dot-nav, .nav-actions a { display: none; }
+    }
+    @media (max-width: 390px) {
+      .hero-title { font-size: 2.2rem; }
+      body { padding: 0 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">Nam<span>.Dev</span></div>
+    <nav class="nav-actions">
+      <a href="#hero">Trang chủ</a>
+      <a href="blogs.html">Blogs</a>
+      <a href="resume.html">Resume</a>
+      <button id="search-btn" class="btn btn-stroke" style="padding: 6px 14px;">🔍 Tìm kiếm</button>
+      <button id="theme-toggle" class="btn btn-stroke" style="padding: 6px 14px;">🌓 Theme</button>
+    </nav>
+  </header>
+
+  <!-- Dot Navigation (6 Sections) -->
+  <nav class="dot-nav" aria-label="Quick Nav">
+    <div class="dot-item active" data-target="#hero"><span class="dot-tooltip">Trang đầu</span></div>
+    <div class="dot-item" data-target="#about"><span class="dot-tooltip">Giới thiệu</span></div>
+    <div class="dot-item" data-target="#skills"><span class="dot-tooltip">Kỹ năng</span></div>
+    <div class="dot-item" data-target="#works"><span class="dot-tooltip">Dự án</span></div>
+    <div class="dot-item" data-target="#blogs"><span class="dot-tooltip">Bài viết</span></div>
+    <div class="dot-item" data-target="#contact"><span class="dot-tooltip">Liên hệ</span></div>
   </nav>
 
-  <!-- Các icon nằm bên phải -->
-  <div class="nav-icons">
-    <span class="icon">&#128269;</span>
-    <span class="icon">&#128247;</span>
-    <span class="icon">&#128172;</span>
+  <main>
+    <!-- 1. Hero Block -->
+    <section id="hero">
+      <div class="hero-container">
+        <div class="hero-text">
+          <span class="section-eyebrow">👋 Chào mừng bạn đến với Portfolio</span>
+          <h1>Tôi là <span style="color: var(--c-accent, #2563eb);">Nguyễn Lâm Nhựt Nam</span></h1>
+          <p>Sinh viên CNTT định hướng lập trình Web & Phát triển phần mềm. Tập trung tối ưu hiệu năng, chuẩn tiếp cận A11y và Responsive đa thiết bị.</p>
+          <div class="hero-buttons">
+            <a href="#contact" class="btn btn-solid">Liên hệ ngay</a>
+            <a href="#works" class="btn btn-stroke">Xem dự án</a>
+          </div>
+        </div>
+        <div class="hero-image-wrapper">
+          <div class="hero-avatar-box">
+            <div class="hero-avatar-circle">👨‍💻</div>
+            <h3 style="font-size: 1.1rem; margin-bottom: 4px;">Nhựt Nam</h3>
+            <p style="color: var(--c-text-muted, #64748b); font-size: 13px;">Software & Web Developer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. About Me -->
+    <section id="about">
+      <span class="section-eyebrow">Giới thiệu</span>
+      <h2 class="section-heading">Về Bản Thân & Mục Tiêu</h2>
+      <p style="color: var(--c-text-muted, #64748b); max-width: 650px; margin-bottom: 24px;">Xây dựng nền tảng giải thuật và cấu trúc dữ liệu vững chắc, kết hợp hiện thực hóa thiết kế Figma thành giao diện Web tương tác mượt mà.</p>
+    </section>
+
+    <!-- 3. Skills -->
+    <section id="skills">
+      <span class="section-eyebrow">Năng lực</span>
+      <h2 class="section-heading">Kỹ Năng Kỹ Thuật</h2>
+      <div class="grid-cards">
+        <div class="card">
+          <h3>Frontend Development</h3>
+          <div>
+            <span class="badge">HTML5 Semantic</span>
+            <span class="badge">CSS3 / Flexbox / Grid</span>
+            <span class="badge">JavaScript ES6+</span>
+            <span class="badge">Tailwind CSS</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Programming & Logic</h3>
+          <div>
+            <span class="badge">C++</span>
+            <span class="badge">Data Structures</span>
+            <span class="badge">Algorithms</span>
+            <span class="badge">OOP</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Tools & Workflow</h3>
+          <div>
+            <span class="badge">Git / GitHub</span>
+            <span class="badge">Figma Dev Mode</span>
+            <span class="badge">VS Code</span>
+            <span class="badge">Lighthouse</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Works -->
+    <section id="works">
+      <span class="section-eyebrow">Sản phẩm</span>
+      <h2 class="section-heading">Dự Án Nổi Bật</h2>
+      <div class="grid-cards">
+        <div class="card">
+          <span class="badge">ĐỀ 11 BTL</span>
+          <h3 style="margin: 8px 0;">Portfolio Lập Trình Viên</h3>
+          <p style="color: var(--c-text-muted, #64748b); font-size: 14px; margin-bottom: 12px;">Xây dựng website cá nhân theo Figma, hỗ trợ 4 breakpoint, Scrollspy và Dark Mode.</p>
+          <a href="project-detail.html" style="color: var(--c-accent, #2563eb); font-weight: 600; text-decoration: none;">Xem chi tiết →</a>
+        </div>
+        <div class="card">
+          <span class="badge">C++ / Algorithms</span>
+          <h3 style="margin: 8px 0;">Hệ Thống Quản Lý Dữ Liệu</h3>
+          <p style="color: var(--c-text-muted, #64748b); font-size: 14px; margin-bottom: 12px;">Ứng dụng console xử lý và tra cứu dữ liệu tối ưu bộ nhớ.</p>
+          <a href="project-detail.html" style="color: var(--c-accent, #2563eb); font-weight: 600; text-decoration: none;">Xem chi tiết →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Blogs -->
+    <section id="blogs">
+      <span class="section-eyebrow">Chia sẻ</span>
+      <h2 class="section-heading">Bài Viết Mới Nhất</h2>
+      <p style="color: var(--c-text-muted, #64748b); margin-bottom: 20px;">Ghi chép và phân tích kỹ thuật trong quá trình học tập, lập trình.</p>
+      <a href="blogs.html" class="btn btn-solid">Xem danh sách bài viết →</a>
+    </section>
+
+    <!-- 6. Contact -->
+    <section id="contact">
+      <span class="section-eyebrow">Liên hệ</span>
+      <h2 class="section-heading">Gửi Tin Nhắn</h2>
+      <form id="contact-form" novalidate style="max-width: 550px;">
+        <div style="margin-bottom: 16px;">
+          <label for="fullname" style="font-size: 13px; font-weight: 600;">HỌ VÀ TÊN *</label>
+          <input type="text" id="fullname" class="form-control" placeholder="Nhập họ tên..." required>
+          <span id="fullname-error" style="color: #e11d48; font-size: 12px; display: block; margin-top: 4px;"></span>
+        </div>
+        <div style="margin-bottom: 16px;">
+          <label for="email" style="font-size: 13px; font-weight: 600;">EMAIL *</label>
+          <input type="email" id="email" class="form-control" placeholder="ten@vidu.com" required>
+          <span id="email-error" style="color: #e11d48; font-size: 12px; display: block; margin-top: 4px;"></span>
+        </div>
+        <div style="margin-bottom: 16px;">
+          <label for="message" style="font-size: 13px; font-weight: 600;">TIN NHẮN *</label>
+          <textarea id="message" rows="4" class="form-control" placeholder="Nội dung cần trao đổi..." required></textarea>
+          <span id="message-error" style="color: #e11d48; font-size: 12px; display: block; margin-top: 4px;"></span>
+        </div>
+        <button type="submit" class="btn btn-solid" style="width: 100%;">GỬI LIÊN HỆ</button>
+        <div id="form-success" style="color: #16a34a; font-weight: 600; margin-top: 10px; display: none;">✓ Tin nhắn đã gửi thành công!</div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Search Modal Overlay -->
+  <div id="search-overlay" class="search-overlay" role="dialog" aria-modal="true" style="position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(6px); display: none; justify-content: center; padding-top: 100px; z-index: 999;">
+    <div style="background: var(--c-card, #fff); width: 90%; max-width: 550px; padding: 24px; border-radius: 12px; border: 1px solid var(--c-border, #e2e8f0);">
+      <input type="text" id="search-input" class="form-control" placeholder="Tìm bài viết, kỹ năng... (Nhấn Esc để đóng)">
+      <ul id="search-results" style="margin-top: 16px; list-style: none;"></ul>
+    </div>
   </div>
 
-</header>
- 
- <!-- Phần nội dung chính của trang -->
-<main>
+  <footer style="padding: 40px 0; text-align: center; border-top: 1px solid var(--c-border, #e2e8f0); color: var(--c-text-muted, #64748b); font-size: 13px;">
+    <p>© 2026 Nguyễn Lâm Nhựt Nam. Portfolio môn Thiết kế Web (Đề 11).</p>
+  </footer>
 
-  <!-- Phần tiêu đề của Blog -->
-  <section class="blog-intro">
-
-    <!-- Tiêu đề chính -->
-    <h1 class="main-title">Blogs</h1>
-
-    <!-- Đường kẻ trang trí dưới tiêu đề -->
-    <div class="title-line"></div>
-
-    <!-- Mô tả ngắn -->
-    <p class="main-description">Những suy ngẫm của tôi về công nghệ và kinh doanh; mời bạn đăng ký theo dõi. </p>
-
-    <!-- Nút đăng ký -->
-    <a href="#" class="subscribe-btn"> Đăng ký theo dõi </a>
-
-  </section>
-
-
-  <!-- Đường phân cách -->
-  <hr class="divider">
-
-
-  <!-- Danh sách các bài Blog -->
-  <section class="blog-list">
-
-    <!-- ================= BÀI VIẾT 1 ================= -->
-    <article class="blog-item">
-
-      <!-- Hình ảnh bài viết -->
-      <img class="blog-thumb" src="https://bairesdev.mo.cloudinary.net/blog/2023/09/How-Many-Web-Developers-in-the-World-1.jpg?tx=w_1920,q_auto" alt="Web developer">
-
-      <!-- Nội dung bài viết -->
-      <div class="blog-content">
-
-        <!-- Tiêu đề -->
-        <h2 class="blog-title">Cần những gì để trở thành một lập trình viên web? </h2>
-
-        <!-- Nội dung mô tả -->
-        <p class="blog-excerpt">Phát triển web, hay còn gọi là phát triển trang web, bao gồm nhiều công việc và quy trình liên quan đếnviệc tạo ra các trang web cho Internet...</p>
-
-        <!-- Link đọc thêm -->
-        <a href="blog1.html" class="read-more">đọc thêm &gt;&gt;</a>
-
-        <!-- Thông tin bài viết -->
-        <div class="blog-meta">
-
-          <span class="tag">Web Developer</span>
-
-          <span class="meta-item"><strong>Date</strong> 10.Oct.2023</span>
-
-        </div>
-
-      </div>
-
-    </article>
-
-
-    <!-- Đường phân cách -->
-    <hr class="divider">
-
-
-    <!-- ================= BÀI VIẾT 2 ================= -->
-    <article class="blog-item">
-
-      <!-- Hình ảnh bài viết -->
-      <img class="blog-thumb" src="https://img.magnific.com/free-vector/male-programmer-working-computer-office-wall-with-hanging-reminder-stickers-developer-creating-new-software-interface-coding-programming-system-administrator-designer-character_575670-1159.jpg?semt=ais_hybrid&w=740&q=80" alt="Web developer">
-
-      <!-- Nội dung bài viết -->
-      <div class="blog-content">
-
-        <!-- Tiêu đề -->
-        <h2 class="blog-title"> Những dự án nào nên có trong portfolio? </h2>
-
-        <!-- Mô tả -->
-        <p class="blog-excerpt"> Khi xây dựng portfolio, bạn nên tập trung vào số lượng,chất lượng và loại dự án thực tế nên thể hiện. </p>
-
-        <!-- Link đọc thêm -->
-        <a href="blog2.html" class="read-more"> đọc thêm &gt;&gt; </a>
-
-        <!-- Thông tin bài viết -->
-        <div class="blog-meta">
-
-          <span class="tag"> Web Developer </span>
-          <span class="meta-item"><strong>Date</strong> 10.Oct.2023</span>
-
-        </div>
-
-      </div>
-
-    </article>
-
-
-    <!-- Đường phân cách -->
-    <hr class="divider">
-
-
-    <!-- ================= BÀI VIẾT 3 ================= -->
-    <article class="blog-item">
-
-      <!-- Hình ảnh bài viết -->
-      <img class="blog-thumb" src="https://limeup.io/wp-content/uploads/2024/03/Developer.png" alt="Web developer">
-
-      <!-- Nội dung bài viết -->
-      <div class="blog-content">
-
-        <!-- Tiêu đề -->
-        <h2 class="blog-title"> Làm sao để portfolio nổi bật trước nhà tuyển dụng? </h2>
-
-        <!-- Mô tả -->
-        <p class="blog-excerpt"> Tập trung vào UX/UI, cách trình bày README, live demo, và câu chuyện đằng sau dự án. </p>
-
-        <!-- Link đọc thêm -->
-        <a href="#" class="read-more"> đọc thêm &gt;&gt; </a>
-
-        <!-- Thông tin bài viết -->
-        <div class="blog-meta">
-
-          <span class="tag"> Web Developer </span>
-
-          <span class="meta-item"> <strong>Date</strong> 10.Oct.2023  </span>
-
-        </div>
-
-      </div>
-
-    </article>
-
-  </section>
-
-</main>
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/validate.js"></script>
 </body>
 </html>
- 
