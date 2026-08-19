@@ -12,455 +12,888 @@
     
 </head>
 <body class="dark-mode">
-    
-    <!-- Navbar (Đã làm Responsive) -->
-    <header class="flex justify-between items-center py-6 px-6 lg:px-16">
-       <div class="logo flex items-center text-xl tracking-wider">
-           <span class="code-icon mr-2 text-2xl font-bold">&lt;C/&gt;</span> <span class="font-bold text-white text-lg">SinanTokmak</span>
-       </div>
+   <header class="main-header py-6 px-6 lg:px-16">
+       <div class="logo">
+    <span class="code-icon">&lt;C/&gt;</span>
+    <span class="logo-name">SinanTokmak</span>
+</div>
 
-       <!-- Menu Link -->
-       <div class="nav-links hidden lg:flex items-center gap-10">
-           <a href="#home" class="nav-link active text-sm font-medium">Home</a>
-           <a href="#blogs" class="nav-link text-sm font-medium">Blogs</a>
-           <div class="relative">
-               <input type="text" class="rounded-full bg-white text-black px-4 py-1 text-xs outline-none w-48" placeholder="">
-               <i class="fa-solid fa-search absolute right-3 top-[6px] text-gray-600 text-sm"></i>
-           </div>
-       </div>
+     <!-- Menu Link -->
+<div class="nav-links">
+    <a href="#home" class="nav-link active">Home</a>
+    <a href="#blogs" class="nav-link">Blogs</a>
+</div>
+
+   <div class="search-box">
+    <input type="text" class="search-input" placeholder="">
+    <i class="fa-solid fa-search search-icon"></i>
+</div>
 
        <!-- Menu Icons -->
-       <div class="nav-icons hidden lg:flex items-center gap-6">
-           <div class="flex items-center gap-2 group cursor-pointer">
-                <i class="fa-brands fa-instagram icon group-hover:text-[#26D9B5] transition"></i>
-                <span class="text-xs text-gray-400 group-hover:text-white transition">Instagram</span>
-           </div>
-           <div class="flex items-center gap-2 group cursor-pointer">
-                <i class="fa-brands fa-discord icon group-hover:text-[#26D9B5] transition"></i>
-                <span class="text-xs text-gray-400 group-hover:text-white transition">Discord</span>
-           </div>
-           <div class="flex items-center gap-2 group cursor-pointer">
-                <i class="fa-brands fa-github icon group-hover:text-[#26D9B5] transition"></i>
-                <span class="text-xs text-gray-400 group-hover:text-white transition">Github</span>
-           </div>
-       </div>
+       <div class="nav-icons">
+    <div class="social-item">
+        <i class="fa-brands fa-instagram icon"></i>
+        <span>Instagram</span>
+    </div>
+
+    <div class="social-item">
+        <i class="fa-brands fa-discord icon"></i>
+        <span>Discord</span>
+    </div>
+
+    <div class="social-item">
+        <i class="fa-brands fa-github icon"></i>
+        <span>Github</span>
+    </div>
+</div>
 
        <!-- Nút Menu Hamburger cho điện thoại -->
-       <div class="lg:hidden text-gray-300 text-2xl cursor-pointer">
-           <i class="fa-solid fa-bars"></i>
-       </div>
-    </header>
-
+      <div class="mobile-menu-btn">
+    <i class="fa-solid fa-bars"></i>
+</div>
+</header>
     <!-- Sidebar Navigation (Đã thêm href và tooltip) -->
-    <aside class="hidden lg:flex fixed left-6 top-1/3 border border-gray-600 rounded-full py-6 px-3 flex-col gap-6 bg-[#2C3137] z-50 shadow-lg">
-        <a href="#home" class="nav-item active group">
-            <i class="fa-solid fa-border-all text-gray-400 group-hover:text-white cursor-pointer text-lg transition"></i>
-            <span class="nav-tooltip">Home</span>
-        </a>
-        <a href="#about" class="nav-item group">
-            <i class="fa-regular fa-user text-gray-400 group-hover:text-white cursor-pointer text-lg transition"></i>
-            <span class="nav-tooltip">About Me</span>
-        </a>
-        <a href="#skills" class="nav-item group">
-            <i class="fa-solid fa-code text-gray-400 group-hover:text-white cursor-pointer text-lg transition"></i>
-            <span class="nav-tooltip">Skills</span>
-        </a>
-        <a href="#works" class="nav-item group">
-            <i class="fa-solid fa-desktop text-gray-400 group-hover:text-white cursor-pointer text-lg transition"></i>
-            <span class="nav-tooltip">Works</span>
-        </a>
-        <a href="#blogs" class="nav-item group">
-            <i class="fa-regular fa-pen-to-square text-gray-400 group-hover:text-white cursor-pointer text-lg transition"></i>
-            <span class="nav-tooltip">Blogs</span>
-        </a>
-        <a href="#contact" class="nav-item group">
-            <i class="fa-regular fa-envelope text-gray-400 group-hover:text-white cursor-pointer text-lg transition"></i>
-            <span class="nav-tooltip">Contact</span>
-        </a>
-    </aside>
+    <aside class="side-nav">
+    <a href="#home" class="nav-item active">
+        <i class="fa-solid fa-border-all"></i>
+        <span class="nav-tooltip">Home</span>
+    </a>
 
-    <!-- Hero Section (Đã thêm id="home") -->
-    <section id="home" class="flex flex-col items-center mt-6 relative w-full max-w-6xl mx-auto px-6 lg:px-10 scroll-mt-24">
-        <h2 class="text-5xl lg:text-[80px] font-medium tracking-wide text-[#26D9B5] mb-10 lg:mb-20 text-center">Developer</h2>
+    <a href="#about" class="nav-item">
+        <i class="fa-regular fa-user"></i>
+        <span class="nav-tooltip">About Me</span>
+    </a>
 
-        <div class="flex flex-col lg:flex-row justify-between w-full items-center gap-12 lg:gap-8">
-            <!-- CỘT 1: Profile Card -->
-            <div class="relative border-[3px] border-[#26D9B5] rounded-tl-[60px] rounded-br-[60px] p-8 w-full max-w-[320px] lg:w-[320px] flex flex-col items-center bg-[#2C3137] shadow-[0_0_15px_rgba(38,217,181,0.2)]">
-                <div class="w-24 h-24 rounded-full border-2 border-[#26D9B5] overflow-hidden mb-4 mt-2">
-                     <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80" alt="Sinan" class="w-full h-full object-cover">
-                </div>
-                <h3 class="text-2xl font-bold text-white tracking-wide">Sinan</h3>
-                <p class="text-xs text-gray-400 mb-8 tracking-wide">Full-stack developer</p>
+    <a href="#skills" class="nav-item">
+        <i class="fa-solid fa-code"></i>
+        <span class="nav-tooltip">Skills</span>
+    </a>
 
-                <div class="w-full flex flex-col gap-4 text-[11px] text-gray-300 mb-8 font-mono">
-                    <div class="flex items-center gap-4"><i class="fa-regular fa-envelope text-[#26D9B5] text-sm"></i> abdurrahman_sinan@hotmail.com</div>
-                    <div class="flex items-center gap-4"><i class="fa-solid fa-location-dot text-[#26D9B5] text-sm"></i> Turkey</div>
-                    <div class="flex items-center gap-4"><i class="fa-solid fa-briefcase text-[#26D9B5] text-sm"></i> Full-time / Freelancer</div>
-                    <div class="flex items-center gap-4"><i class="fa-solid fa-link text-[#26D9B5] text-sm"></i> www.sinantokmak.com</div>
-                </div>
+    <a href="#works" class="nav-item">
+        <i class="fa-solid fa-desktop"></i>
+        <span class="nav-tooltip">Works</span>
+    </a>
 
-                <div class="flex flex-wrap justify-center gap-3 mb-10 w-full px-2">
-                    <span class="bg-[#26D9B5] text-[#2C3137] px-3 py-1 rounded-full text-[9px] font-bold tracking-widest">HTML</span>
-                    <span class="bg-[#26D9B5] text-[#2C3137] px-3 py-1 rounded-full text-[9px] font-bold tracking-widest">CSS</span>
-                    <span class="bg-[#26D9B5] text-[#2C3137] px-3 py-1 rounded-full text-[9px] font-bold tracking-widest">JS</span>
-                    <span class="bg-[#26D9B5] text-[#2C3137] px-3 py-1 rounded-full text-[9px] font-bold tracking-widest">REACT</span>
-                </div>
+    <a href="#blogs" class="nav-item">
+        <i class="fa-regular fa-pen-to-square"></i>
+        <span class="nav-tooltip">Blogs</span>
+    </a>
 
-                <button class="bg-white text-black px-6 py-3 rounded-full text-sm font-semibold flex items-center justify-center gap-2 hover:bg-gray-200 transition w-[85%]">
-                    Download CV <i class="fa-solid fa-download text-lg font-light"></i>
-                </button>
+    <a href="#contact" class="nav-item">
+        <i class="fa-regular fa-envelope"></i>
+        <span class="nav-tooltip">Contact</span>
+    </a>
+</aside>
+
+<!-- Hero Section -->
+<section id="home" class="hero-section">
+
+    <!-- Hero Title -->
+    <h2 class="hero-title">
+        Developer
+    </h2>
+
+    <!-- 3 CỘT HERO -->
+    <div class="hero-content">
+
+        <!-- =========================================
+             CỘT 1: PROFILE CARD
+        ========================================== -->
+        <div class="profile-card">
+
+            <!-- Avatar -->
+            <div class="profile-avatar">
+                <img
+                    src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80"
+                    alt="Sinan"
+                >
             </div>
 
-            <!-- CỘT 2: Center Introduction -->
-            <div class="flex-1 w-full max-w-[500px] font-mono text-center lg:text-left flex flex-col items-center lg:items-start">
-                <span class="text-[#26D9B5] text-xs mb-3 block opacity-80">&lt;h1&gt;</span>
-                <h1 class="text-4xl lg:text-[44px] font-normal text-white leading-[1.1] mb-2 font-sans tracking-wide">
-                    Hey<br>
-                    I'm <span class="text-[#26D9B5] font-semibold">Sinan</span>,<br>
-                    Full-Stack Developer
-                </h1>
-                <span class="text-[#26D9B5] text-xs mt-3 block opacity-80 w-full lg:text-right lg:mr-16">&lt;/h1&gt;</span>
+            <!-- Name -->
+            <h3 class="profile-name">
+                Sinan
+            </h3>
 
-                <span class="text-[#26D9B5] text-xs mt-6 lg:mt-8 block opacity-80">&lt;p&gt;</span>
-                <p class="text-gray-300 text-sm leading-[1.8] px-2 lg:pl-4 lg:pr-0 my-2">
-                    I help business grow by crafting amazing web experiences. If you're looking for a developer that likes to get stuff done,
-                </p>
-                <span class="text-[#26D9B5] text-xs mb-6 lg:mb-8 block opacity-80">&lt;/p&gt;</span>
+            <!-- Job -->
+            <p class="profile-role">
+                Full-stack developer
+            </p>
 
-                <!-- Sửa thẻ div thành thẻ a để nhấp vào cuộn xuống phần liên hệ -->
-                <a href="#contact" class="flex items-center justify-center lg:justify-start gap-3 text-[#26D9B5] text-[24px] lg:text-[28px] mt-2 font-medium cursor-pointer font-sans tracking-wide hover:opacity-80 transition">
-                    Let's Talk 
-                    <div class="bg-[#3a3f47] rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-600 transition">
-                        <i class="fa-regular fa-envelope text-lg text-gray-300"></i>
+            <!-- Information -->
+            <div class="profile-info">
+
+                <div class="info-item">
+                    <i class="fa-regular fa-envelope"></i>
+                    <span>abdurrahman_sinan@hotmail.com</span>
+                </div>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Turkey</span>
+                </div>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <span>Full-time / Freelancer</span>
+                </div>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-link"></i>
+                    <span>www.sinantokmak.com</span>
+                </div>
+
+            </div>
+
+            <!-- Skills -->
+            <div class="skill-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JS</span>
+                <span>REACT</span>
+            </div>
+
+            <!-- Download CV -->
+            <button class="download-cv">
+                <span>Download CV</span>
+                <i class="fa-solid fa-download"></i>
+            </button>
+
+        </div>
+
+
+        <!-- =========================================
+             CỘT 2: INTRODUCTION
+        ========================================== -->
+        <div class="intro-section">
+
+            <span class="intro-tag intro-tag-top">
+                &lt;h1&gt;
+            </span>
+
+            <h1 class="intro-title">
+                Hey<br>
+                I'm <span class="intro-name">Sinan</span>,<br>
+                Full-Stack Developer
+            </h1>
+
+            <span class="intro-tag intro-tag-end">
+                &lt;/h1&gt;
+            </span>
+
+
+            <span class="intro-tag intro-paragraph-tag">
+                &lt;p&gt;
+            </span>
+
+            <p class="intro-text">
+                I help business grow by crafting amazing web experiences.
+                If you're looking for a developer that likes to get stuff done,
+            </p>
+
+            <span class="intro-tag intro-paragraph-end">
+                &lt;/p&gt;
+            </span>
+
+
+            <!-- Let's Talk -->
+            <a href="#contact" class="talk-link">
+                <span>Let's Talk</span>
+
+                <div class="talk-icon">
+                    <i class="fa-regular fa-envelope"></i>
+                </div>
+            </a>
+
+        </div>
+
+
+        <!-- =========================================
+             CỘT 3: STATS CARD
+        ========================================== -->
+        <div class="stats-card">
+
+            <!-- Stat 1 -->
+            <div class="stat-item">
+
+                <span class="stat-number">
+                    4
+                </span>
+
+                <span class="stat-label">
+                    Programming<br>
+                    Language
+                </span>
+
+            </div>
+
+
+            <!-- Stat 2 -->
+            <div class="stat-item">
+
+                <span class="stat-number">
+                    6
+                </span>
+
+                <span class="stat-label">
+                    Development<br>
+                    Tools
+                </span>
+
+            </div>
+
+
+            <!-- Stat 3 -->
+            <div class="stat-item">
+
+                <span class="stat-number">
+                    8
+                </span>
+
+                <span class="stat-label">
+                    Years of<br>
+                    Experience
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- About Me Section -->
+<section id="about" class="about-section">
+
+    <!-- Abstract Topology Background -->
+    <div class="about-background">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="topo" width="100" height="100" patternUnits="userSpaceOnUse">
+                    <path
+                        d="M 0 50 Q 25 0 50 50 T 100 50"
+                        fill="none"
+                        stroke="#26D9B5"
+                        stroke-width="1"
+                    />
+                    <path
+                        d="M 0 70 Q 25 20 50 70 T 100 70"
+                        fill="none"
+                        stroke="#26D9B5"
+                        stroke-width="1"
+                    />
+                    <path
+                        d="M 0 90 Q 25 40 50 90 T 100 90"
+                        fill="none"
+                        stroke="#26D9B5"
+                        stroke-width="1"
+                    />
+                </pattern>
+            </defs>
+
+            <rect width="100%" height="100%" fill="url(#topo)" />
+        </svg>
+    </div>
+
+
+    <!-- Mouse / Divider -->
+    <div class="about-divider">
+        <i class="fa-solid fa-computer-mouse"></i>
+
+        <div class="divider-line"></div>
+
+        <div class="divider-diamond"></div>
+    </div>
+
+
+    <!-- Section Title -->
+    <div class="about-title-box">
+        <h2>About Me</h2>
+    </div>
+
+
+    <!-- About Content -->
+    <div class="about-content">
+
+        <!-- Left Text Box -->
+        <div class="about-text-box">
+
+            <span class="about-code-tag">&lt;p&gt;</span>
+
+            <h3>Hello!</h3>
+
+            <p>
+                My name is Sinan and I specialize in web developement that
+                utilizes <span class="highlight">HTML</span>,
+                <span class="highlight">CSS</span>,
+                <span class="highlight">JS</span>, and
+                <span class="highlight">REACT</span> etc.
+            </p>
+
+            <p>
+                I am a highly motivated individual and eternal optimist
+                dedicated to writing clear, concise, robust code that works.
+                Striving to never stop learning and improving.
+            </p>
+
+            <p>
+                When I'm not coding, I am
+                <a href="#blogs">writing blogs</a>,
+                reading, or picking up some new hands-on art project like
+                <span class="highlight">photography</span>.
+            </p>
+
+            <p>
+                I like to have my perspective and belief systems challenged
+                so that I see the world through new eyes.
+            </p>
+
+            <span class="about-code-tag about-code-end">
+                &lt;/p&gt;
+            </span>
+
+        </div>
+
+
+        <!-- Right Image -->
+        <div class="about-image">
+            <img
+                src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?auto=format&fit=crop&w=600&q=80"
+                alt="Working on laptop"
+            >
+        </div>
+
+    </div>
+
+</section>
+    <!-- Skills Section -->
+<section id="skills" class="skills-section">
+    <!-- Mouse / Divider -->
+    <div class="skills-divider">
+        <i class="fa-solid fa-computer-mouse"></i>
+        <div class="divider-line"></div>
+        <div class="divider-diamond"></div>
+    </div>
+
+
+
+    <!-- Title -->
+    <div class="skills-title-wrapper">
+
+        <h2>
+            Skills
+        </h2>
+
+        <div class="skills-title-line">
+            <div></div>
+            <span></span>
+            <div></div>
+            <span></span>
+        </div>
+
+    </div>
+
+
+    <!-- Description -->
+    <p class="skills-description">
+        I am striving to never stop learning and improving
+    </p>
+
+
+    <!-- Development Categories -->
+    <div class="development-boxes">
+
+        <!-- Web Development -->
+        <div class="development-box">
+
+            <i class="fa-solid fa-desktop"></i>
+
+            <h3>
+                Web Developement
+            </h3>
+
+            <p>
+                HTML•CSS•JS•REACT
+            </p>
+
+        </div>
+
+
+        <!-- App Development -->
+        <div class="development-box">
+
+            <i class="fa-solid fa-mobile-screen"></i>
+
+            <h3>
+                App Developement
+            </h3>
+
+            <p>
+                iOS•Android
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Skill Badges -->
+    <div class="skill-badges">
+
+        <!-- HTML -->
+        <div class="skill-badge">
+
+            <div class="skill-icon html-icon">
+                <i class="fa-brands fa-html5"></i>
+            </div>
+
+            <span class="html-text">
+                HTML
+            </span>
+
+        </div>
+
+
+        <!-- CSS -->
+        <div class="skill-badge">
+
+            <div class="skill-icon css-icon">
+                <i class="fa-brands fa-css3-alt"></i>
+            </div>
+
+            <span class="css-text">
+                CSS
+            </span>
+
+        </div>
+
+
+        <!-- JavaScript -->
+        <div class="skill-badge">
+
+            <div class="skill-icon js-icon">
+                <i class="fa-brands fa-js"></i>
+            </div>
+
+            <span class="js-text">
+                JS
+            </span>
+
+        </div>
+
+
+        <!-- React -->
+        <div class="skill-badge">
+
+            <div class="skill-icon react-icon">
+                <i class="fa-brands fa-react"></i>
+            </div>
+
+            <span class="react-text">
+                REACT
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+   <!-- Works Section -->
+<section id="works" class="works-section">
+
+    <!-- Abstract Background -->
+    <div class="works-background"></div>
+
+
+    <!-- Mouse / Divider -->
+    <div class="works-divider">
+        <i class="fa-solid fa-computer-mouse"></i>
+
+        <div class="divider-line"></div>
+
+        <div class="divider-diamond"></div>
+    </div>
+
+
+    <!-- Section Title -->
+    <div class="works-title-wrapper">
+
+        <h2>
+            Works
+        </h2>
+
+        <div class="works-title-line">
+            <span></span>
+            <div></div>
+            <span></span>
+        </div>
+
+    </div>
+
+
+    <!-- Description -->
+    <p class="works-description">
+        I had the pleasure of working with these awesome projects
+    </p>
+
+
+    <!-- Project Slider -->
+    <div class="works-slider">
+
+        <!-- Left Arrow -->
+        <button class="works-arrow works-arrow-left">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+
+        <!-- Screens -->
+        <div class="screens-display">
+
+            <!-- Vertical Monitor Left -->
+            <div class="vertical-monitor">
+
+                <img
+                    src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=300&q=80"
+                    alt="Code Screenshot"
+                >
+
+                <!-- Monitor Base -->
+                <div class="vertical-monitor-base"></div>
+
+            </div>
+
+
+            <!-- Desktop Monitor -->
+            <div class="desktop-monitor">
+
+                <!-- View Website -->
+                <div class="view-website">
+                    <span>
+                        View Website
+                    </span>
+
+                    <i class="fa-solid fa-arrow-pointer"></i>
+                </div>
+
+
+                <!-- Screen -->
+                <div class="desktop-screen">
+
+                    <div class="website-content">
+
+                        <h4>
+                            Get Some Fresh Air
+                        </h4>
+
+                        <p>
+                            Explore Now
+                        </p>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80"
+                            alt="Website UI"
+                        >
+
                     </div>
-                </a>
-            </div>
 
-            <!-- CỘT 3: Stats Card -->
-            <div class="bg-[#212429] rounded-[40px] p-6 lg:p-10 w-full max-w-[400px] lg:w-[260px] flex flex-row lg:flex-col justify-around lg:justify-start gap-0 lg:gap-10 shadow-2xl lg:mr-8">
-                <div class="flex flex-col lg:flex-row items-center gap-2 lg:gap-6 text-center lg:text-left">
-                    <span class="text-[#26D9B5] text-3xl lg:text-[40px] font-bold font-mono">4</span>
-                    <span class="text-[10px] lg:text-xs text-gray-300 leading-relaxed font-mono">Programming<br>Language</span>
                 </div>
-                <div class="flex flex-col lg:flex-row items-center gap-2 lg:gap-6 text-center lg:text-left">
-                    <span class="text-[#26D9B5] text-3xl lg:text-[40px] font-bold font-mono">6</span>
-                    <span class="text-[10px] lg:text-xs text-gray-300 leading-relaxed font-mono">Development<br>Tools</span>
+
+
+                <!-- Monitor Stand -->
+                <div class="monitor-stand">
+
+                    <div class="monitor-stand-neck"></div>
+
+                    <div class="monitor-stand-base"></div>
+
                 </div>
-                <div class="flex flex-col lg:flex-row items-center gap-2 lg:gap-6 text-center lg:text-left">
-                    <span class="text-[#26D9B5] text-3xl lg:text-[40px] font-bold font-mono">8</span>
-                    <span class="text-[10px] lg:text-xs text-gray-300 leading-relaxed font-mono">Years of<br>Experience</span>
-                </div>
-            </div>
-            
-        </div>
-    </section>
 
-    <!-- About Me Section (Đã thêm id="about") -->
-    <section id="about" class="mt-48 relative w-full max-w-5xl mx-auto px-10 scroll-mt-24">
-        <!-- Abstract Topology Background Map Placeholder -->
-        <div class="absolute inset-0 z-[-1] opacity-5 overflow-hidden pointer-events-none">
-            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <pattern id="topo" width="100" height="100" patternUnits="userSpaceOnUse">
-                        <path d="M 0 50 Q 25 0 50 50 T 100 50" fill="none" stroke="#26D9B5" stroke-width="1"/>
-                        <path d="M 0 70 Q 25 20 50 70 T 100 70" fill="none" stroke="#26D9B5" stroke-width="1"/>
-                        <path d="M 0 90 Q 25 40 50 90 T 100 90" fill="none" stroke="#26D9B5" stroke-width="1"/>
-                    </pattern>
-                </defs>
-                <rect width="100%" height="100%" fill="url(#topo)" />
-            </svg>
-        </div>
-
-        <div class="flex flex-col items-center mb-12">
-            <i class="fa-solid fa-computer-mouse text-[#26D9B5] text-2xl mb-3"></i>
-            <div class="w-[1px] h-14 border-l border-dashed border-white"></div>
-            <div class="w-[6px] h-[6px] bg-white rotate-45 mt-2"></div>
-        </div>
-
-        <div class="inline-block border-2 border-[#26D9B5] rounded-tl-xl rounded-br-xl px-10 py-3 mb-16 relative">
-            <h2 class="text-4xl text-white font-medium tracking-wide">About Me</h2>
-        </div>
-
-        <div class="flex gap-12 items-center">
-            <!-- Left Text Box -->
-            <div class="bg-[#33383f] rounded-[24px] p-10 flex-1 shadow-lg font-mono relative">
-                <span class="text-[#26D9B5] text-xs block mb-4">&lt;p&gt;</span>
-                <h3 class="text-[#26D9B5] text-[32px] font-bold mb-6 font-sans tracking-wide">Hello!</h3>
-                <p class="text-gray-300 text-[13px] mb-5 leading-[1.8]">
-                    My name is Sinan and I specialize in web developement that utilizes <span class="text-[#26D9B5]">HTML</span>, <span class="text-[#26D9B5]">CSS</span>, <span class="text-[#26D9B5]">JS</span>, and <span class="text-[#26D9B5]">REACT</span> etc.
-                </p>
-                <p class="text-gray-300 text-[13px] mb-5 leading-[1.8]">
-                    I am a highly motivated individual and eternal optimist dedicated to writing clear, concise, robust code that works. Striving to never stop learning and improving.
-                </p>
-                <p class="text-gray-300 text-[13px] mb-5 leading-[1.8]">
-                    When I'm not coding, I am <a href="#blogs" class="text-[#26D9B5] hover:underline">writing blogs</a>, reading, or picking up some new hands-on art project like <span class="text-[#26D9B5]">photography</span>.
-                </p>
-                <p class="text-gray-300 text-[13px] leading-[1.8]">
-                    I like to have my perspective and belief systems challenged so that I see the world through new eyes.
-                </p>
-                <span class="text-[#26D9B5] text-xs block mt-4">&lt;/p&gt;</span>
             </div>
 
-            <!-- Right Image -->
-            <div class="w-[380px] h-[450px] rounded-[24px] overflow-hidden shadow-2xl flex-shrink-0">
-                <img src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?auto=format&fit=crop&w=600&q=80" alt="Working on laptop" class="w-full h-full object-cover">
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section (Đã thêm id="skills") -->
-    <section id="skills" class="mt-48 relative w-full max-w-5xl mx-auto px-10 text-center scroll-mt-24">
-        <!-- Code background watermark -->
-        <div class="absolute inset-0 z-[-1] opacity-5 overflow-hidden text-[10px] leading-tight text-left font-mono break-words text-gray-300">
-            $sort_order = array(); foreach ($quotes as $key => $value) { $sort_order_array[] = $value; }
-            if (empty($quotes)) { $this->session->data['lpa']['language']->get('error_no_shipping_methods'); }
-            $this->response->addHeader('Content-Type: application/json');
-            <!-- Repeated text -->
-            $sort_order = array(); foreach ($quotes as $key => $value) { $sort_order_array[] = $value; }
-            if (empty($quotes)) { $this->session->data['lpa']['language']->get('error_no_shipping_methods'); }
-            $this->response->addHeader('Content-Type: application/json');
         </div>
 
-        <div class="flex flex-col items-center mb-10">
-            <i class="fa-solid fa-computer-mouse text-[#26D9B5] text-2xl mb-3"></i>
-            <div class="w-[1px] h-14 border-l border-dashed border-white"></div>
-            <div class="w-[6px] h-[6px] bg-white rotate-45 mt-2"></div>
+
+        <!-- Right Arrow -->
+        <button class="works-arrow works-arrow-right">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+    </div>
+
+</section>
+
+   <!-- Blogs Section -->
+<section id="blogs" class="blogs-section">
+
+    <!-- Mouse / Divider -->
+    <div class="blogs-divider">
+        <i class="fa-solid fa-computer-mouse"></i>
+
+        <div class="divider-line"></div>
+
+        <div class="divider-diamond"></div>
+    </div>
+
+
+    <!-- Section Title -->
+    <div class="blogs-title-wrapper">
+
+        <h2>
+            Blogs
+        </h2>
+
+        <div class="blogs-title-line">
+            <span></span>
+            <div></div>
+            <span></span>
         </div>
 
-        <div class="absolute right-20 top-0 text-[#26D9B5] text-[150px] font-bold opacity-90 tracking-tighter">&lt;/&gt;</div>
+    </div>
 
-        <div class="inline-block relative">
-            <h2 class="text-[44px] text-[#26D9B5] font-medium mb-1 relative z-10 tracking-wide">Skills</h2>
-            <div class="flex items-center justify-center w-full relative z-10 mt-1">
-                <div class="w-2 h-2 rounded-full bg-[#26D9B5]"></div>
-                <div class="h-[2px] w-full bg-[#26D9B5]"></div>
-                <div class="w-2 h-2 rounded-full bg-[#26D9B5]"></div>
+
+    <!-- Description -->
+    <p class="blogs-description">
+        My thoughts on technology and business, welcome to subscribe
+    </p>
+
+
+    <!-- Top Divider -->
+    <hr class="blogs-divider-line">
+
+
+    <!-- Blog Item -->
+    <div class="blog-item">
+
+        <!-- Blog Thumbnail -->
+        <img
+            src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80"
+            alt="Blog Thumb"
+            class="blog-thumbnail"
+        >
+
+
+        <!-- Blog Content -->
+        <div class="blog-content">
+
+            <h3>
+                What does it take to become a web developer?
+            </h3>
+
+            <p>
+                Web development, also known as website development,
+                encompasses a variety of tasks and processes involved
+                in creating websites for the internet...
+            </p>
+
+
+            <!-- Read More -->
+            <a href="#" class="blog-read-more">
+                Read More &gt;&gt;
+            </a>
+
+
+            <!-- Blog Metadata -->
+            <div class="blog-meta">
+
+                <span class="blog-category">
+                    Web Developer
+                </span>
+
+                <span>
+                    <strong>Text</strong> Sinan
+                </span>
+
+                <span>
+                    <strong>Date</strong> 10.Oct 2023
+                </span>
+
+                <span>
+                    <strong>Read</strong> 1 Min
+                </span>
+
             </div>
+
         </div>
-        
-        <p class="text-gray-300 text-[13px] mt-6 mb-20 font-mono tracking-wide">I am striving to never stop learning and improving</p>
 
-        <div class="flex justify-center gap-12 mb-20">
-            <!-- Box 1 -->
-            <div class="bg-[#bbf6ec] text-black w-[300px] py-8 rounded-[4px] border-l-[16px] border-[#43d4c0] shadow-xl flex flex-col items-center">
-                <i class="fa-solid fa-desktop text-3xl mb-4 text-[#2C3137]"></i>
-                <h3 class="font-bold text-lg tracking-wide">Web Developement</h3>
-                <p class="text-[11px] text-[#2C3137] font-medium mt-2 tracking-widest">HTML•CSS•JS•REACT</p>
-            </div>
-            <!-- Box 2 -->
-            <div class="bg-[#bbf6ec] text-black w-[300px] py-8 rounded-[4px] border-l-[16px] border-[#43d4c0] shadow-xl flex flex-col items-center">
-                <i class="fa-solid fa-mobile-screen text-3xl mb-4 text-[#2C3137]"></i>
-                <h3 class="font-bold text-lg tracking-wide">App Developement</h3>
-                <p class="text-[11px] text-[#2C3137] font-medium mt-2 tracking-widest">iOS•Android</p>
-            </div>
+    </div>
+
+
+    <!-- Bottom Divider -->
+    <hr class="blogs-divider-line blogs-divider-bottom">
+
+
+    <!-- Buttons -->
+    <div class="blog-buttons">
+
+        <button class="view-more-btn">
+            View More
+        </button>
+
+        <button class="subscribe-btn">
+            Subscribe
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+
+    <!-- Section Divider -->
+    <div class="contact-divider">
+
+        <i class="fa-solid fa-computer-mouse"></i>
+
+        <div class="contact-divider-line"></div>
+
+        <div class="contact-divider-diamond"></div>
+
+    </div>
+
+
+    <!-- Section Title -->
+    <div class="contact-title">
+
+        <h2>Contact</h2>
+
+        <div class="contact-title-line">
+            <span></span>
+            <div></div>
+            <span></span>
         </div>
 
-        <!-- Badges Container -->
-        <div class="flex justify-center gap-16 mt-10">
-            <div class="flex flex-col items-center gap-5">
-                <div class="w-24 h-24 rounded-full bg-[#E44D26] flex items-center justify-center text-white text-5xl shadow-[0_4px_15px_rgba(0,0,0,0.5)] border-4 border-[#2C3137]">
-                    <i class="fa-brands fa-html5"></i>
-                </div>
-                <span class="text-[#E44D26] font-bold tracking-widest text-[15px]">HTML</span>
+    </div>
+
+
+    <!-- Description -->
+    <p class="contact-description">
+        I'm currently available for freelance work
+    </p>
+
+
+    <!-- Message Button -->
+    <div class="message-box">
+        <h3>Send Me A Message</h3>
+    </div>
+
+
+    <!-- Contact Form -->
+    <form class="contact-form">
+
+        <!-- Name + Email -->
+        <div class="contact-fields">
+
+            <div class="contact-field">
+
+                <label>Your name *</label>
+
+                <input
+                    type="text"
+                    placeholder="Enter your name"
+                >
+
             </div>
-            <div class="flex flex-col items-center gap-5">
-                <div class="w-24 h-24 rounded-full bg-[#264DE4] flex items-center justify-center text-white text-5xl shadow-[0_4px_15px_rgba(0,0,0,0.5)] border-4 border-[#2C3137]">
-                    <i class="fa-brands fa-css3-alt"></i>
-                </div>
-                <span class="text-[#264DE4] font-bold tracking-widest text-[15px]">CSS</span>
+
+
+            <div class="contact-field">
+
+                <label>Your email *</label>
+
+                <input
+                    type="email"
+                    placeholder="Enter your email"
+                >
+
             </div>
-            <div class="flex flex-col items-center gap-5">
-                <div class="w-24 h-24 rounded-full bg-[#F7DF1E] flex items-center justify-center text-black text-5xl shadow-[0_4px_15px_rgba(0,0,0,0.5)] border-4 border-[#2C3137]">
-                    <i class="fa-brands fa-js"></i>
-                </div>
-                <span class="text-[#F7DF1E] font-bold tracking-widest text-[15px]">JS</span>
-            </div>
-            <div class="flex flex-col items-center gap-5">
-                <div class="w-24 h-24 rounded-full bg-[#00D8FF] flex items-center justify-center text-white text-5xl shadow-[0_4px_15px_rgba(0,0,0,0.5)] border-4 border-[#2C3137]">
-                    <i class="fa-brands fa-react"></i>
-                </div>
-                <span class="text-[#00D8FF] font-bold tracking-widest text-[15px]">REACT</span>
-            </div>
+
         </div>
-    </section>
 
-    <!-- Works Section (Đã thêm id="works") -->
-    <section id="works" class="mt-48 relative w-full max-w-5xl mx-auto px-10 text-center scroll-mt-24">
-        <!-- Abstract Background -->
-        <div class="absolute inset-0 z-[-1] opacity-5 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/black-linen.png')]"></div>
 
-        <div class="flex flex-col items-center mb-10">
-            <i class="fa-solid fa-computer-mouse text-[#26D9B5] text-2xl mb-3"></i>
-            <div class="w-[1px] h-14 border-l border-dashed border-white"></div>
-            <div class="w-[6px] h-[6px] bg-white rotate-45 mt-2"></div>
+        <!-- Message -->
+        <div class="contact-message">
+
+            <label>Your message *</label>
+
+            <input
+                type="text"
+                placeholder="Enter your needs"
+            >
+
         </div>
 
-        <div class="inline-block relative">
-            <h2 class="text-[44px] text-[#26D9B5] font-medium mb-1 relative z-10 tracking-wide">Works</h2>
-            <div class="flex items-center justify-center w-full relative z-10 mt-1">
-                <div class="w-2 h-2 rounded-full bg-[#26D9B5]"></div>
-                <div class="h-[2px] w-full bg-[#26D9B5]"></div>
-                <div class="w-2 h-2 rounded-full bg-[#26D9B5]"></div>
-            </div>
-        </div>
-        
-        <p class="text-gray-300 text-[13px] mt-6 mb-24 font-mono tracking-wide">I had the pleasure of working with these awesome projects</p>
 
-        <div class="relative flex items-center justify-center mb-20 w-full">
-            <!-- Left Arrow -->
-            <button class="absolute left-0 w-12 h-12 bg-[#363b42] rounded-full text-white flex items-center justify-center hover:bg-gray-600 transition shadow-lg z-30">
-                <i class="fa-solid fa-chevron-left text-sm"></i>
+        <!-- Submit -->
+        <div class="contact-submit">
+
+            <button type="submit">
+
+                Send Message
+
+                <i class="fa-regular fa-paper-plane"></i>
+
             </button>
 
-            <!-- Screens Display -->
-            <div class="relative flex items-end justify-center w-full max-w-4xl px-20">
-                <!-- Vertical Monitor Left -->
-                <div class="w-[200px] h-[350px] bg-gray-800 border-[6px] border-gray-600 rounded relative z-10 transform translate-x-16 translate-y-6 shadow-2xl flex items-center justify-center overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=300&q=80" class="w-full h-full object-cover opacity-90" alt="Code Screenshot">
-                    <!-- Monitor Base Placeholder -->
-                    <div class="absolute -bottom-6 w-16 h-8 bg-gray-700"></div>
-                </div>
-
-                <!-- Desktop Monitor Right -->
-                <div class="w-[500px] h-[340px] bg-gray-200 rounded-[20px] p-2 relative z-20 shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex flex-col items-center">
-                     <!-- "View Website" link hovering -->
-                     <div class="absolute -top-10 right-10 flex items-center gap-2 text-[#26D9B5] font-mono text-sm tracking-wide z-30 cursor-pointer hover:text-white transition">
-                         <span class="border-b border-[#26D9B5] pb-1">View Website</span>
-                         <i class="fa-solid fa-arrow-pointer text-lg"></i>
-                     </div>
-                     <div class="w-full h-full bg-white rounded-xl overflow-hidden border border-gray-300 flex flex-col">
-                         <!-- Website Screenshot -->
-                         <div class="bg-gray-100 p-6 flex-1 relative">
-                             <h4 class="text-black font-extrabold text-[28px] tracking-tight mb-2 z-10 relative">Get Some Fresh Air</h4>
-                             <p class="text-blue-500 text-[10px] font-bold mb-4 relative z-10 inline-block bg-blue-100 px-3 py-1 rounded-full">Explore Now</p>
-                             <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80" class="absolute inset-0 w-full h-full object-cover opacity-70" alt="Website UI">
-                         </div>
-                     </div>
-                     <!-- Stand Base -->
-                     <div class="absolute -bottom-10 w-24 h-10 bg-gray-300 clip-path-stand flex flex-col items-center">
-                          <div class="w-full h-full bg-gray-300"></div>
-                          <div class="w-40 h-3 bg-gray-400 rounded-full mt-1"></div>
-                     </div>
-                </div>
-            </div>
-
-            <!-- Right Arrow -->
-            <button class="absolute right-0 w-12 h-12 bg-[#363b42] rounded-full text-white flex items-center justify-center hover:bg-gray-600 transition shadow-lg z-30">
-                <i class="fa-solid fa-chevron-right text-sm"></i>
-            </button>
-        </div>
-    </section>
-
-    <!-- Blogs Section (Đã thêm id="blogs") -->
-    <section id="blogs" class="mt-48 relative w-full max-w-4xl mx-auto px-10 text-center scroll-mt-24">
-        <div class="flex flex-col items-center mb-10">
-            <i class="fa-solid fa-computer-mouse text-[#26D9B5] text-2xl mb-3"></i>
-            <div class="w-[1px] h-14 border-l border-dashed border-white"></div>
-            <div class="w-[6px] h-[6px] bg-white rotate-45 mt-2"></div>
         </div>
 
-        <div class="inline-block relative">
-            <h2 class="text-[44px] text-[#26D9B5] font-medium mb-1 relative z-10 tracking-wide">Blogs</h2>
-            <div class="flex items-center justify-center w-full relative z-10 mt-1">
-                <div class="w-2 h-2 rounded-full bg-[#26D9B5]"></div>
-                <div class="h-[2px] w-full bg-[#26D9B5]"></div>
-                <div class="w-2 h-2 rounded-full bg-[#26D9B5]"></div>
-            </div>
-        </div>
-        
-        <p class="text-gray-300 text-[13px] mt-6 mb-16 font-mono tracking-wide">My thoughts on technology and business, welcome to subscribe</p>
+    </form>
 
-        <hr class="border-gray-500 mb-12 opacity-50">
+</section>
+   <!-- Footer -->
+<footer class="site-footer">
 
-        <div class="blog-item flex text-left items-center gap-10">
-            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80" alt="Blog Thumb" class="w-[260px] h-[220px] object-cover rounded-sm shadow-md">
-            <div class="flex-1 py-4">
-                <h3 class="text-[#26D9B5] text-[28px] font-medium mb-3 tracking-wide">What does it take to become a web developer?</h3>
-                <p class="text-gray-300 text-[13px] mb-4 leading-[1.8] pr-10">
-                    Web development, also known as website development, encompasses a variety of tasks and processes involved in creating websites for the internet...
-                </p>
-                <a href="#" class="text-[#26D9B5] text-xs font-mono underline decoration-[#26D9B5] underline-offset-4 mb-8 inline-block hover:text-white transition">Read More >></a>
+    <!-- Copyright -->
+    <div class="footer-copyright">
+        © 2023 SinanTokmak. All rights reserved.
+    </div>
 
-                <div class="flex items-center gap-4 text-[10px] text-gray-300 font-mono mt-4">
-                    <span class="bg-gray-600 text-gray-200 px-4 py-1 rounded-full border border-gray-500">Web Developer</span>
-                    <span><strong class="text-white">Text</strong> Sinan</span>
-                    <span><strong class="text-white">Date</strong> 10.Oct 2023</span>
-                    <span><strong class="text-white">Read</strong> 1 Min</span>
-                </div>
-            </div>
-        </div>
 
-        <hr class="border-gray-500 mt-12 mb-16 opacity-50">
+    <!-- Privacy / Terms -->
+    <div class="footer-links">
 
-        <div class="flex items-center justify-center gap-6 pb-10">
-            <button class="bg-[#26D9B5] text-[#2C3137] px-8 py-[10px] rounded-full text-sm font-bold hover:bg-teal-400 transition tracking-wide">View More</button>
-            <button class="border border-white text-white px-8 py-[10px] rounded-full text-sm font-medium hover:bg-gray-700 transition tracking-wide">Subscribe</button>
-        </div>
-    </section>
+        <a href="#">
+            Privacy Policy
+        </a>
 
-    <!-- Contact Section (Đã thêm id="contact") -->
-    <section id="contact" class="mt-32 relative w-full max-w-4xl mx-auto px-10 text-center pb-20 scroll-mt-24">
-        <div class="flex flex-col items-center mb-10">
-            <i class="fa-solid fa-computer-mouse text-[#26D9B5] text-2xl mb-3"></i>
-            <div class="w-[1px] h-14 border-l border-dashed border-white"></div>
-            <div class="w-[6px] h-[6px] bg-white rotate-45 mt-2"></div>
-        </div>
+        <a href="#">
+            Terms & Conditions
+        </a>
 
-        <div class="inline-block relative">
-            <h2 class="text-[44px] text-[#26D9B5] font-medium mb-1 relative z-10 tracking-wide">Contact</h2>
-            <div class="flex items-center justify-center w-full relative z-10 mt-1">
-                <div class="w-2 h-2 rounded-full bg-[#26D9B5]"></div>
-                <div class="h-[2px] w-full bg-[#26D9B5]"></div>
-                <div class="w-2 h-2 rounded-full bg-[#26D9B5]"></div>
-            </div>
-        </div>
-        
-        <p class="text-gray-300 text-[13px] mt-6 mb-20 font-mono tracking-wide">I'm currently available for freelance work</p>
+    </div>
 
-        <div class="inline-block border-[1.5px] border-[#26D9B5] rounded-tl-xl rounded-br-xl px-16 py-4 mb-24 hover:bg-[#26D9B5] hover:text-[#2C3137] transition cursor-pointer group">
-            <h3 class="text-[22px] text-[#26D9B5] group-hover:text-[#2C3137] font-mono tracking-wider">Send Me A Message</h3>
-        </div>
 
-        <form class="text-left w-full max-w-3xl mx-auto font-mono">
-            <div class="flex gap-16 mb-16">
-                <div class="flex-1">
-                    <label class="block text-[#26D9B5] text-xs mb-3 tracking-wide">Your name *</label>
-                    <input type="text" placeholder="Enter your name" class="w-full bg-transparent border-b border-gray-500 text-white py-2 outline-none focus:border-[#26D9B5] transition placeholder-gray-300 text-sm">
-                </div>
-                <div class="flex-1">
-                    <label class="block text-[#26D9B5] text-xs mb-3 tracking-wide">Your email *</label>
-                    <input type="email" placeholder="Enter your email" class="w-full bg-transparent border-b border-gray-500 text-white py-2 outline-none focus:border-[#26D9B5] transition placeholder-gray-300 text-sm">
-                </div>
-            </div>
-            <div class="mb-20">
-                <label class="block text-[#26D9B5] text-xs mb-3 tracking-wide">Your message *</label>
-                <input type="text" placeholder="Enter your needs" class="w-full bg-transparent border-b border-gray-500 text-white py-2 outline-none focus:border-[#26D9B5] transition placeholder-gray-300 text-sm">
-            </div>
+    <!-- Social Icons -->
+    <div class="footer-social">
 
-            <div class="text-center">
-                <button type="submit" class="bg-[#26D9B5] text-[#2C3137] px-8 py-3 rounded-full text-sm font-bold flex items-center justify-center gap-3 mx-auto hover:bg-teal-400 transition tracking-wide">
-                    Send Message <i class="fa-regular fa-paper-plane text-lg"></i>
-                </button>
-            </div>
-        </form>
-    </section>
+        <a href="#" class="footer-social-icon">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
 
-    <!-- Footer -->
-    <footer class="border-t border-[#3a3f47] py-8 px-16 flex justify-between items-center text-[11px] text-gray-400 mt-10 font-sans tracking-wide">
-        <div>© 2023 SinanTokmak. All rights reserved.</div>
-        <div class="flex gap-10">
-            <a href="#" class="hover:text-white transition">Privacy Policy</a>
-            <a href="#" class="hover:text-white transition">Terms & Conditions</a>
-        </div>
-        <div class="flex gap-4">
-             <div class="w-7 h-7 rounded-full bg-[#bbf6ec] text-[#2C3137] flex items-center justify-center cursor-pointer hover:bg-white transition"><i class="fa-brands fa-instagram text-[13px]"></i></div>
-             <div class="w-7 h-7 rounded-full bg-[#bbf6ec] text-[#2C3137] flex items-center justify-center cursor-pointer hover:bg-white transition"><i class="fa-brands fa-discord text-[13px]"></i></div>
-             <div class="w-7 h-7 rounded-full bg-[#bbf6ec] text-[#2C3137] flex items-center justify-center cursor-pointer hover:bg-white transition"><i class="fa-brands fa-github text-[13px]"></i></div>
-        </div>
-        <div>
-            Design By <a href="#" class="text-[#26D9B5] hover:underline decoration-[#26D9B5]">JohannLeon</a>
-        </div>
-    </footer>
+        <a href="#" class="footer-social-icon">
+            <i class="fa-brands fa-discord"></i>
+        </a>
+
+        <a href="#" class="footer-social-icon">
+            <i class="fa-brands fa-github"></i>
+        </a>
+
+    </div>
+
+
+    <!-- Designer -->
+    <div class="footer-designer">
+
+        Design By
+
+        <a href="#">
+            JohannLeon
+        </a>
+
+    </div>
+
+</footer>
 
     
 </body>
