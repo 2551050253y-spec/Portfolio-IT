@@ -61,223 +61,29 @@
 
 /* Nền sáng */
 body {
-    background-color: var(--color-surface);
-    
-    /* Chữ tối */
-    color: var(--color-ink);
-    
-    font-family: var(--font-body);
+
 }
 
 /* Màu nền tối  */
-body.dark {
-    background-color: var(--color-surface-dark);
-    
-    /* Màu chữ chính */
-    color: var(--color-ink-invert);
-    
-    /* Font chữ của toàn bộ trang */
-    font-family: var(--font-body);
+.dark-mode {
+    /* dark */
+    background-color: #111827;
+
+    /* font-sans */
+    font-family: ui-sans-serif, system-ui, sans-serif;
+
+    /* text-gray-200 */
+    color: #e5e7eb;
+
+    /* pb-10 = padding-bottom: 2.5rem */
+    padding-bottom: 2.5rem;
+
+    /* relative */
+    position: relative;
 }
 
 
 
-/* Logo bên trái */
-.logo {
-    color: var(--color-ink-invert);
-    font-size: 14px;
-    font-weight: bold;
-}
-
-/* Phần "Nhom 4:" */
-.code-icon {
-    color: var(--color-brand-600);
-}
-
-/* Khu vực menu */
-.nav-links {
-    display: flex;
-    gap: 30px;
-}
-
-/* Chữ Home và Blogs */
-.nav-link {
-    color: var(--color-muted-invert);
-    text-decoration: none;
-    font-size: 13px;
-}
-
-/* Blogs đang được chọn */
-.nav-link.active {
-    color: var(--color-brand-600);
-}
-
-/* Khu vực icon bên phải */
-.nav-icons {
-    display: flex;
-    gap: 18px;
-}
-
-/* Icon */
-.icon {
-    color: var(--color-muted-invert);
-    font-size: 16px;
-    cursor: pointer;
-}
-
-/* Khi đưa chuột vào icon */
-.icon:hover {
-    color: var(--color-brand-600);
-}
-
-/* Phần nội dung chính */
-main {
-  width: 90%;
-  max-width: 850px;
-  margin: 0 auto;
-}
-
-/* Phần giới thiệu Blog */
-.blog-intro {
-  text-align: center;
-  padding: 50px 20px 35px;
-}
-
-/* Tiêu đề Blogs */
-.main-title {
-  color: var(--color-brand-600);
-  font-size: 32px;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-/* Đường kẻ dưới tiêu đề */
-.title-line {
-  width: 60px;
-  height: 2px;
-  background-color: var(--color-brand-600);
-  margin: 0 auto 12px;
-}
-
-/* Mô tả */
-.main-description {
-  color: var(--color-muted-invert);
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-
-/* Nút Subscribe */
-.subscribe-btn {
-  display: inline-block;
-  color: var(--color-brand-600);
-  border: 1px solid var(--color-brand-600);
-  border-radius: 20px;
-  padding: 8px 16px;
-  text-decoration: none;
-  font-size: 12px;
-}
-
-/* Hiệu ứng khi di chuột vào nút */
-.subscribe-btn:hover {
-  background-color: var(--color-brand-600);
-  color: var(--color-surface-dark);
-}
-
-
-/* ==============================
-   DANH SÁCH BLOG
-   ============================== */
-
-   /* Khống chế kích thước tất cả ảnh Blog */
-.blog-thumb {
-    width: 300px !important;
-    height: 150px !important;
-    object-fit: cover;
-    display: block;
-    flex-shrink: 0;
-
-}
-
-
-/* Thanh header */
-.blog-header {
-    width: 100%;
-    height: 60px;
-
-    /* Đưa 3 phần nằm trên cùng một hàng */
-    display: flex;
-
-    /* Căn giữa theo chiều dọc */
-    align-items: center;
-
-    /* Logo trái - menu giữa - icon phải */
-    justify-content: space-between;
-
-    /* Khoảng cách hai bên */
-    padding: 0 40px;
-
-    /* Đường kẻ dưới header */
-    border-bottom: 1px solid var(--color-muted);
-}
-
-/* Mỗi bài Blog */
-.blog-item {
-  display: flex;
-  gap: 15px;
-  padding: 20px 0;
-}
-
-/* Tiêu đề bài viết */
-.blog-title {
-  color: var(--color-brand-600);
-  font-size: 40px;
-  margin: 0 0 8px;
-}
-
-/* Nội dung bài viết */
-.blog-excerpt {
-  color: var(--color-muted-invert);
-  font-size: 20px;
-  line-height: 1.5;
-  margin-bottom: 8px;
-}
-
-/* Link đọc thêm */
-.read-more {
-  color: var(--color-brand-600);
-  font-size: 15px;
-  text-decoration: none;
-}
-
-/* Thông tin bài viết */
-.blog-meta {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-/* Tag */
-.tag {
-  background-color: var(--color-ink);
-  color: var(--color-muted-invert);
-  padding: 3px 7px;
-  border-radius: 5px;
-  font-size: 9px;
-}
-
-/* Date / Read */
-.meta-item {
-  color: var(--color-muted-invert);
-  font-size: 9px;
-}
-
-/* Đường phân cách */
-.divider {
-  border: none;
-  border-top: 1px solid var(--color-muted);
-  margin: 0;
-}
 /* ==============================
     BLOG 2
    ============================== */
