@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - SinanTokmak</title>
+    <!-- Cập nhật CDN Tailwind v4 để hỗ trợ cú pháp @theme -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Liên kết trực tiếp tới file output.css -->
+    <link rel="stylesheet" href="dist/output.css">
+    
+</head>
+<body class="dark-mode">
+   <header class="main-header py-6 px-6 lg:px-16">
+       <div class="logo">
+    <span class="code-icon">&lt;C/&gt;</span>
+    <span class="logo-name">SinanTokmak</span>
+</div>
+
+     <!-- Menu Link -->
+<div class="nav-links">
+    <a href="#home" class="nav-link active">Home</a>
+    <a href="#blogs" class="nav-link">Blogs</a>
+</div>
+
+   <div class="search-box">
+    <input type="text" class="search-input" placeholder="">
+    <i class="fa-solid fa-search search-icon"></i>
+</div>
+
+       <!-- Menu Icons -->
+       <div class="nav-icons">
+    <div class="social-item">
+        <i class="fa-brands fa-instagram icon"></i>
+        <span>Instagram</span>
+    </div>
+
+    <div class="social-item">
+        <i class="fa-brands fa-discord icon"></i>
+        <span>Discord</span>
+    </div>
+
+    <div class="social-item">
+        <i class="fa-brands fa-github icon"></i>
+        <span>Github</span>
+    </div>
+</div>
+
+       <!-- Nút Menu Hamburger cho điện thoại -->
+      <div class="mobile-menu-btn">
+    <i class="fa-solid fa-bars"></i>
+</div>
+</header>
+    <!-- Sidebar Navigation (Đã thêm href và tooltip) -->
+    <aside class="side-nav">
+    <a href="#home" class="nav-item active">
+        <i class="fa-solid fa-border-all"></i>
+        <span class="nav-tooltip">Home</span>
+    </a>
+
+    <a href="#about" class="nav-item">
+        <i class="fa-regular fa-user"></i>
+        <span class="nav-tooltip">About Me</span>
+    </a>
+
+    <a href="#skills" class="nav-item">
+        <i class="fa-solid fa-code"></i>
+        <span class="nav-tooltip">Skills</span>
+    </a>
+
+    <a href="#works" class="nav-item">
+        <i class="fa-solid fa-desktop"></i>
+        <span class="nav-tooltip">Works</span>
+    </a>
+
+    <a href="#blogs" class="nav-item">
+        <i class="fa-regular fa-pen-to-square"></i>
+        <span class="nav-tooltip">Blogs</span>
+    </a>
+
+    <a href="#contact" class="nav-item">
+        <i class="fa-regular fa-envelope"></i>
+        <span class="nav-tooltip">Contact</span>
+    </a>
+</aside>
+
+<!-- Hero Section -->
+<section id="home" class="hero-section">
+
+    <!-- Hero Title -->
+    <h2 class="hero-title">
+        Developer
+    </h2>
+
+    <!-- 3 CỘT HERO -->
+    <div class="hero-content">
+
+        <!-- =========================================
+             CỘT 1: PROFILE CARD
+        ========================================== -->
+        <div class="profile-card">
+
+            <!-- Avatar -->
+            <div class="profile-avatar">
+                <img
+                    src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80"
+                    alt="Sinan"
+                >
+            </div>
+
+            <!-- Name -->
+            <h3 class="profile-name">
+                Sinan
+            </h3>
+
+            <!-- Job -->
+            <p class="profile-role">
+                Full-stack developer
+            </p>
+
+            <!-- Information -->
+            <div class="profile-info">
+
+                <div class="info-item">
+                    <i class="fa-regular fa-envelope"></i>
+                    <span>abdurrahman_sinan@hotmail.com</span>
+                </div>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Turkey</span>
+                </div>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <span>Full-time / Freelancer</span>
+                </div>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-link"></i>
+                    <span>www.sinantokmak.com</span>
+                </div>
+
+            </div>
+
+            <!-- Skills -->
+            <div class="skill-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JS</span>
+                <span>REACT</span>
+            </div>
+
+            <!-- Download CV -->
+            <button class="download-cv">
+                <span>Download CV</span>
+                <i class="fa-solid fa-download"></i>
+            </button>
+
+        </div>
+
+
+        <!-- =========================================
+             CỘT 2: INTRODUCTION
+        ========================================== -->
+        <div class="intro-section">
+
+            <span class="intro-tag intro-tag-top">
+                &lt;h1&gt;
+            </span>
+
+            <h1 class="intro-title">
+                Hey<br>
+                I'm <span class="intro-name">Sinan</span>,<br>
+                Full-Stack Developer
+            </h1>
+
+            <span class="intro-tag intro-tag-end">
+                &lt;/h1&gt;
+            </span>
+
+
+            <span class="intro-tag intro-paragraph-tag">
+                &lt;p&gt;
+            </span>
+
+            <p class="intro-text">
+                I help business grow by crafting amazing web experiences.
+                If you're looking for a developer that likes to get stuff done,
+            </p>
+
+            <span class="intro-tag intro-paragraph-end">
+                &lt;/p&gt;
+            </span>
+
+
+            <!-- Let's Talk -->
+            <a href="#contact" class="talk-link">
+                <span>Let's Talk</span>
+
+                <div class="talk-icon">
+                    <i class="fa-regular fa-envelope"></i>
+                </div>
+            </a>
+
+        </div>
+
+
+        <!-- =========================================
+             CỘT 3: STATS CARD
+        ========================================== -->
+        <div class="stats-card">
+
+            <!-- Stat 1 -->
+            <div class="stat-item">
+
+                <span class="stat-number">
+                    4
+                </span>
+
+                <span class="stat-label">
+                    Programming<br>
+                    Language
+                </span>
+
+            </div>
+
+
+            <!-- Stat 2 -->
+            <div class="stat-item">
+
+                <span class="stat-number">
+                    6
+                </span>
+
+                <span class="stat-label">
+                    Development<br>
+                    Tools
+                </span>
+
+            </div>
+
+
+            <!-- Stat 3 -->
+            <div class="stat-item">
+
+                <span class="stat-number">
+                    8
+                </span>
+
+                <span class="stat-label">
+                    Years of<br>
+                    Experience
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- About Me Section -->
+<section id="about" class="about-section">
+
+    <!-- Abstract Topology Background -->
+    <div class="about-background">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="topo" width="100" height="100" patternUnits="userSpaceOnUse">
+                    <path
+                        d="M 0 50 Q 25 0 50 50 T 100 50"
+                        fill="none"
+                        stroke="#26D9B5"
+                        stroke-width="1"
+                    />
+                    <path
+                        d="M 0 70 Q 25 20 50 70 T 100 70"
+                        fill="none"
+                        stroke="#26D9B5"
+                        stroke-width="1"
+                    />
+                    <path
+                        d="M 0 90 Q 25 40 50 90 T 100 90"
+                        fill="none"
+                        stroke="#26D9B5"
+                        stroke-width="1"
+                    />
+                </pattern>
+            </defs>
+
+            <rect width="100%" height="100%" fill="url(#topo)" />
+        </svg>
+    </div>
+
+
+    <!-- Mouse / Divider -->
+    <div class="about-divider">
+        <i class="fa-solid fa-computer-mouse"></i>
+
+        <div class="divider-line"></div>
+
+        <div class="divider-diamond"></div>
+    </div>
+
+
+    <!-- Section Title -->
+    <div class="about-title-box">
+        <h2>About Me</h2>
+    </div>
+
+
+    <!-- About Content -->
+    <div class="about-content">
+
+        <!-- Left Text Box -->
+        <div class="about-text-box">
+
+            <span class="about-code-tag">&lt;p&gt;</span>
+
+            <h3>Hello!</h3>
+
+            <p>
+                My name is Sinan and I specialize in web developement that
+                utilizes <span class="highlight">HTML</span>,
+                <span class="highlight">CSS</span>,
+                <span class="highlight">JS</span>, and
+                <span class="highlight">REACT</span> etc.
+            </p>
+
+            <p>
+                I am a highly motivated individual and eternal optimist
+                dedicated to writing clear, concise, robust code that works.
+                Striving to never stop learning and improving.
+            </p>
+
+            <p>
+                When I'm not coding, I am
+                <a href="#blogs">writing blogs</a>,
+                reading, or picking up some new hands-on art project like
+                <span class="highlight">photography</span>.
+            </p>
+
+            <p>
+                I like to have my perspective and belief systems challenged
+                so that I see the world through new eyes.
+            </p>
+
+            <span class="about-code-tag about-code-end">
+                &lt;/p&gt;
+            </span>
+
+        </div>
+
+
+        <!-- Right Image -->
+        <div class="about-image">
+            <img
+                src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?auto=format&fit=crop&w=600&q=80"
+                alt="Working on laptop"
+            >
+        </div>
+
+    </div>
+
+</section>
+    <!-- Skills Section -->
+<section id="skills" class="skills-section">
+    <!-- Mouse / Divider -->
+    <div class="skills-divider">
+        <i class="fa-solid fa-computer-mouse"></i>
+        <div class="divider-line"></div>
+        <div class="divider-diamond"></div>
+    </div>
+
+
+
+    <!-- Title -->
+    <div class="skills-title-wrapper">
+
+        <h2>
+            Skills
+        </h2>
+
+        <div class="skills-title-line">
+            <div></div>
+            <span></span>
+            <div></div>
+            <span></span>
+        </div>
+
+    </div>
+
+
+    <!-- Description -->
+    <p class="skills-description">
+        I am striving to never stop learning and improving
+    </p>
+
+
+    <!-- Development Categories -->
+    <div class="development-boxes">
+
+        <!-- Web Development -->
+        <div class="development-box">
+
+            <i class="fa-solid fa-desktop"></i>
+
+            <h3>
+                Web Developement
+            </h3>
+
+            <p>
+                HTML•CSS•JS•REACT
+            </p>
+
+        </div>
+
+
+        <!-- App Development -->
+        <div class="development-box">
+
+            <i class="fa-solid fa-mobile-screen"></i>
+
+            <h3>
+                App Developement
+            </h3>
+
+            <p>
+                iOS•Android
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Skill Badges -->
+    <div class="skill-badges">
+
+        <!-- HTML -->
+        <div class="skill-badge">
+
+            <div class="skill-icon html-icon">
+                <i class="fa-brands fa-html5"></i>
+            </div>
+
+            <span class="html-text">
+                HTML
+            </span>
+
+        </div>
+
+
+        <!-- CSS -->
+        <div class="skill-badge">
+
+            <div class="skill-icon css-icon">
+                <i class="fa-brands fa-css3-alt"></i>
+            </div>
+
+            <span class="css-text">
+                CSS
+            </span>
+
+        </div>
+
+
+        <!-- JavaScript -->
+        <div class="skill-badge">
+
+            <div class="skill-icon js-icon">
+                <i class="fa-brands fa-js"></i>
+            </div>
+
+            <span class="js-text">
+                JS
+            </span>
+
+        </div>
+
+
+        <!-- React -->
+        <div class="skill-badge">
+
+            <div class="skill-icon react-icon">
+                <i class="fa-brands fa-react"></i>
+            </div>
+
+            <span class="react-text">
+                REACT
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+   <!-- Works Section -->
+<section id="works" class="works-section">
+
+    <!-- Abstract Background -->
+    <div class="works-background"></div>
+
+
+    <!-- Mouse / Divider -->
+    <div class="works-divider">
+        <i class="fa-solid fa-computer-mouse"></i>
+
+        <div class="divider-line"></div>
+
+        <div class="divider-diamond"></div>
+    </div>
+
+
+    <!-- Section Title -->
+    <div class="works-title-wrapper">
+
+        <h2>
+            Works
+        </h2>
+
+        <div class="works-title-line">
+            <span></span>
+            <div></div>
+            <span></span>
+        </div>
+
+    </div>
+
+
+    <!-- Description -->
+    <p class="works-description">
+        I had the pleasure of working with these awesome projects
+    </p>
+
+
+    <!-- Project Slider -->
+    <div class="works-slider">
+
+        <!-- Left Arrow -->
+        <button class="works-arrow works-arrow-left">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+
+        <!-- Screens -->
+        <div class="screens-display">
+
+            <!-- Vertical Monitor Left -->
+            <div class="vertical-monitor">
+
+                <img
+                    src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=300&q=80"
+                    alt="Code Screenshot"
+                >
+
+                <!-- Monitor Base -->
+                <div class="vertical-monitor-base"></div>
+
+            </div>
+
+
+            <!-- Desktop Monitor -->
+            <div class="desktop-monitor">
+
+                <!-- View Website -->
+                <div class="view-website">
+                    <span>
+                        View Website
+                    </span>
+
+                    <i class="fa-solid fa-arrow-pointer"></i>
+                </div>
+
+
+                <!-- Screen -->
+                <div class="desktop-screen">
+
+                    <div class="website-content">
+
+                        <h4>
+                            Get Some Fresh Air
+                        </h4>
+
+                        <p>
+                            Explore Now
+                        </p>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80"
+                            alt="Website UI"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Monitor Stand -->
+                <div class="monitor-stand">
+
+                    <div class="monitor-stand-neck"></div>
+
+                    <div class="monitor-stand-base"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Right Arrow -->
+        <button class="works-arrow works-arrow-right">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+    </div>
+
+</section>
+
+   <!-- Blogs Section -->
+<section id="blogs" class="blogs-section">
+
+    <!-- Mouse / Divider -->
+    <div class="blogs-divider">
+        <i class="fa-solid fa-computer-mouse"></i>
+
+        <div class="divider-line"></div>
+
+        <div class="divider-diamond"></div>
+    </div>
+
+
+    <!-- Section Title -->
+    <div class="blogs-title-wrapper">
+
+        <h2>
+            Blogs
+        </h2>
+
+        <div class="blogs-title-line">
+            <span></span>
+            <div></div>
+            <span></span>
+        </div>
+
+    </div>
+
+
+    <!-- Description -->
+    <p class="blogs-description">
+        My thoughts on technology and business, welcome to subscribe
+    </p>
+
+
+    <!-- Top Divider -->
+    <hr class="blogs-divider-line">
+
+
+    <!-- Blog Item -->
+    <div class="blog-item">
+
+        <!-- Blog Thumbnail -->
+        <img
+            src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80"
+            alt="Blog Thumb"
+            class="blog-thumbnail"
+        >
+
+
+        <!-- Blog Content -->
+        <div class="blog-content">
+
+            <h3>
+                What does it take to become a web developer?
+            </h3>
+
+            <p>
+                Web development, also known as website development,
+                encompasses a variety of tasks and processes involved
+                in creating websites for the internet...
+            </p>
+
+
+            <!-- Read More -->
+            <a href="#" class="blog-read-more">
+                Read More &gt;&gt;
+            </a>
+
+
+            <!-- Blog Metadata -->
+            <div class="blog-meta">
+
+                <span class="blog-category">
+                    Web Developer
+                </span>
+
+                <span>
+                    <strong>Text</strong> Sinan
+                </span>
+
+                <span>
+                    <strong>Date</strong> 10.Oct 2023
+                </span>
+
+                <span>
+                    <strong>Read</strong> 1 Min
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Bottom Divider -->
+    <hr class="blogs-divider-line blogs-divider-bottom">
+
+
+    <!-- Buttons -->
+    <div class="blog-buttons">
+
+        <button class="view-more-btn">
+            View More
+        </button>
+
+        <button class="subscribe-btn">
+            Subscribe
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+
+    <!-- Section Divider -->
+    <div class="contact-divider">
+
+        <i class="fa-solid fa-computer-mouse"></i>
+
+        <div class="contact-divider-line"></div>
+
+        <div class="contact-divider-diamond"></div>
+
+    </div>
+
+
+    <!-- Section Title -->
+    <div class="contact-title">
+
+        <h2>Contact</h2>
+
+        <div class="contact-title-line">
+            <span></span>
+            <div></div>
+            <span></span>
+        </div>
+
+    </div>
+
+
+    <!-- Description -->
+    <p class="contact-description">
+        I'm currently available for freelance work
+    </p>
+
+
+    <!-- Message Button -->
+    <div class="message-box">
+        <h3>Send Me A Message</h3>
+    </div>
+
+
+    <!-- Contact Form -->
+    <form class="contact-form">
+
+        <!-- Name + Email -->
+        <div class="contact-fields">
+
+            <div class="contact-field">
+
+                <label>Your name *</label>
+
+                <input
+                    type="text"
+                    placeholder="Enter your name"
+                >
+
+            </div>
+
+
+            <div class="contact-field">
+
+                <label>Your email *</label>
+
+                <input
+                    type="email"
+                    placeholder="Enter your email"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- Message -->
+        <div class="contact-message">
+
+            <label>Your message *</label>
+
+            <input
+                type="text"
+                placeholder="Enter your needs"
+            >
+
+        </div>
+
+
+        <!-- Submit -->
+        <div class="contact-submit">
+
+            <button type="submit">
+
+                Send Message
+
+                <i class="fa-regular fa-paper-plane"></i>
+
+            </button>
+
+        </div>
+
+    </form>
+
+</section>
+   <!-- Footer -->
+<footer class="site-footer">
+
+    <!-- Copyright -->
+    <div class="footer-copyright">
+        © 2023 SinanTokmak. All rights reserved.
+    </div>
+
+
+    <!-- Privacy / Terms -->
+    <div class="footer-links">
+
+        <a href="#">
+            Privacy Policy
+        </a>
+
+        <a href="#">
+            Terms & Conditions
+        </a>
+
+    </div>
+
+
+    <!-- Social Icons -->
+    <div class="footer-social">
+
+        <a href="#" class="footer-social-icon">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="#" class="footer-social-icon">
+            <i class="fa-brands fa-discord"></i>
+        </a>
+
+        <a href="#" class="footer-social-icon">
+            <i class="fa-brands fa-github"></i>
+        </a>
+
+    </div>
+
+
+    <!-- Designer -->
+    <div class="footer-designer">
+
+        Design By
+
+        <a href="#">
+            JohannLeon
+        </a>
+
+    </div>
+
+</footer>
+
+    
+</body>
+</html>

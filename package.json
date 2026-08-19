@@ -4,7 +4,7 @@
   "description": "",
   "main": "feature.js",
   "scripts": {
-    "dev" : "tailwindcss -i ./style.css -o ./dist/output.css --watch",
+    "dev": "tailwindcss -i ./style.css -o ./dist/output.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/2551050253y-spec/Portfolio-IT#readme",
   "dependencies": {
-    "@tailwindcss/cli": "^4.3.3",
+    "@tailwindcss/cli": "^4.3.3"
+  },
+  "devDependencies": {
     "tailwindcss": "^4.3.3"
   }
 }

@@ -61,223 +61,2109 @@
 
 /* Nền sáng */
 body {
-    background-color: var(--color-surface);
-    
-    /* Chữ tối */
-    color: var(--color-ink);
-    
-    font-family: var(--font-body);
+
 }
 
 /* Màu nền tối  */
-body.dark {
-    background-color: var(--color-surface-dark);
-    
-    /* Màu chữ chính */
-    color: var(--color-ink-invert);
-    
-    /* Font chữ của toàn bộ trang */
-    font-family: var(--font-body);
+.dark-mode {
+    background-color: #2C3137;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    color: #eaf2ee;
+    padding-bottom: 2.5rem;
+    position: relative;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
 
-/* Logo bên trái */
 .logo {
-    color: var(--color-ink-invert);
-    font-size: 14px;
-    font-weight: bold;
+    @apply flex items-center text-xl tracking-wider;
 }
 
-/* Phần "Nhom 4:" */
 .code-icon {
-    color: var(--color-brand-600);
+    @apply mr-2 text-2xl font-bold;
 }
 
-/* Khu vực menu */
+.logo-name {
+    @apply font-bold text-white text-lg;
+}
+
+
+
+
+
+/* Menu */
 .nav-links {
-    display: flex;
-    gap: 30px;
+    @apply hidden lg:flex items-center gap-10;
 }
 
-/* Chữ Home và Blogs */
 .nav-link {
-    color: var(--color-muted-invert);
-    text-decoration: none;
-    font-size: 13px;
+    @apply text-sm font-medium;
 }
 
-/* Blogs đang được chọn */
-.nav-link.active {
-    color: var(--color-brand-600);
+.search-box {
+    @apply relative;
 }
 
-/* Khu vực icon bên phải */
+.search-box input {
+    @apply rounded-full bg-white text-black px-4 py-1 text-xs outline-none w-48;
+}
+
+.search-box i {
+    @apply absolute right-3 top-[6px] text-gray-600 text-sm;
+}
+
+.search-box {
+    @apply relative;
+}
+
+.search-input {
+    @apply rounded-full bg-white text-black px-4 py-1 text-xs outline-none w-48;
+}
+
+.search-icon {
+    @apply absolute right-3 top-[6px] text-gray-600 text-sm;
+}
 .nav-icons {
-    display: flex;
-    gap: 18px;
+    @apply hidden lg:flex items-center gap-6;
+}
+
+.social-item {
+    @apply flex items-center gap-2 cursor-pointer;
+}
+
+
+
+
+
+/* Icon */
+.social-item .icon {
+    @apply transition;
+}
+
+/* Text */
+.social-item span {
+    @apply text-xs text-gray-400 transition;
+}
+
+/* Hover icon */
+.social-item:hover .icon {
+    @apply text-[#26D9B5];
+}
+
+/* Hover text */
+.social-item:hover span {
+    @apply text-white;
+}
+
+
+
+ /* Nút Menu Hamburger cho điện thoại */
+.mobile-menu-btn {
+    @apply lg:hidden text-gray-300 text-2xl cursor-pointer;
+}
+
+
+
+/* Thanh điều hướng bên trái */
+.side-nav {
+    @apply hidden lg:flex
+           fixed left-6 top-1/3
+           border border-gray-600
+           rounded-full
+           py-6 px-3
+           flex-col gap-6
+           bg-[#2C3137]
+           z-50
+           shadow-lg;
+}
+
+/* Từng mục trong thanh điều hướng */
+.side-nav .nav-item {
+    @apply relative
+           flex items-center justify-center
+           w-6 h-6;
 }
 
 /* Icon */
-.icon {
-    color: var(--color-muted-invert);
-    font-size: 16px;
-    cursor: pointer;
+.side-nav .nav-item i {
+    @apply text-gray-400
+           cursor-pointer
+           text-lg
+           transition;
 }
 
-/* Khi đưa chuột vào icon */
-.icon:hover {
-    color: var(--color-brand-600);
+/* Hover icon */
+.side-nav .nav-item:hover i {
+    @apply text-white;
 }
 
-/* Phần nội dung chính */
-main {
-  width: 90%;
-  max-width: 850px;
-  margin: 0 auto;
+/* Tooltip */
+.side-nav .nav-tooltip {
+    @apply absolute
+           left-full
+           ml-3
+           px-3 py-1
+           rounded
+           bg-gray-800
+           text-white
+           text-xs
+           whitespace-nowrap
+           opacity-0
+           invisible
+           transition;
 }
 
-/* Phần giới thiệu Blog */
-.blog-intro {
-  text-align: center;
-  padding: 50px 20px 35px;
+/* Hiện tooltip */
+.side-nav .nav-item:hover .nav-tooltip {
+    @apply opacity-100 visible;
 }
 
-/* Tiêu đề Blogs */
-.main-title {
-  color: var(--color-brand-600);
-  font-size: 32px;
-  font-weight: 600;
-  margin-bottom: 8px;
+/* ========================================
+   HERO SECTION
+======================================== */
+
+.hero-section {
+    @apply flex flex-col items-center
+           mt-6 relative
+           w-full max-w-6xl
+           mx-auto px-6
+           lg:px-10
+           scroll-mt-24;
 }
 
-/* Đường kẻ dưới tiêu đề */
-.title-line {
-  width: 60px;
-  height: 2px;
-  background-color: var(--color-brand-600);
-  margin: 0 auto 12px;
+/* Tiêu đề Developer */
+.hero-title {
+    @apply text-5xl
+           lg:text-[80px]
+           font-medium
+           tracking-wide
+           text-[#26D9B5]
+           mb-10
+           lg:mb-20
+           text-center;
 }
 
-/* Mô tả */
-.main-description {
-  color: var(--color-muted-invert);
-  font-size: 20px;
-  margin-bottom: 20px;
-}
+/* Nội dung Hero */
+.hero-content {
+    @apply flex flex-col items-center gap-12 w-full;
 
-/* Nút Subscribe */
-.subscribe-btn {
-  display: inline-block;
-  color: var(--color-brand-600);
-  border: 1px solid var(--color-brand-600);
-  border-radius: 20px;
-  padding: 8px 16px;
-  text-decoration: none;
-  font-size: 12px;
-}
-
-/* Hiệu ứng khi di chuột vào nút */
-.subscribe-btn:hover {
-  background-color: var(--color-brand-600);
-  color: var(--color-surface-dark);
-}
-
-
-/* ==============================
-   DANH SÁCH BLOG
-   ============================== */
-
-   /* Khống chế kích thước tất cả ảnh Blog */
-.blog-thumb {
-    width: 300px !important;
-    height: 150px !important;
-    object-fit: cover;
-    display: block;
-    flex-shrink: 0;
-
+    /* Desktop: 3 cột trên cùng một hàng */
+    @apply lg:grid lg:grid-cols-[320px_minmax(0,1fr)_260px]
+           lg:items-center
+           lg:gap-8;
 }
 
 
-/* Thanh header */
-.blog-header {
-    width: 100%;
-    height: 60px;
+/* ========================================
+   PROFILE CARD
+======================================== */
 
-    /* Đưa 3 phần nằm trên cùng một hàng */
-    display: flex;
-
-    /* Căn giữa theo chiều dọc */
-    align-items: center;
-
-    /* Logo trái - menu giữa - icon phải */
-    justify-content: space-between;
-
-    /* Khoảng cách hai bên */
-    padding: 0 40px;
-
-    /* Đường kẻ dưới header */
-    border-bottom: 1px solid var(--color-muted);
+.profile-card {
+    @apply relative
+           border-[3px]
+           border-[#26D9B5]
+           rounded-tl-[60px]
+           rounded-br-[60px]
+           p-8
+           w-full
+           max-w-[320px]
+           lg:max-w-none
+           flex flex-col
+           items-center
+           bg-[#2C3137]
+           shadow-[0_0_15px_rgba(38,217,181,0.2)];
 }
 
-/* Mỗi bài Blog */
+
+/* ========================================
+   AVATAR
+======================================== */
+
+.profile-avatar {
+    @apply w-24
+           h-24
+           rounded-full
+           border-2
+           border-[#26D9B5]
+           overflow-hidden
+           mb-4
+           mt-2;
+}
+
+.profile-avatar img {
+    @apply w-full
+           h-full
+           object-cover;
+}
+
+
+/* ========================================
+   PROFILE NAME
+======================================== */
+
+.profile-name {
+    @apply text-2xl
+           font-bold
+           text-white
+           tracking-wide;
+}
+
+
+/* ========================================
+   PROFILE ROLE
+======================================== */
+
+.profile-role {
+    @apply text-xs
+           text-gray-400
+           mb-8
+           tracking-wide;
+}
+
+
+/* ========================================
+   PROFILE INFORMATION
+======================================== */
+
+.profile-info {
+    @apply w-full
+           flex flex-col
+           gap-4
+           text-[11px]
+           text-gray-300
+           mb-8
+           font-mono;
+}
+
+.info-item {
+    @apply flex
+           items-center
+           gap-4;
+}
+
+.info-item i {
+    @apply text-[#26D9B5]
+           text-sm;
+}
+
+
+/* ========================================
+   SKILL TAGS
+======================================== */
+
+.skill-tags {
+    @apply flex
+           flex-wrap
+           justify-center
+           gap-3
+           mb-10
+           w-full
+           px-2;
+}
+
+.skill-tags span {
+    @apply bg-[#26D9B5]
+           text-[#2C3137]
+           px-3
+           py-1
+           rounded-full
+           text-[9px]
+           font-bold
+           tracking-widest;
+}
+
+
+/* ========================================
+   DOWNLOAD CV
+======================================== */
+
+.download-cv {
+    @apply bg-white
+           text-black
+           px-6
+           py-3
+           rounded-full
+           text-sm
+           font-semibold
+           flex
+           items-center
+           justify-center
+           gap-2
+           hover:bg-gray-200
+           transition
+           w-[85%];
+}
+
+.download-cv i {
+    @apply text-lg
+           font-light;
+}
+
+/* ========================================
+   CENTER INTRODUCTION
+======================================== */
+
+.intro-section {
+    @apply w-full
+           max-w-[500px]
+           lg:max-w-none
+           font-mono
+           text-center
+           lg:text-left
+           flex flex-col
+           items-center
+           lg:items-start;
+}
+
+
+
+/* Code tags: <h1>, </h1>, <p>, </p> */
+
+.intro-tag {
+    @apply text-[#26D9B5]
+           text-xs
+           block
+           opacity-80;
+}
+
+.intro-tag-top {
+    @apply mb-3;
+}
+
+.intro-tag-end {
+    @apply mt-3
+           w-full
+           lg:text-right
+           lg:mr-16;
+}
+
+.intro-paragraph-tag {
+    @apply mt-6
+           lg:mt-8;
+}
+
+.intro-paragraph-end {
+    @apply mb-6
+           lg:mb-8;
+}
+
+
+/* Tiêu đề */
+
+.intro-title {
+    @apply text-4xl
+           lg:text-[44px]
+           font-normal
+           text-white
+           leading-[1.1]
+           mb-2
+           font-sans
+           tracking-wide;
+}
+
+
+/* Tên Sinan */
+
+.intro-name {
+    @apply text-[#26D9B5]
+           font-semibold;
+}
+
+
+/* Nội dung */
+
+.intro-text {
+    @apply text-gray-300
+           text-sm
+           leading-[1.8]
+           px-2
+           lg:pl-4
+           lg:pr-0
+           my-2;
+}
+
+
+/* Let's Talk */
+
+.talk-link {
+    @apply flex
+           items-center
+           justify-center
+           lg:justify-start
+           gap-3
+           text-[#26D9B5]
+           text-[24px]
+           lg:text-[28px]
+           mt-2
+           font-medium
+           cursor-pointer
+           font-sans
+           tracking-wide
+           hover:opacity-80
+           transition;
+}
+
+
+/* Icon Let's Talk */
+
+.talk-icon {
+    @apply bg-[#3a3f47]
+           rounded-full
+           w-10
+           h-10
+           flex
+           items-center
+           justify-center
+           hover:bg-gray-600
+           transition;
+}
+
+.talk-icon i {
+    @apply text-lg
+           text-gray-300;
+}
+
+
+/* ========================================
+   STATS CARD
+======================================== */
+.stats-card {
+    @apply bg-[#212429]
+           rounded-[40px]
+           p-6
+           lg:p-8
+           w-full
+           max-w-[400px]
+           lg:max-w-none
+           flex flex-row
+           lg:flex-col
+           justify-around
+           lg:justify-start
+           gap-0
+           lg:gap-10
+           shadow-2xl;
+}
+
+/* Từng stat */
+
+.stat-item {
+    @apply flex
+           flex-col
+           lg:flex-row
+           items-center
+           gap-2
+           lg:gap-6
+           text-center
+           lg:text-left;
+}
+
+
+/* Số */
+
+.stat-number {
+    @apply text-[#26D9B5]
+           text-3xl
+           lg:text-[40px]
+           font-bold
+           font-mono;
+}
+
+
+/* Nội dung stat */
+
+.stat-label {
+    @apply text-[10px]
+           lg:text-xs
+           text-gray-300
+           leading-relaxed
+           font-mono;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========================================
+   ABOUT ME SECTION
+======================================== */
+
+.about-section {
+    @apply mt-48
+           relative
+           w-full
+           max-w-5xl
+           mx-auto
+           px-10
+           scroll-mt-24;
+}
+
+
+/* ========================================
+   TOPOLOGY BACKGROUND
+======================================== */
+
+.about-background {
+    @apply absolute
+           inset-0
+           z-[-1]
+           opacity-5
+           overflow-hidden
+           pointer-events-none;
+}
+
+
+/* ========================================
+   MOUSE / DIVIDER
+======================================== */
+
+.about-divider {
+    @apply flex
+           flex-col
+           items-center
+           mb-12;
+}
+
+.about-divider i {
+    @apply text-[#26D9B5]
+           text-2xl
+           mb-3;
+}
+
+.divider-line {
+    @apply w-[1px]
+           h-14
+           border-l
+           border-dashed
+           border-white;
+}
+
+.divider-diamond {
+    @apply w-[6px]
+           h-[6px]
+           bg-white
+           rotate-45
+           mt-2;
+}
+
+
+/* ========================================
+   SECTION TITLE
+======================================== */
+
+.about-title-box {
+    @apply inline-block
+           border-2
+           border-[#26D9B5]
+           rounded-tl-xl
+           rounded-br-xl
+           px-10
+           py-3
+           mb-16
+           relative;
+}
+
+.about-title-box h2 {
+    @apply text-4xl
+           text-white
+           font-medium
+           tracking-wide;
+}
+
+
+/* ========================================
+   ABOUT CONTENT
+======================================== */
+
+.about-content {
+    @apply flex
+           flex-col
+           lg:flex-row
+           gap-12
+           items-center;
+}
+
+
+/* ========================================
+   LEFT TEXT BOX
+======================================== */
+
+.about-text-box {
+    @apply bg-[#33383f]
+           rounded-[24px]
+           p-10
+           flex-1
+           shadow-lg
+           font-mono
+           relative;
+}
+
+
+/* Code tag */
+
+.about-code-tag {
+    @apply text-[#26D9B5]
+           text-xs
+           block
+           mb-4;
+}
+
+.about-code-end {
+    @apply mt-4
+           mb-0;
+}
+
+
+/* Hello */
+
+.about-text-box h3 {
+    @apply text-[#26D9B5]
+           text-[32px]
+           font-bold
+           mb-6
+           font-sans
+           tracking-wide;
+}
+
+
+/* Paragraph */
+
+.about-text-box p {
+    @apply text-gray-300
+           text-[13px]
+           mb-5
+           leading-[1.8];
+}
+
+
+/* Highlight */
+
+.about-text-box .highlight {
+    @apply text-[#26D9B5];
+}
+
+
+/* Blog link */
+
+.about-text-box a {
+    @apply text-[#26D9B5]
+           hover:underline;
+}
+
+
+/* ========================================
+   RIGHT IMAGE
+======================================== */
+
+.about-image {
+    @apply w-full
+           lg:w-[380px]
+           h-[450px]
+           rounded-[24px]
+           overflow-hidden
+           shadow-2xl
+           flex-shrink-0;
+}
+
+.about-image img {
+    @apply w-full
+           h-full
+           object-cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========================================
+   SKILLS SECTION
+======================================== */
+
+.skills-section {
+    @apply mt-48
+           relative
+           w-full
+           max-w-5xl
+           mx-auto
+           px-10
+           text-center
+           scroll-mt-24;
+}
+
+
+
+
+
+/* ========================================
+   MOUSE / DIVIDER
+======================================== */
+
+.skills-divider {
+    @apply flex
+           flex-col
+           items-center
+           mb-10;
+}
+
+.skills-divider i {
+    @apply text-[#26D9B5]
+           text-2xl
+           mb-3;
+}
+
+/* ========================================
+   TITLE
+======================================== */
+
+.skills-title-wrapper {
+    @apply inline-block
+           relative;
+}
+
+.skills-title-wrapper h2 {
+    @apply text-[44px]
+           text-[#26D9B5]
+           font-medium
+           mb-1
+           relative
+           z-10
+           tracking-wide;
+}
+
+
+/* ========================================
+   TITLE LINE
+======================================== */
+
+.skills-title-line {
+    @apply flex
+           items-center
+           justify-center
+           w-full
+           relative
+           z-10
+           mt-1;
+}
+
+.skills-title-line div {
+    @apply h-[2px]
+           flex-1
+           bg-[#26D9B5];
+}
+
+.skills-title-line span {
+    @apply w-2
+           h-2
+           rounded-full
+           bg-[#26D9B5];
+}
+
+
+/* ========================================
+   DESCRIPTION
+======================================== */
+
+.skills-description {
+    @apply text-gray-300
+           text-[13px]
+           mt-6
+           mb-20
+           font-mono
+           tracking-wide;
+}
+
+
+/* ========================================
+   DEVELOPMENT BOXES
+======================================== */
+
+.development-boxes {
+    @apply flex
+           flex-col
+           lg:flex-row
+           justify-center
+           items-center
+           gap-12
+           mb-20;
+}
+
+
+/* Development Box */
+
+.development-box {
+    @apply bg-[#bbf6ec]
+           text-black
+           w-[300px]
+           py-8
+           rounded-[4px]
+           border-l-[16px]
+           border-[#43d4c0]
+           shadow-xl
+           flex
+           flex-col
+           items-center;
+}
+
+
+/* Development icon */
+
+.development-box i {
+    @apply text-3xl
+           mb-4
+           text-[#2C3137];
+}
+
+
+/* Development title */
+
+.development-box h3 {
+    @apply font-bold
+           text-lg
+           tracking-wide;
+}
+
+
+/* Development description */
+
+.development-box p {
+    @apply text-[11px]
+           text-[#2C3137]
+           font-medium
+           mt-2
+           tracking-widest;
+}
+
+/* ========================================
+   SKILL BADGES
+======================================== */
+
+.skill-badges {
+    @apply flex
+           flex-wrap
+           justify-center
+           gap-10
+           lg:gap-16
+           mt-10;
+}
+
+
+/* Individual badge */
+
+.skill-badge {
+    @apply flex
+           flex-col
+           items-center
+           gap-5;
+}
+
+
+/* Circle */
+
+.skill-icon {
+    @apply w-24
+           h-24
+           rounded-full
+           flex
+           items-center
+           justify-center
+           text-white
+           text-5xl
+           shadow-[0_4px_15px_rgba(0,0,0,0.5)]
+           border-4
+           border-[#2C3137];
+}
+
+
+/* ========================================
+   SKILL COLORS
+======================================== */
+
+/* HTML */
+
+.html-icon {
+    @apply bg-[#E44D26];
+}
+
+.html-text {
+    @apply text-[#E44D26]
+           font-bold
+           tracking-widest
+           text-[15px];
+}
+
+
+/* CSS */
+
+.css-icon {
+    @apply bg-[#264DE4];
+}
+
+.css-text {
+    @apply text-[#264DE4]
+           font-bold
+           tracking-widest
+           text-[15px];
+}
+
+
+/* JavaScript */
+
+.js-icon {
+    @apply bg-[#F7DF1E]
+           text-black;
+}
+
+.js-text {
+    @apply text-[#F7DF1E]
+           font-bold
+           tracking-widest
+           text-[15px];
+}
+
+
+/* React */
+
+.react-icon {
+    @apply bg-[#00D8FF];
+}
+
+.react-text {
+    @apply text-[#00D8FF]
+           font-bold
+           tracking-widest
+           text-[15px];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========================================
+   WORKS SECTION
+======================================== */
+
+.works-section {
+    @apply mt-48
+           relative
+           w-full
+           max-w-5xl
+           mx-auto
+           px-10
+           text-center
+           scroll-mt-24;
+}
+
+
+/* ========================================
+   BACKGROUND
+======================================== */
+
+.works-background {
+    @apply absolute
+           inset-0
+           z-[-1]
+           opacity-5
+           pointer-events-none
+           bg-[url('https://www.transparenttextures.com/patterns/black-linen.png')];
+}
+
+
+/* ========================================
+   MOUSE / DIVIDER
+======================================== */
+
+.works-divider {
+    @apply flex
+           flex-col
+           items-center
+           mb-10;
+}
+
+.works-divider i {
+    @apply text-[#26D9B5]
+           text-2xl
+           mb-3;
+}
+
+
+/* ========================================
+   TITLE
+======================================== */
+
+.works-title-wrapper {
+    @apply inline-block
+           relative;
+}
+
+.works-title-wrapper h2 {
+    @apply text-[44px]
+           text-[#26D9B5]
+           font-medium
+           mb-1
+           relative
+           z-10
+           tracking-wide;
+}
+
+
+/* ========================================
+   TITLE LINE
+======================================== */
+
+.works-title-line {
+    @apply flex
+           items-center
+           justify-center
+           w-full
+           relative
+           z-10
+           mt-1;
+}
+
+.works-title-line span {
+    @apply w-2
+           h-2
+           rounded-full
+           bg-[#26D9B5];
+}
+
+.works-title-line div {
+    @apply h-[2px]
+           flex-1
+           bg-[#26D9B5];
+}
+
+
+/* ========================================
+   DESCRIPTION
+======================================== */
+
+.works-description {
+    @apply text-gray-300
+           text-[13px]
+           mt-6
+           mb-24
+           font-mono
+           tracking-wide;
+}
+
+
+/* ========================================
+   WORKS SLIDER
+======================================== */
+
+.works-slider {
+    @apply relative
+           flex
+           items-center
+           justify-center
+           mb-20
+           w-full;
+}
+
+
+/* ========================================
+   ARROWS
+======================================== */
+
+.works-arrow {
+    @apply absolute
+           w-12
+           h-12
+           bg-[#363b42]
+           rounded-full
+           text-white
+           flex
+           items-center
+           justify-center
+           hover:bg-gray-600
+           transition
+           shadow-lg
+           z-30;
+}
+
+.works-arrow-left {
+    @apply left-0;
+}
+
+.works-arrow-right {
+    @apply right-0;
+}
+
+.works-arrow i {
+    @apply text-sm;
+}
+
+
+/* ========================================
+   SCREENS DISPLAY
+======================================== */
+
+.screens-display {
+    @apply relative
+           flex
+           items-end
+           justify-center
+           w-full
+           max-w-4xl
+           px-20;
+}
+
+
+/* ========================================
+   VERTICAL MONITOR
+======================================== */
+
+.vertical-monitor {
+    @apply w-[200px]
+           h-[350px]
+           bg-gray-800
+           border-[6px]
+           border-gray-600
+           rounded
+           relative
+           z-10
+           translate-x-16
+           translate-y-6
+           shadow-2xl
+           flex
+           items-center
+           justify-center
+           overflow-hidden;
+}
+
+.vertical-monitor img {
+    @apply w-full
+           h-full
+           object-cover
+           opacity-90;
+}
+
+
+/* Vertical monitor base */
+
+.vertical-monitor-base {
+    @apply absolute
+           -bottom-6
+           w-16
+           h-8
+           bg-gray-700;
+}
+
+
+/* ========================================
+   DESKTOP MONITOR
+======================================== */
+
+.desktop-monitor {
+    @apply w-[500px]
+           h-[340px]
+           bg-gray-200
+           rounded-[20px]
+           p-2
+           relative
+           z-20
+           shadow-[0_20px_50px_rgba(0,0,0,0.5)]
+           flex
+           flex-col
+           items-center;
+}
+
+
+/* ========================================
+   VIEW WEBSITE
+======================================== */
+
+.view-website {
+    @apply absolute
+           -top-10
+           right-10
+           flex
+           items-center
+           gap-2
+           text-[#26D9B5]
+           font-mono
+           text-sm
+           tracking-wide
+           z-30
+           cursor-pointer
+           hover:text-white
+           transition;
+}
+
+.view-website span {
+    @apply border-b
+           border-[#26D9B5]
+           pb-1;
+}
+
+.view-website i {
+    @apply text-lg;
+}
+
+
+/* ========================================
+   DESKTOP SCREEN
+======================================== */
+
+.desktop-screen {
+    @apply w-full
+           h-full
+           bg-white
+           rounded-xl
+           overflow-hidden
+           border
+           border-gray-300
+           flex
+           flex-col;
+}
+
+
+/* Website content */
+
+.website-content {
+    @apply bg-gray-100
+           p-6
+           flex-1
+           relative;
+}
+
+
+/* Website title */
+
+.website-content h4 {
+    @apply text-black
+           font-extrabold
+           text-[28px]
+           tracking-tight
+           mb-2
+           z-10
+           relative;
+}
+
+
+/* Explore button */
+
+.website-content p {
+    @apply text-blue-500
+           text-[10px]
+           font-bold
+           mb-4
+           relative
+           z-10
+           inline-block
+           bg-blue-100
+           px-3
+           py-1
+           rounded-full;
+}
+
+
+/* Website image */
+
+.website-content img {
+    @apply absolute
+           inset-0
+           w-full
+           h-full
+           object-cover
+           opacity-70;
+}
+
+
+/* ========================================
+   MONITOR STAND
+======================================== */
+
+.monitor-stand {
+    @apply absolute
+           -bottom-10
+           w-24
+           h-10
+           bg-gray-300
+           flex
+           flex-col
+           items-center;
+}
+
+
+/* Stand neck */
+
+.monitor-stand-neck {
+    @apply w-full
+           h-full
+           bg-gray-300;
+}
+
+
+/* Stand bottom */
+
+.monitor-stand-base {
+    @apply w-40
+           h-3
+           bg-gray-400
+           rounded-full
+           mt-1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========================================
+   BLOGS SECTION
+======================================== */
+
+.blogs-section {
+    @apply mt-48
+           relative
+           w-full
+           max-w-4xl
+           mx-auto
+           px-10
+           text-center
+           scroll-mt-24;
+}
+
+
+/* ========================================
+   MOUSE / DIVIDER
+======================================== */
+
+.blogs-divider {
+    @apply flex
+           flex-col
+           items-center
+           mb-10;
+}
+
+.blogs-divider i {
+    @apply text-[#26D9B5]
+           text-2xl
+           mb-3;
+}
+
+
+/* ========================================
+   TITLE
+======================================== */
+
+.blogs-title-wrapper {
+    @apply inline-block
+           relative;
+}
+
+.blogs-title-wrapper h2 {
+    @apply text-[44px]
+           text-[#26D9B5]
+           font-medium
+           mb-1
+           relative
+           z-10
+           tracking-wide;
+}
+
+
+/* ========================================
+   TITLE LINE
+======================================== */
+
+.blogs-title-line {
+    @apply flex
+           items-center
+           justify-center
+           w-full
+           relative
+           z-10
+           mt-1;
+}
+
+.blogs-title-line span {
+    @apply w-2
+           h-2
+           rounded-full
+           bg-[#26D9B5];
+}
+
+.blogs-title-line div {
+    @apply h-[2px]
+           flex-1
+           bg-[#26D9B5];
+}
+
+
+/* ========================================
+   DESCRIPTION
+======================================== */
+
+.blogs-description {
+    @apply text-gray-300
+           text-[13px]
+           mt-6
+           mb-16
+           font-mono
+           tracking-wide;
+}
+
+
+/* ========================================
+   DIVIDER
+======================================== */
+
+.blogs-divider-line {
+    @apply border-gray-500
+           mb-12
+           opacity-50;
+}
+
+.blogs-divider-bottom {
+    @apply mt-12
+           mb-16;
+}
+
+
+/* ========================================
+   BLOG ITEM
+======================================== */
+
 .blog-item {
-  display: flex;
-  gap: 15px;
-  padding: 20px 0;
+    @apply flex
+           flex-col
+           md:flex-row
+           text-left
+           items-center
+           gap-10;
 }
 
-/* Tiêu đề bài viết */
-.blog-title {
-  color: var(--color-brand-600);
-  font-size: 40px;
-  margin: 0 0 8px;
+
+/* ========================================
+   BLOG THUMBNAIL
+======================================== */
+
+.blog-thumbnail {
+    @apply w-full
+           md:w-[260px]
+           h-[220px]
+           object-cover
+           rounded-sm
+           shadow-md
+           flex-shrink-0;
 }
 
-/* Nội dung bài viết */
-.blog-excerpt {
-  color: var(--color-muted-invert);
-  font-size: 20px;
-  line-height: 1.5;
-  margin-bottom: 8px;
+
+/* ========================================
+   BLOG CONTENT
+======================================== */
+
+.blog-content {
+    @apply flex-1
+           py-4;
 }
 
-/* Link đọc thêm */
-.read-more {
-  color: var(--color-brand-600);
-  font-size: 15px;
-  text-decoration: none;
+
+/* Blog title */
+
+.blog-content h3 {
+    @apply text-[#26D9B5]
+           text-[28px]
+           font-medium
+           mb-3
+           tracking-wide;
 }
 
-/* Thông tin bài viết */
+
+/* Blog description */
+
+.blog-content > p {
+    @apply text-gray-300
+           text-[13px]
+           mb-4
+           leading-[1.8]
+           pr-10;
+}
+
+
+/* ========================================
+   READ MORE
+======================================== */
+
+.blog-read-more {
+    @apply text-[#26D9B5]
+           text-xs
+           font-mono
+           underline
+           decoration-[#26D9B5]
+           underline-offset-4
+           mb-8
+           inline-block
+           hover:text-white
+           transition;
+}
+
+
+/* ========================================
+   BLOG META
+======================================== */
+
 .blog-meta {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 10px;
+    @apply flex
+           flex-wrap
+           items-center
+           gap-4
+           text-[10px]
+           text-gray-300
+           font-mono
+           mt-4;
 }
 
-/* Tag */
-.tag {
-  background-color: var(--color-ink);
-  color: var(--color-muted-invert);
-  padding: 3px 7px;
-  border-radius: 5px;
-  font-size: 9px;
+
+/* Category */
+
+.blog-category {
+    @apply bg-gray-600
+           text-gray-200
+           px-4
+           py-1
+           rounded-full
+           border
+           border-gray-500;
 }
 
-/* Date / Read */
-.meta-item {
-  color: var(--color-muted-invert);
-  font-size: 9px;
+
+/* Metadata strong */
+
+.blog-meta strong {
+    @apply text-white;
 }
 
-/* Đường phân cách */
-.divider {
-  border: none;
-  border-top: 1px solid var(--color-muted);
-  margin: 0;
+
+/* ========================================
+   BUTTONS
+======================================== */
+
+.blog-buttons {
+    @apply flex
+           items-center
+           justify-center
+           gap-6
+           pb-10;
 }
+
+
+/* View More */
+
+.view-more-btn {
+    @apply bg-[#26D9B5]
+           text-[#2C3137]
+           px-8
+           py-[10px]
+           rounded-full
+           text-sm
+           font-bold
+           hover:bg-teal-400
+           transition
+           tracking-wide;
+}
+
+
+/* Subscribe */
+
+.subscribe-btn {
+    @apply border
+           border-white
+           text-white
+           px-8
+           py-[10px]
+           rounded-full
+           text-sm
+           font-medium
+           hover:bg-gray-700
+           transition
+           tracking-wide;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========================================
+   CONTACT SECTION
+======================================== */
+
+.contact-section {
+    @apply mt-32
+           relative
+           w-full
+           max-w-4xl
+           mx-auto
+           px-10
+           text-center
+           pb-20
+           scroll-mt-24;
+}
+
+
+/* ========================================
+   DIVIDER
+======================================== */
+
+.contact-divider {
+    @apply flex
+           flex-col
+           items-center
+           mb-10;
+}
+
+.contact-divider i {
+    @apply text-[#26D9B5]
+           text-2xl
+           mb-3;
+}
+
+.contact-divider-line {
+    @apply w-[1px]
+           h-14
+           border-l
+           border-dashed
+           border-white;
+}
+
+.contact-divider-diamond {
+    @apply w-[6px]
+           h-[6px]
+           bg-white
+           rotate-45
+           mt-2;
+}
+
+
+/* ========================================
+   CONTACT TITLE
+======================================== */
+
+.contact-title {
+    @apply inline-block
+           relative;
+}
+
+.contact-title h2 {
+    @apply text-[44px]
+           text-[#26D9B5]
+           font-medium
+           mb-1
+           relative
+           z-10
+           tracking-wide;
+}
+
+
+/* ========================================
+   TITLE LINE
+======================================== */
+
+.contact-title-line {
+    @apply flex
+           items-center
+           justify-center
+           w-full
+           relative
+           z-10
+           mt-1;
+}
+
+.contact-title-line span {
+    @apply w-2
+           h-2
+           rounded-full
+           bg-[#26D9B5];
+}
+
+.contact-title-line div {
+    @apply h-[2px]
+           flex-1
+           bg-[#26D9B5];
+}
+
+
+/* ========================================
+   DESCRIPTION
+======================================== */
+
+.contact-description {
+    @apply text-gray-300
+           text-[13px]
+           mt-6
+           mb-20
+           font-mono
+           tracking-wide;
+}
+
+
+/* ========================================
+   MESSAGE BOX
+======================================== */
+
+.message-box {
+    @apply inline-block
+           border-[1.5px]
+           border-[#26D9B5]
+           rounded-tl-xl
+           rounded-br-xl
+           px-16
+           py-4
+           mb-24
+           cursor-pointer
+           transition
+           hover:bg-[#26D9B5]
+}
+
+.message-box h3 {
+    @apply text-[22px]
+           text-[#26D9B5]
+           font-mono
+           tracking-wider
+           transition
+}
+
+
+/* ========================================
+   FORM
+======================================== */
+
+.contact-form {
+    @apply text-left
+           w-full
+           max-w-3xl
+           mx-auto
+           font-mono;
+}
+
+
+/* ========================================
+   NAME + EMAIL
+======================================== */
+
+.contact-fields {
+    @apply flex
+           gap-16
+           mb-16;
+}
+
+.contact-field {
+    @apply flex-1;
+}
+
+
+/* ========================================
+   LABEL
+======================================== */
+
+.contact-field label,
+.contact-message label {
+    @apply block
+           text-[#26D9B5]
+           text-xs
+           mb-3
+           tracking-wide;
+}
+
+
+/* ========================================
+   INPUT
+======================================== */
+
+.contact-field input,
+.contact-message input {
+    @apply w-full
+           bg-transparent
+           border-b
+           border-gray-500
+           text-white
+           py-2
+           outline-none
+           text-sm
+           transition
+           placeholder-gray-300
+           focus:border-[#26D9B5];
+}
+
+
+/* ========================================
+   MESSAGE
+======================================== */
+
+.contact-message {
+    @apply mb-20;
+}
+
+
+/* ========================================
+   SUBMIT
+======================================== */
+
+.contact-submit {
+    @apply text-center;
+}
+
+.contact-submit button {
+    @apply bg-[#26D9B5]
+           text-[#2C3137]
+           px-8
+           py-3
+           rounded-full
+           text-sm
+           font-bold
+           flex
+           items-center
+           justify-center
+           gap-3
+           mx-auto
+           tracking-wide
+           transition
+           hover:bg-teal-400;
+}
+
+.contact-submit button i {
+    @apply text-lg;
+}
+
+
+
+
+
+
+
+
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.site-footer {
+    @apply w-full
+           border-t
+           border-[#3a3f47]
+           mt-10
+           py-8
+           px-16
+           flex
+           justify-between
+           items-center
+           text-[11px]
+           text-gray-400
+           font-sans
+           tracking-wide;
+}
+
+
+/* ========================================
+   COPYRIGHT
+======================================== */
+
+.footer-copyright {
+    @apply text-gray-400;
+}
+
+
+/* ========================================
+   PRIVACY / TERMS
+======================================== */
+
+.footer-links {
+    @apply flex
+           items-center
+           gap-10;
+}
+
+.footer-links a {
+    @apply text-gray-400
+           no-underline
+           transition
+           hover:text-white;
+}
+
+
+/* ========================================
+   SOCIAL
+======================================== */
+
+.footer-social {
+    @apply flex
+           items-center
+           gap-4;
+}
+
+
+/* ========================================
+   SOCIAL ICON
+======================================== */
+
+.footer-social-icon {
+    @apply w-7
+           h-7
+           rounded-full
+           bg-[#bbf6ec]
+           text-[#2C3137]
+           flex
+           items-center
+           justify-center
+           cursor-pointer
+           transition
+           hover:bg-white;
+}
+
+.footer-social-icon i {
+    @apply text-[13px];
+}
+
+
+/* ========================================
+   DESIGNER
+======================================== */
+
+.footer-designer {
+    @apply text-gray-400;
+}
+
+.footer-designer a {
+    @apply text-[#26D9B5]
+           no-underline
+           transition
+           hover:text-white
+           hover:underline
+           decoration-[#26D9B5];
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ========================================
+   FOOTER RESPONSIVE
+======================================== */
+
+@media (max-width: 1100px) {
+
+    .site-footer {
+        @apply px-8
+               flex-wrap
+               justify-center
+               gap-6;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .site-footer {
+        @apply px-5
+               py-8
+               flex-col
+               justify-center
+               gap-5
+               text-center;
+    }
+
+
+    .footer-links {
+        @apply gap-6;
+    }
+
+
+    .footer-social {
+        @apply gap-3;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .site-footer {
+        @apply px-4;
+    }
+
+    .footer-links {
+        @apply flex-col
+               gap-3;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ==============================
     BLOG 2
    ============================== */
@@ -400,3 +2286,47 @@ main {
   font-size: 20px;
 }
 
+.nav-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+.nav-tooltip {
+  position: absolute;
+  left: 100%;
+  margin-left: 15px;
+  background-color: #26D9B5;
+  color: #2C3137;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  pointer-events: none; /* Tránh cản trở việc click */
+}
+
+/* Mũi tên chỉ vào icon của Tooltip */
+ .nav-tooltip::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #26D9B5 transparent transparent;
+}
+
+.nav-item:hover .nav-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(5px);
+}
+
+/* Class active cho ScrollSpy (đổi màu icon khi cuộn tới) */
+.nav-item.active i {
+  color: #26D9B5 !important;
+}
