@@ -355,6 +355,74 @@ body {
     opacity: 0;
     transform: translateX(-30px);
 }
+.skill-card {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  display: block;
+}
+
+.skill-card:hover {
+  transform: scale(1.05); /* Phóng to 5% */
+}
+
+/* ========================================
+   MOUSE / DIVIDER
+======================================== */
+
+.about-divider {
+    @apply flex
+           flex-col
+           items-center
+           mb-12;
+}
+
+.about-divider i {
+    @apply text-[#26D9B5]
+           text-2xl
+           mb-3;
+}
+
+.divider-line {
+    @apply w-[1px]
+           h-14
+           border-l
+           border-dashed
+           border-white;
+}
+
+.divider-diamond {
+    @apply w-[6px]
+           h-[6px]
+           bg-white
+           rotate-45
+           mt-2;
+}
+
+/* Container chứa các icon */
+.skill-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Định dạng thẻ a làm nút bấm hình tròn */
+.skill-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  
+  /* Hiệu ứng chuyển động mượt */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hiệu ứng phóng to khi hover */
+.skill-icon:hover {
+  transform: scale(1.15); /* Phóng to 15% */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Tạo hiệu ứng nổi lên nhẹ */
+}
 
 
 

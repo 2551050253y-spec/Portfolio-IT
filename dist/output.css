@@ -22,7 +22,6 @@
     --spacing: 0.25rem;
     --container-2xl: 42rem;
     --container-3xl: 48rem;
-    --container-4xl: 56rem;
     --text-xs: 0.75rem;
     --text-xs--line-height: calc(1 / 0.75);
     --text-sm: 0.875rem;
@@ -328,6 +327,9 @@
   }
   .cursor-not-allowed {
     cursor: not-allowed;
+  }
+  .cursor-pointer {
+    cursor: pointer;
   }
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -651,6 +653,11 @@
   }
   .transition {
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .transition-transform {
+    transition-property: transform, translate, scale, rotate;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
@@ -1061,6 +1068,60 @@ body {
 .project-item.fade-out {
   opacity: 0;
   transform: translateX(-30px);
+}
+.skill-card {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  display: block;
+}
+.skill-card:hover {
+  transform: scale(1.05);
+}
+.about-divider {
+  margin-bottom: calc(var(--spacing) * 12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.about-divider i {
+  margin-bottom: calc(var(--spacing) * 3);
+  font-size: var(--text-2xl);
+  line-height: var(--tw-leading, var(--text-2xl--line-height));
+  color: #26D9B5;
+}
+.divider-line {
+  height: calc(var(--spacing) * 14);
+  width: 1px;
+  border-left-style: var(--tw-border-style);
+  border-left-width: 1px;
+  --tw-border-style: dashed;
+  border-style: dashed;
+  border-color: var(--color-white);
+}
+.divider-diamond {
+  margin-top: calc(var(--spacing) * 2);
+  height: 6px;
+  width: 6px;
+  rotate: 45deg;
+  background-color: var(--color-white);
+}
+.skill-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.skill-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.skill-icon:hover {
+  transform: scale(1.15);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 .site-header {
   position: sticky;
