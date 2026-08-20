@@ -289,8 +289,7 @@
 
     </div>
 </section>
-
-   <!-- 4. Works Section -->
+<!-- 4. Works Section -->
 <section id="works" class="section-wrapper text-center">
 
     <div class="section-title-wrap">
@@ -301,60 +300,32 @@
         Các sản phẩm thực tế đã hoàn thiện
     </p>
 
+    <!-- Thanh nút bấm slider -->
     <div class="flex justify-center gap-3 mb-8 flex-wrap">
-        <button type="button" class="filter-btn active" data-tech="all">
-            All
-        </button>
-
-        <button type="button" class="filter-btn" data-tech="web">
-            Web Portfolio
-        </button>
-
-        <button type="button" class="filter-btn" data-tech="cpp">
-            C++ Application
-        </button>
+        <button id="prevBtn" type="button" class="slider-btn prev-btn">&lt;</button>
+        <button id="nextBtn" type="button" class="slider-btn next-btn">&gt;</button>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left max-w-4xl mx-auto">
-
-        <article class="project-item" data-tech="web">
+    <!-- Khung hiển thị dự án -->
+    <div class="project-container max-w-2xl mx-auto text-left">
+        <article class="project-item">
             <div class="project-image">
-                <img
-                    src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80"
-                    alt="Web Preview"
-                >
+                <img id="projectImage" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80" alt="Web Preview">
             </div>
 
             <div class="project-content">
-                <span>Web Developer Portfolio</span>
-                <h3>ĐỀ 11 BTL Thiết kế Web</h3>
+                <span id="projectCategory">Web Developer Portfolio</span>
+                <h3 id="projectTitle">ĐỀ 11 BTL Thiết kế Web</h3>
 
-                <a href="project-detail.html">
+                <a id="projectLink" href="project-detail.html">
                     Chi tiết dự án →
                 </a>
             </div>
         </article>
-
-        <article class="project-item" data-tech="cpp">
-            <div class="project-image">
-                <img
-                    src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80"
-                    alt="C++ Preview"
-                >
-            </div>
-
-            <div class="project-content">
-                <span>C++ Console App</span>
-                <h3>Hệ thống xử lý dữ liệu C++</h3>
-
-                <a href="project-cpp.html">
-                    Chi tiết dự án →
-                </a>
-            </div>
-        </article>
-
     </div>
+
 </section>
+
 
    <!-- 5. Blogs Section -->
 <section id="blogs" class="section-wrapper text-center">

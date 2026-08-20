@@ -355,3 +355,97 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+/* ----------------------------------
+  10. Javascript Slider Project
+---------------------------------- */
+
+
+const projects = [
+  {
+    category: "Web Developer Portfolio",
+    title: "ĐỀ 11 BTL Thiết kế Web",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80",
+    link: "project-detail.html"
+  },
+  {
+    category: "C++ Console App",
+    title: "Hệ thống xử lý dữ liệu C++",
+    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80",
+    link: "project-cpp.html"
+  },
+  {
+    category: "Web & Dashboard App",
+    title: "Analytics & Admin Dashboard App",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
+    link: "project-dashboard.html"
+  }
+];
+
+let currentProject = 0;
+
+const projectImage = document.getElementById("projectImage");
+const projectTitle = document.getElementById("projectTitle");
+const projectCategory = document.getElementById("projectCategory");
+const projectLink = document.getElementById("projectLink");
+
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const projectCard = document.querySelector(".project-item");
+
+// Hàm tạo hiệu ứng lướt bằng JS Animation API
+function changeProject(newIndex, direction) {
+  if (!projectCard) return;
+
+  // Xác định hướng lướt: sang trái hay sang phải
+  const exitX = direction === 'next' ? '-50px' : '50px';
+  const enterX = direction === 'next' ? '50px' : '-50px';
+
+  // 1. Hiệu ứng lướt biến mất
+  const fadeOut = projectCard.animate([
+    { opacity: 1, transform: 'translateX(0)' },
+    { opacity: 0, transform: `translateX(${exitX})` }
+  ], {
+    duration: 200,
+    fill: 'forwards',
+    easing: 'ease-in'
+  });
+
+  // 2. Đổi dữ liệu khi lướt xong và chạy hiệu ứng xuất hiện lại
+  fadeOut.onfinish = () => {
+    currentProject = newIndex;
+
+    if (projectImage) projectImage.src = projects[currentProject].image;
+    if (projectTitle) projectTitle.textContent = projects[currentProject].title;
+    if (projectCategory) projectCategory.textContent = projects[currentProject].category;
+    if (projectLink) projectLink.href = projects[currentProject].link;
+
+    // Hiệu ứng lướt vào từ hướng ngược lại
+    projectCard.animate([
+      { opacity: 0, transform: `translateX(${enterX})` },
+      { opacity: 1, transform: 'translateX(0)' }
+    ], {
+      duration: 250,
+      fill: 'forwards',
+      easing: 'ease-out'
+    });
+  };
+}
+
+// Bấm nút Lùi (Trái)
+if (prevBtn) {
+  prevBtn.addEventListener("click", () => {
+    let index = currentProject - 1;
+    if (index < 0) index = projects.length - 1;
+    changeProject(index, 'prev');
+  });
+}
+
+// Bấm nút Tiến (Phải)
+if (nextBtn) {
+  nextBtn.addEventListener("click", () => {
+    let index = currentProject + 1;
+    if (index >= projects.length) index = 0;
+    changeProject(index, 'next');
+  });
+}
