@@ -15,7 +15,7 @@
 3. **Trần Nguyễn Hoàng Gia | 2551050:** 
 
 
-
+## Những công nghệ và tính năng có trong trang WEB
 2. Công nghệ & Bộ công cụ sử dụng
 Dự án được xây dựng tuân thủ đúng các chuẩn đầu ra công nghệ nghề nghiệp:
 *   **Ngôn ngữ cốt lõi:** HTML5 (Semantic tags), CSS3 + Tailwind CSS, JavaScript (ES6+). 
