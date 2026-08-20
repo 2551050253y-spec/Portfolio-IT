@@ -1,172 +1,556 @@
 <!DOCTYPE html>
-<html lang="vn">
+<html lang="vi" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Lập Trình Viên</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Portfolio - SinanTokmak | Web Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="dist/output.css">
-</head> 
-<body style="background-color: var(--color-surface-dark); color: var(--color-ink-invert);">
- 
-  <header class="blog-header">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="dist/output.css">
+</head>
+<body class="dark font-sans relative">
+    
+    <!-- Navbar Header -->
+<header class="site-header flex items-center justify-between" data-site-header>
 
-  <!-- Logo/tên nhóm nằm bên trái -->
-  <div class="logo">
-    <span class="code-icon">Nhom 4: </span>
-    Nam, Y, Gia
-  </div>
+    <div class="site-logo">
+        <span>&lt;C/&gt;</span> SinanTokmak
+    </div>
 
-  <!-- Menu nằm ở giữa -->
-  <nav class="nav-links">
-    <a href="#" class="nav-link">Home</a>
-    <a href="index.html" class="nav-link active">Blogs</a>
-  </nav>
+    <nav class="hidden lg:flex gap-10" aria-label="Main navigation">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#works" class="nav-link">Works</a>
+        <a href="blogs.html" class="nav-link">Blogs</a>
+        <a href="#contact" class="nav-link">Contact</a>
 
-  <!-- Các icon nằm bên phải -->
-  <div class="nav-icons">
-    <span class="icon">&#128269;</span>
-    <span class="icon">&#128247;</span>
-    <span class="icon">&#128172;</span>
-  </div>
+        <button type="button" class="search-trigger" aria-label="Open search">
+            <i class="fa-solid fa-search"></i>
+        </button>
+    </nav>
+
+    <div class="hidden lg:flex gap-6 items-center">
+        <a
+            href="https://github.com/2551050253y-spec/Portfolio-IT"
+            target="_blank"
+            class="nav-link github-link flex gap-2"
+        >
+            <i class="fa-brands fa-github brand-icon"></i>
+            <span>Github</span>
+        </a>
+
+        <button type="button" class="theme-toggle p-2" aria-label="Switch theme">
+            <i class="fa-solid fa-sun brand-icon"></i>
+        </button>
+    </div>
+
+    <div class="lg:hidden flex gap-4 items-center">
+        <button type="button" class="search-trigger" aria-label="Search">
+            <i class="fa-solid fa-search"></i>
+        </button>
+
+        <button type="button" class="theme-toggle" aria-label="Theme">
+            <i class="fa-solid fa-sun brand-icon"></i>
+        </button>
+
+        <button type="button" class="menu-toggle" aria-label="Menu">
+            <i class="fa-solid fa-bars menu-icon"></i>
+        </button>
+    </div>
 
 </header>
- 
- <!-- Phần nội dung chính của trang -->
-<main>
 
-  <!-- Phần tiêu đề của Blog -->
-  <section class="blog-intro">
+    <!-- Mobile Drawer -->
+    <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation" hidden>
+        <button type="button" id="close-mobile-btn" class="self-end text-xl" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#works" class="nav-link">Works</a>
+        <a href="blogs.html" class="nav-link">Blogs</a>
+        <a href="#contact" class="nav-link">Contact</a>
+    </nav>
 
-    <!-- Tiêu đề chính -->
-    <h1 class="main-title">Blogs</h1>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar-dock hidden lg:flex flex-col gap-6">
+        <a href="#home" class="nav-item active" data-target="#home">
+            <i class="fa-solid fa-border-all text-lg"></i>
+            <span class="nav-tooltip">Home</span>
+        </a>
+        <a href="#about" class="nav-item" data-target="#about">
+            <i class="fa-regular fa-user text-lg"></i>
+            <span class="nav-tooltip">About Me</span>
+        </a>
+        <a href="#skills" class="nav-item" data-target="#skills">
+            <i class="fa-solid fa-code text-lg"></i>
+            <span class="nav-tooltip">Skills</span>
+        </a>
+        <a href="#works" class="nav-item" data-target="#works">
+            <i class="fa-solid fa-desktop text-lg"></i>
+            <span class="nav-tooltip">Works</span>
+        </a>
+        <a href="#blogs" class="nav-item" data-target="#blogs">
+            <i class="fa-regular fa-pen-to-square text-lg"></i>
+            <span class="nav-tooltip">Blogs</span>
+        </a>
+        <a href="#contact" class="nav-item" data-target="#contact">
+            <i class="fa-regular fa-envelope text-lg"></i>
+            <span class="nav-tooltip">Contact</span>
+        </a>
+    </aside>
 
-    <!-- Đường kẻ trang trí dưới tiêu đề -->
-    <div class="title-line"></div>
+   <!-- 1. Hero Section -->
+<section id="home" class="section-wrapper hero-section flex flex-col items-center">
 
-    <!-- Mô tả ngắn -->
-    <p class="main-description">Những suy ngẫm của tôi về công nghệ và kinh doanh; mời bạn đăng ký theo dõi. </p>
+    <h2 class="hero-title">Developer</h2>
 
-    <!-- Nút đăng ký -->
-    <a href="#" class="subscribe-btn"> Đăng ký theo dõi </a>
+    <div class="hero-content flex flex-col lg:flex-row items-center justify-between w-full gap-8">
 
-  </section>
+        <!-- Profile Card -->
+        <div class="profile-card flex flex-col items-center">
 
+            <div class="profile-avatar">
+                <img
+                    src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80"
+                    alt="Avatar"
+                >
+            </div>
 
-  <!-- Đường phân cách -->
-  <hr class="divider">
+            <h3 class="profile-name">Sinan</h3>
+            <p class="profile-role">Full-stack developer</p>
 
+            <div class="profile-info">
+                <div class="info-item">
+                    <i class="fa-regular fa-envelope brand-icon"></i>
+                    <span data-email>abdurrahman_sinan@hotmail.com</span>
+                    <button type="button" class="copy-email" aria-label="Copy email">
+                        <i class="fa-regular fa-copy"></i>
+                    </button>
+                </div>
 
-  <!-- Danh sách các bài Blog -->
-  <section class="blog-list">
+                <div class="info-item">
+                    <i class="fa-solid fa-location-dot brand-icon"></i>
+                    Turkey
+                </div>
 
-    <!-- ================= BÀI VIẾT 1 ================= -->
-    <article class="blog-item">
+                <div class="info-item">
+                    <i class="fa-solid fa-briefcase brand-icon"></i>
+                    Full-time / Freelancer
+                </div>
+            </div>
 
-      <!-- Hình ảnh bài viết -->
-      <img class="blog-thumb" src="https://bairesdev.mo.cloudinary.net/blog/2023/09/How-Many-Web-Developers-in-the-World-1.jpg?tx=w_1920,q_auto" alt="Web developer">
+            <div class="tech-list">
+                <span class="tech-badge">HTML</span>
+                <span class="tech-badge">CSS</span>
+                <span class="tech-badge">JS</span>
+                <span class="tech-badge">REACT</span>
+            </div>
 
-      <!-- Nội dung bài viết -->
-      <div class="blog-content">
-
-        <!-- Tiêu đề -->
-        <h2 class="blog-title">Cần những gì để trở thành một lập trình viên web? </h2>
-
-        <!-- Nội dung mô tả -->
-        <p class="blog-excerpt">Phát triển web, hay còn gọi là phát triển trang web, bao gồm nhiều công việc và quy trình liên quan đếnviệc tạo ra các trang web cho Internet...</p>
-
-        <!-- Link đọc thêm -->
-        <a href="blog1.html" class="read-more">đọc thêm &gt;&gt;</a>
-
-        <!-- Thông tin bài viết -->
-        <div class="blog-meta">
-
-          <span class="tag">Web Developer</span>
-
-          <span class="meta-item"><strong>Date</strong> 10.Oct.2023</span>
-
-        </div>
-
-      </div>
-
-    </article>
-
-
-    <!-- Đường phân cách -->
-    <hr class="divider">
-
-
-    <!-- ================= BÀI VIẾT 2 ================= -->
-    <article class="blog-item">
-
-      <!-- Hình ảnh bài viết -->
-      <img class="blog-thumb" src="https://img.magnific.com/free-vector/male-programmer-working-computer-office-wall-with-hanging-reminder-stickers-developer-creating-new-software-interface-coding-programming-system-administrator-designer-character_575670-1159.jpg?semt=ais_hybrid&w=740&q=80" alt="Web developer">
-
-      <!-- Nội dung bài viết -->
-      <div class="blog-content">
-
-        <!-- Tiêu đề -->
-        <h2 class="blog-title"> Những dự án nào nên có trong portfolio? </h2>
-
-        <!-- Mô tả -->
-        <p class="blog-excerpt"> Khi xây dựng portfolio, bạn nên tập trung vào số lượng,chất lượng và loại dự án thực tế nên thể hiện. </p>
-
-        <!-- Link đọc thêm -->
-        <a href="blog2.html" class="read-more"> đọc thêm &gt;&gt; </a>
-
-        <!-- Thông tin bài viết -->
-        <div class="blog-meta">
-
-          <span class="tag"> Web Developer </span>
-          <span class="meta-item"><strong>Date</strong> 10.Oct.2023</span>
-
-        </div>
-
-      </div>
-
-    </article>
-
-
-    <!-- Đường phân cách -->
-    <hr class="divider">
-
-
-    <!-- ================= BÀI VIẾT 3 ================= -->
-    <article class="blog-item">
-
-      <!-- Hình ảnh bài viết -->
-      <img class="blog-thumb" src="https://limeup.io/wp-content/uploads/2024/03/Developer.png" alt="Web developer">
-
-      <!-- Nội dung bài viết -->
-      <div class="blog-content">
-
-        <!-- Tiêu đề -->
-        <h2 class="blog-title"> Làm sao để portfolio nổi bật trước nhà tuyển dụng? </h2>
-
-        <!-- Mô tả -->
-        <p class="blog-excerpt"> Tập trung vào UX/UI, cách trình bày README, live demo, và câu chuyện đằng sau dự án. </p>
-
-        <!-- Link đọc thêm -->
-        <a href="#" class="read-more"> đọc thêm &gt;&gt; </a>
-
-        <!-- Thông tin bài viết -->
-        <div class="blog-meta">
-
-          <span class="tag"> Web Developer </span>
-
-          <span class="meta-item"> <strong>Date</strong> 10.Oct.2023  </span>
+            <a href="#contact" class="btn-primary cv-button">
+                Download CV
+                <i class="fa-solid fa-download"></i>
+            </a>
 
         </div>
 
-      </div>
+        <!-- Intro -->
+        <div class="hero-intro flex-1 flex flex-col items-center lg:items-start">
 
-    </article>
+            <span class="code-label">&lt;h1&gt;</span>
 
-  </section>
+            <h1 class="hero-heading">
+                Hey<br>
+                I'm <span class="brand-text">Sinan</span>,<br>
+                <span id="typing-text" class="typing-text">Full-Stack Developer</span>
+            </h1>
 
-</main>
+            <span class="code-label closing-label">&lt;/h1&gt;</span>
+
+            <p class="hero-description">
+                Tôi hỗ trợ doanh nghiệp xây dựng những trải nghiệm web hiện đại, tốc độ cao và chuẩn SEO.
+            </p>
+
+            <a href="#contact" class="contact-link">
+                Let's Talk
+                <span class="contact-icon">
+                    <i class="fa-regular fa-envelope"></i>
+                </span>
+            </a>
+
+        </div>
+
+        <!-- Stats Card -->
+        <div class="stats-card flex flex-col gap-6">
+
+            <div class="stat-item">
+                <span class="stat-number">4</span>
+                <span class="stat-label">Programming<br>Language</span>
+            </div>
+
+            <div class="stat-item">
+                <span class="stat-number">6</span>
+                <span class="stat-label">Development<br>Tools</span>
+            </div>
+
+            <div class="stat-item">
+                <span class="stat-number">8</span>
+                <span class="stat-label">Years of<br>Experience</span>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+   <!-- 2. About Section -->
+<section id="about" class="section-wrapper">
+
+ <div class="about-divider">
+        <i class="fa-solid fa-computer-mouse"></i>
+
+        <div class="divider-line"></div>
+
+        <div class="divider-diamond"></div>
+    </div>
+
+    <div class="section-title-wrap">
+        <h2>About Me</h2>
+    </div>
+
+    <div class="about-content flex flex-col lg:flex-row items-center gap-8">
+
+        <div class="about-card flex-1">
+            <h3>Xin chào!</h3>
+
+            <p>
+                Tôi là lập trình viên chuyên sâu về giao diện Web hiện đại với
+                <span>HTML5</span>,
+                <span>CSS3/Tailwind</span>,
+                <span>JavaScript ES6+</span>
+                và tư duy thuật toán vững vàng từ
+                <span>C++</span>.
+            </p>
+
+            <p>
+                Luôn hướng đến việc viết mã sạch (Clean Code), đáp ứng đầy đủ
+                tiêu chuẩn Accessibility (A11y) và đạt điểm số Lighthouse tối đa.
+            </p>
+        </div>
+
+        <div class="about-image">
+            <img
+                src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?auto=format&fit=crop&w=600&q=80"
+                alt="About"
+            >
+        </div>
+
+    </div>
+</section>
+
+  
+
+<!-- 3. Skills Section -->
+<section id="skills" class="section-wrapper text-center">
+
+ <div class="about-divider">
+        <i class="fa-solid fa-computer-mouse"></i>
+
+        <div class="divider-line"></div>
+
+        <div class="divider-diamond"></div>
+    </div>
+
+    <div class="section-title-wrap">
+        <h2 class="section-title">Skills</h2>
+    </div>
+
+    <p class="section-subtitle">
+        Không ngừng học hỏi và cải thiện kỹ năng chuyên môn
+    </p>
+
+    <div class="skills-grid grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-10">
+
+        <a href="web-development.html" class="skill-card block transition-transform duration-300 hover:scale-105 cursor-pointer">
+            <i class="fa-solid fa-desktop"></i>
+            <h3>Web Development</h3>
+            <p>HTML • CSS/Tailwind • JavaScript</p>
+        </a>
+
+        <a href="programming-logic.html" class="skill-card block transition-transform duration-300 hover:scale-105 cursor-pointer">
+            <i class="fa-solid fa-code"></i>
+            <h3>Programming & Logic</h3>
+            <p>C++ • Algorithms • Git</p>
+        </a>
+
+    </div>
+
+    <div class="skill-icons flex justify-center gap-8 flex-wrap">
+
+        <a href="https://www.youtube.com/watch?v=Z6uylatF5VY&list=PLPt6-BtUI22oveeGAyckbAXRSmTBGLZP4&index=1&pp=iAQB" class="skill-icon skill-html">
+            <i class="fa-brands fa-html5"></i>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=Z6uylatF5VY&list=PLPt6-BtUI22oveeGAyckbAXRSmTBGLZP4&index=2&pp=iAQB" class="skill-icon skill-css">
+            <i class="fa-brands fa-css3-alt"></i>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=Z6uylatF5VY&list=PLPt6-BtUI22oveeGAyckbAXRSmTBGLZP4&index=1&pp=iAQB" class="skill-icon skill-js">
+            <i class="fa-brands fa-js"></i>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=5vLkWRF-dpE&list=PLPt6-BtUI22rZ-lB276VBY85mUNeIFJf5&index=1&pp=iAQB" class="skill-icon skill-cpp">
+            C++
+        </a>
+
+    </div>
+</section>
+
+
+
+<!-- 4. Works Section -->
+<section id="works" class="section-wrapper text-center">
+
+ <div class="about-divider">
+        <i class="fa-solid fa-computer-mouse"></i>
+
+        <div class="divider-line"></div>
+
+        <div class="divider-diamond"></div>
+    </div>
+
+    <div class="section-title-wrap">
+        <h2 class="section-title">Works</h2>
+    </div>
+
+    <p class="section-subtitle">
+        Các sản phẩm thực tế đã hoàn thiện
+    </p>
+
+    <!-- Thanh nút bấm slider -->
+    <div class="flex justify-center gap-3 mb-8 flex-wrap">
+        <button id="prevBtn" type="button" class="slider-btn prev-btn">&lt;</button>
+        <button id="nextBtn" type="button" class="slider-btn next-btn">&gt;</button>
+    </div>
+
+    <!-- Khung hiển thị dự án -->
+    <div class="project-container max-w-2xl mx-auto text-left">
+        <article class="project-item">
+            <div class="project-image">
+                <img id="projectImage" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80" alt="Web Preview">
+            </div>
+
+            <div class="project-content">
+                <span id="projectCategory">Web Developer Portfolio</span>
+                <h3 id="projectTitle">ĐỀ 11 BTL Thiết kế Web</h3>
+
+                <a id="projectLink" href="project-detail.html">
+                    Chi tiết dự án →
+                </a>
+            </div>
+        </article>
+    </div>
+
+</section>
+
+
+   <!-- 5. Blogs Section -->
+<section id="blogs" class="section-wrapper text-center">
+
+ <div class="about-divider">
+        <i class="fa-solid fa-computer-mouse"></i>
+
+        <div class="divider-line"></div>
+
+        <div class="divider-diamond"></div>
+    </div>
+
+
+    <div class="section-title-wrap">
+        <h2 class="section-title">Blogs</h2>
+    </div>
+
+    <p class="section-subtitle">
+        Những bài viết kỹ thuật và kinh nghiệm lập trình Web
+    </p>
+
+    <div class="blog-card flex flex-col md:flex-row items-center gap-6 text-left max-w-3xl mx-auto">
+
+        <img
+            src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80"
+            alt="Thumbnail"
+            class="blog-image"
+        >
+
+        <div class="blog-content flex-1">
+            <h3>
+                Tối ưu hiệu năng Web với Core Web Vitals & Lighthouse
+            </h3>
+
+            <p>
+                Phân tích chuyên sâu về cách cải thiện các chỉ số LCP, CLS để đạt điểm 100 tuyệt đối trên Google Lighthouse...
+            </p>
+
+            <a href="blog-detail.html?id=post-1">
+                Đọc tiếp bài viết &gt;&gt;
+            </a>
+        </div>
+
+    </div>
+
+    <a href="blogs.html" class="btn-primary inline-block">
+        Xem Tất Cả Bài Viết (Blogs Page) →
+    </a>
+
+</section>
+
+<!-- 6. Contact Section -->
+<section id="contact" class="section-wrapper text-center pb-20">
+
+ <div class="about-divider">
+        <i class="fa-solid fa-computer-mouse"></i>
+
+        <div class="divider-line"></div>
+
+        <div class="divider-diamond"></div>
+    </div>
+
+
+    <div class="section-title-wrap">
+        <h2 class="section-title">Contact</h2>
+    </div>
+
+    <p class="section-subtitle">
+        Sẵn sàng nhận dự án freelance và hợp tác phát triển phần mềm
+    </p>
+
+    <form
+        id="contact-form"
+        class="contact-form text-left w-full max-w-2xl mx-auto"
+        novalidate
+    >
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+
+            <div>
+                <label for="contact-name">Your name *</label>
+                <input
+                    id="contact-name"
+                    name="name"
+                    type="text"
+                    placeholder="Enter your name"
+                    class="form-input"
+                    required
+                >
+                <span id="name-error" class="field-error" role="alert"></span>
+            </div>
+
+            <div>
+                <label for="contact-email">Your email *</label>
+                <input
+                    id="contact-email"
+                    name="email"
+                    type="email"
+                    placeholder="Enter your email"
+                    class="form-input"
+                    required
+                >
+                <span id="email-error" class="field-error" role="alert"></span>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label for="contact-phone">Your phone *</label>
+            <input
+                id="contact-phone"
+                name="phone"
+                type="tel"
+                placeholder="Enter your phone number"
+                class="form-input"
+                required
+            >
+            <span id="phone-error" class="field-error" role="alert"></span>
+        </div>
+
+        <div class="form-group message-group">
+            <label for="contact-message">Your message *</label>
+            <textarea
+                id="contact-message"
+                name="message"
+                rows="4"
+                placeholder="Enter your needs"
+                class="form-input"
+                required
+            ></textarea>
+            <span id="message-error" class="field-error" role="alert"></span>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn-primary contact-submit">
+                Send Message
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+        </div>
+
+        <p id="form-status" class="form-status" role="status"></p>
+    </form>
+</section>
+
+
+<!-- Footer -->
+<footer class="site-footer flex justify-between items-center">
+    <div>© 2026 SinanTokmak. ĐỀ 11 - BTL Thiết kế Web.</div>
+
+    <a
+        href="https://github.com/2551050253y-spec/Portfolio-IT"
+        target="_blank"
+        class="footer-github"
+    >
+        <i class="fa-brands fa-github"></i>
+    </a>
+</footer>
+
+
+<!-- Overlay Search -->
+<div
+    id="search-overlay"
+    class="search-overlay"
+    role="dialog"
+    aria-modal="true"
+    hidden
+>
+    <div class="search-panel">
+
+        <button
+            type="button"
+            class="search-close"
+            aria-label="Close"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <p class="search-label">
+            Search Portfolio
+        </p>
+
+        <input
+            id="site-search"
+            type="search"
+            placeholder="Type keywords..."
+            class="form-input"
+            autocomplete="off"
+        >
+
+        <div
+            id="search-results"
+            class="mt-4 max-h-48 overflow-y-auto text-xs text-gray-400"
+        ></div>
+
+    </div>
+</div>
+
+    <script src="js/javas.js"></script>
 </body>
 </html>
- 

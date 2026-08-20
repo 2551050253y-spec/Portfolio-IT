@@ -1,634 +1,369 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
-
-@theme {
-   /* Màu thương hiệu: xanh nước nhạt */
-   --color-brand-50:  #9BEDDD;
-   --color-brand-100: #74E7D0;
-   --color-brand-500: #4CE0C3;
-   --color-brand-600: #26D9B5;
-   --color-brand-700: #188B74;
-   --color-brand-900: #126453;
- 
-    /* Màu nhấn: màu tím*/
-  --color-accent-300: #8B5CF6;
-  --color-accent-400: #7138F5;
-  --color-accent-500: #520DF2;
-
-  /* Chữ và nền. Mỗi vai trò có một cặp sáng/tối */
-  --color-ink: #12211d;               /* chữ */
-  --color-ink-invert: #eaf2ee;        /* chữ tối */
-  --color-muted: #5c6f69;             /* chữ phụ */
-  --color-muted-invert: #93a8a1;    /* chữ phụ tối */
-  --color-line: #D9264A;           /* đường kẻ */
-  --color-line-invert: #26D9B5;      /* đường kẻ tối */
-  --color-surface:#CECAD0 ;         /* nền */
-  --color-surface-dark: #2C3137;    /* nền tối */
-/* Phông chữ. Be Vietnam Pro thiết kế riêng cho dấu tiếng Việt:
-     dấu không đè lên chữ hoa. Inter đọc tốt ở cỡ nhỏ. */
-  --font-display: "Be Vietnam Pro", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
-
-/* Bo góc — một giá trị duy nhất cho mọi thẻ trong dự án */
-  --radius-card: 0.875rem; 
-  --radius-pill: 9999px;
+:root {
+  /* DARK MODE (Mặc định chuẩn Figma Đề 11) */
+  --bg-main: #212429;
+  --bg-card: #2C3137;
+  --bg-box: #33383f;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --color-accent: #26D9B5;
+  --color-accent-dark: #1fb99a;
+  --border-main: #475569;
+  --input-bg: #212429;
+  --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
 }
 
-/* Khai báo container dùng chung một lần */
-.section {
-  @apply mx-auto w-full max-w-6xl px-5 py-20 lg:py-28;
+/* LIGHT MODE CAO CẤP (Nền xám ấm, chữ sắc nét, chống chói mắt) */
+body:not(.dark) {
+  --bg-main: #f1f5f9;       /* Slate 100 ấm áp thay vì trắng tinh chói lóa */
+  --bg-card: #ffffff;       /* Card trắng nổi bật trên nền Slate */
+  --bg-box: #f8fafc;        /* Box phụ màu Slate 50 */
+  --text-main: #0f172a;     /* Chữ đen đậm Slate 900 sắc nét */
+  --text-muted: #475569;    /* Chữ phụ Slate 600 rõ ràng */
+  --color-accent: #0d9488;  /* Xanh Teal đậm đạt chuẩn tương phản WCAG */
+  --color-accent-dark: #0f766e;
+  --border-main: #cbd5e1;   /* Viền Slate 300 mềm mại */
+  --input-bg: #f8fafc;
+  --card-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
 }
 
-/* Gom nút thành các component để tái sử dụng */
-.btn {
-  @apply inline-flex items-center justify-center gap-2 rounded-pill px-5 py-2.5 text-sm font-semibold transition-colors;
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background-color: var(--bg-main);
+  opacity: 0.95;
+  backdrop-filter: blur(12px);
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-main);
+}
+@media (min-width: 1024px) {
+  .site-header { padding: 1.25rem 4rem; }
+}
+
+.site-logo {
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+  color: var(--text-main);
+}
+.site-logo span { color: var(--color-accent); }
+
+.nav-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-link:hover, .nav-link.active {
+  color: var(--color-accent);
+}
+
+/* Sidebar Dock */
+.sidebar-dock {
+  position: fixed;
+  left: 1.5rem;
+  top: 33%;
+  border: 1px solid var(--border-main);
+  border-radius: 9999px;
+  padding: 1.5rem 0.75rem;
+  background-color: var(--bg-card);
+  z-index: 30;
+  box-shadow: var(--card-shadow);
+}
+
+.nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+}
+.nav-item.active i, .nav-item:hover i {
+  color: var(--color-accent) !important;
+}
+
+.nav-tooltip {
+  position: absolute;
+  left: 55px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--color-accent);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: monospace;
+  padding: 4px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}
+.nav-tooltip.show-tooltip { opacity: 1; }
+
+/* Sections chung */
+.section-wrapper {
+  margin-top: 8rem;
+  position: relative;
+  width: 100%;
+  max-width: 64rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  scroll-margin-top: 6rem;
+}
+
+.section-title-wrap {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  color: var(--color-accent);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+  font-family: monospace;
+  margin-bottom: 2.5rem;
+}
+
+/* Các khối Card đồng bộ biến màu */
+.profile-card {
+  border: 2.5px solid var(--color-accent);
+  border-top-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 320px;
+  background-color: var(--bg-card);
+  box-shadow: var(--card-shadow);
+}
+
+.stats-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-main);
+  border-radius: 40px;
+  padding: 1.75rem;
+  width: 100%;
+  max-width: 260px;
+  box-shadow: var(--card-shadow);
+}
+
+.custom-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-main);
+  border-radius: 1rem;
+  box-shadow: var(--card-shadow);
+  color: var(--text-main);
+}
+
+.tech-badge {
+  background-color: var(--color-accent);
+  color: #ffffff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 10px;
+  font-weight: bold;
 }
 
 .btn-primary {
-  @apply bg-brand-600 text-white hover:bg-brand-700;
+  background-color: var(--color-accent);
+  color: #ffffff;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  transition: background-color 0.2s;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.btn-primary:hover { background-color: var(--color-accent-dark); }
+
+.filter-btn {
+  padding: 6px 18px;
+  border-radius: 9999px;
+  border: 1px solid var(--border-main);
+  background-color: var(--bg-card);
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.filter-btn:hover { border-color: var(--color-accent); color: var(--color-accent); }
+.filter-btn.active {
+  background-color: var(--color-accent) !important;
+  color: #ffffff !important;
+  border-color: var(--color-accent) !important;
+  font-weight: 700;
 }
 
-/* Ép kích thước cố định cho logo khách hàng */
-.brand-logo-img {
-  height: 28px !important;       /* Ép chiều cao cố định 28px */
-  max-height: 28px !important;
-  width: auto !important;        /* Tự động tính chiều rộng theo đúng tỉ lệ */
-  max-width: 130px !important;   /* Giới hạn chiều rộng tối đa không bị tràn */
-  object-fit: contain !important;/* Giữ nguyên dạng logo, không bị méo */
-  display: inline-block !important;
+/* Form Styles */
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: var(--input-bg);
+  border: 1.5px solid var(--border-main);
+  border-radius: 8px;
+  color: var(--text-main);
+  font-size: 13px;
+  outline: none;
+  display: block;
+  margin-top: 6px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.form-input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+}
+.form-input[aria-invalid="true"] { border-color: #f43f5e !important; }
+
+.field-error {
+  color: #f43f5e;
+  font-size: 11px;
+  font-family: monospace;
+  margin-top: 4px;
+  min-height: 16px;
+  display: block;
 }
 
-/* Nền sáng */
-.light-mode {
-    background-color: #eaf2ee;
-    font-family: ui-sans-serif, system-ui, sans-serif;
-    color: #12211d;
-    padding-bottom: 2.5rem;
-    position: relative;
-
+.copy-email {
+  background: none;
+  border: none;
+  color: var(--color-accent);
+  cursor: pointer;
+  padding: 4px;
+  margin-left: 6px;
 }
 
-/* Màu nền tối  */
-.dark-mode {
-    background-color: #2C3137;
-    font-family: ui-sans-serif, system-ui, sans-serif;
-    color: #eaf2ee;
-    padding-bottom: 2.5rem;
-    position: relative;
+/* Search Wrapper & Overlay */
+.search-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+.search-input-wrapper i {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+.search-input-wrapper input {
+  padding-left: 48px !important;
 }
 
-.main-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 999;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 15vh;
+}
+.search-overlay[hidden] { display: none !important; }
+
+.search-panel {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-main);
+  width: 90%;
+  max-width: 580px;
+  border-radius: 16px;
+  padding: 24px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-
-
-.logo {
-    @apply flex items-center text-xl tracking-wider;
+.search-close {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  color: var(--text-muted);
+  font-size: 18px;
+  cursor: pointer;
+  background: none;
+  border: none;
 }
 
-.code-icon {
-    @apply mr-2 text-2xl font-bold;
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100vh;
+  background-color: var(--bg-card);
+  border-left: 1px solid var(--border-main);
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 100;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+.mobile-menu[hidden] { display: none !important; }
+
+/* Scroll Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { transition: none !important; opacity: 1 !important; transform: none !important; }
 }
 
-.logo-name {
-    @apply font-bold text-white text-lg;
+/* Hiệu ứng mượt cho khung card */
+.project-item {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 1;
+    transform: translateX(0);
 }
 
-
-
-
-
-/* Menu */
-.nav-links {
-    @apply hidden lg:flex items-center gap-10;
+/* Khi bấm nút, card sẽ lướt sang trái và mờ dần */
+.project-item.fade-out {
+    opacity: 0;
+    transform: translateX(-30px);
+}
+.skill-card {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  display: block;
 }
 
-.nav-link {
-    @apply text-sm font-medium;
+.skill-card:hover {
+  transform: scale(1.05); /* Phóng to 5% */
 }
-
-.search-box {
-    @apply relative;
-}
-
-.search-box input {
-    @apply rounded-full bg-white text-black px-4 py-1 text-xs outline-none w-48;
-}
-
-.search-box i {
-    @apply absolute right-3 top-[6px] text-gray-600 text-sm;
-}
-
-.search-box {
-    @apply relative;
-}
-
-.search-input {
-    @apply rounded-full bg-white text-black px-4 py-1 text-xs outline-none w-48;
-}
-
-.search-icon {
-    @apply absolute right-3 top-[6px] text-gray-600 text-sm;
-}
-.nav-icons {
-    @apply hidden lg:flex items-center gap-6;
-}
-
-.social-item {
-    @apply flex items-center gap-2 cursor-pointer;
-}
-
-
-
-
-
-/* Icon */
-.social-item .icon {
-    @apply transition;
-}
-
-/* Text */
-.social-item span {
-    @apply text-xs text-gray-400 transition;
-}
-
-/* Hover icon */
-.social-item:hover .icon {
-    @apply text-[#26D9B5];
-}
-
-/* Hover text */
-.social-item:hover span {
-    @apply text-white;
-}
-
-
-
- /* Nút Menu Hamburger cho điện thoại */
-.mobile-menu-btn {
-    @apply lg:hidden text-gray-300 text-2xl cursor-pointer;
-}
-
-
-
-/* Thanh điều hướng bên trái */
-.side-nav {
-    @apply hidden lg:flex
-           fixed left-6 top-1/3
-           border border-gray-600
-           rounded-full
-           py-6 px-3
-           flex-col gap-6
-           bg-[#2C3137]
-           z-50
-           shadow-lg;
-}
-
-/* Từng mục trong thanh điều hướng */
-.side-nav .nav-item {
-    @apply relative
-           flex items-center justify-center
-           w-6 h-6;
-}
-
-/* Icon */
-.side-nav .nav-item i {
-    @apply text-gray-400
-           cursor-pointer
-           text-lg
-           transition;
-}
-
-/* Hover icon */
-.side-nav .nav-item:hover i {
-    @apply text-white;
-}
-
-/* Tooltip */
-.side-nav .nav-tooltip {
-    @apply absolute
-           left-full
-           ml-3
-           px-3 py-1
-           rounded
-           bg-gray-800
-           text-white
-           text-xs
-           whitespace-nowrap
-           opacity-0
-           invisible
-           transition;
-}
-
-/* Hiện tooltip */
-.side-nav .nav-item:hover .nav-tooltip {
-    @apply opacity-100 visible;
-}
-
-/* ========================================
-   HERO SECTION
-======================================== */
-
-.hero-section {
-    @apply flex flex-col items-center
-           mt-6 relative
-           w-full max-w-6xl
-           mx-auto px-6
-           lg:px-10
-           scroll-mt-24;
-}
-
-/* Tiêu đề Developer */
-.hero-title {
-    @apply text-5xl
-           lg:text-[80px]
-           font-medium
-           tracking-wide
-           text-[#26D9B5]
-           mb-10
-           lg:mb-20
-           text-center;
-}
-
-/* Nội dung Hero */
-.hero-content {
-    @apply flex flex-col items-center gap-12 w-full;
-
-    /* Desktop: 3 cột trên cùng một hàng */
-    @apply lg:grid lg:grid-cols-[320px_minmax(0,1fr)_260px]
-           lg:items-center
-           lg:gap-8;
-}
-
-
-/* ========================================
-   PROFILE CARD
-======================================== */
-
-.profile-card {
-    @apply relative
-           border-[3px]
-           border-[#26D9B5]
-           rounded-tl-[60px]
-           rounded-br-[60px]
-           p-8
-           w-full
-           max-w-[320px]
-           lg:max-w-none
-           flex flex-col
-           items-center
-           bg-[#2C3137]
-           shadow-[0_0_15px_rgba(38,217,181,0.2)];
-}
-
-
-/* ========================================
-   AVATAR
-======================================== */
-
-.profile-avatar {
-    @apply w-24
-           h-24
-           rounded-full
-           border-2
-           border-[#26D9B5]
-           overflow-hidden
-           mb-4
-           mt-2;
-}
-
-.profile-avatar img {
-    @apply w-full
-           h-full
-           object-cover;
-}
-
-
-/* ========================================
-   PROFILE NAME
-======================================== */
-
-.profile-name {
-    @apply text-2xl
-           font-bold
-           text-white
-           tracking-wide;
-}
-
-
-/* ========================================
-   PROFILE ROLE
-======================================== */
-
-.profile-role {
-    @apply text-xs
-           text-gray-400
-           mb-8
-           tracking-wide;
-}
-
-
-/* ========================================
-   PROFILE INFORMATION
-======================================== */
-
-.profile-info {
-    @apply w-full
-           flex flex-col
-           gap-4
-           text-[11px]
-           text-gray-300
-           mb-8
-           font-mono;
-}
-
-.info-item {
-    @apply flex
-           items-center
-           gap-4;
-}
-
-.info-item i {
-    @apply text-[#26D9B5]
-           text-sm;
-}
-
-
-/* ========================================
-   SKILL TAGS
-======================================== */
-
-.skill-tags {
-    @apply flex
-           flex-wrap
-           justify-center
-           gap-3
-           mb-10
-           w-full
-           px-2;
-}
-
-.skill-tags span {
-    @apply bg-[#26D9B5]
-           text-[#2C3137]
-           px-3
-           py-1
-           rounded-full
-           text-[9px]
-           font-bold
-           tracking-widest;
-}
-
-
-/* ========================================
-   DOWNLOAD CV
-======================================== */
-
-.download-cv {
-    @apply bg-white
-           text-black
-           px-6
-           py-3
-           rounded-full
-           text-sm
-           font-semibold
-           flex
-           items-center
-           justify-center
-           gap-2
-           hover:bg-gray-200
-           transition
-           w-[85%];
-}
-
-.download-cv i {
-    @apply text-lg
-           font-light;
-}
-
-/* ========================================
-   CENTER INTRODUCTION
-======================================== */
-
-.intro-section {
-    @apply w-full
-           max-w-[500px]
-           lg:max-w-none
-           font-mono
-           text-center
-           lg:text-left
-           flex flex-col
-           items-center
-           lg:items-start;
-}
-
-
-
-/* Code tags: <h1>, </h1>, <p>, </p> */
-
-.intro-tag {
-    @apply text-[#26D9B5]
-           text-xs
-           block
-           opacity-80;
-}
-
-.intro-tag-top {
-    @apply mb-3;
-}
-
-.intro-tag-end {
-    @apply mt-3
-           w-full
-           lg:text-right
-           lg:mr-16;
-}
-
-.intro-paragraph-tag {
-    @apply mt-6
-           lg:mt-8;
-}
-
-.intro-paragraph-end {
-    @apply mb-6
-           lg:mb-8;
-}
-
-
-/* Tiêu đề */
-
-.intro-title {
-    @apply text-4xl
-           lg:text-[44px]
-           font-normal
-           text-white
-           leading-[1.1]
-           mb-2
-           font-sans
-           tracking-wide;
-}
-
-
-/* Tên Sinan */
-
-.intro-name {
-    @apply text-[#26D9B5]
-           font-semibold;
-}
-
-
-/* Nội dung */
-
-.intro-text {
-    @apply text-gray-300
-           text-sm
-           leading-[1.8]
-           px-2
-           lg:pl-4
-           lg:pr-0
-           my-2;
-}
-
-
-/* Let's Talk */
-
-.talk-link {
-    @apply flex
-           items-center
-           justify-center
-           lg:justify-start
-           gap-3
-           text-[#26D9B5]
-           text-[24px]
-           lg:text-[28px]
-           mt-2
-           font-medium
-           cursor-pointer
-           font-sans
-           tracking-wide
-           hover:opacity-80
-           transition;
-}
-
-
-/* Icon Let's Talk */
-
-.talk-icon {
-    @apply bg-[#3a3f47]
-           rounded-full
-           w-10
-           h-10
-           flex
-           items-center
-           justify-center
-           hover:bg-gray-600
-           transition;
-}
-
-.talk-icon i {
-    @apply text-lg
-           text-gray-300;
-}
-
-
-/* ========================================
-   STATS CARD
-======================================== */
-.stats-card {
-    @apply bg-[#212429]
-           rounded-[40px]
-           p-6
-           lg:p-8
-           w-full
-           max-w-[400px]
-           lg:max-w-none
-           flex flex-row
-           lg:flex-col
-           justify-around
-           lg:justify-start
-           gap-0
-           lg:gap-10
-           shadow-2xl;
-}
-
-/* Từng stat */
-
-.stat-item {
-    @apply flex
-           flex-col
-           lg:flex-row
-           items-center
-           gap-2
-           lg:gap-6
-           text-center
-           lg:text-left;
-}
-
-
-/* Số */
-
-.stat-number {
-    @apply text-[#26D9B5]
-           text-3xl
-           lg:text-[40px]
-           font-bold
-           font-mono;
-}
-
-
-/* Nội dung stat */
-
-.stat-label {
-    @apply text-[10px]
-           lg:text-xs
-           text-gray-300
-           leading-relaxed
-           font-mono;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/* ========================================
-   ABOUT ME SECTION
-======================================== */
-
-.about-section {
-    @apply mt-48
-           relative
-           w-full
-           max-w-5xl
-           mx-auto
-           px-10
-           scroll-mt-24;
-}
-
-
-/* ========================================
-   TOPOLOGY BACKGROUND
-======================================== */
-
-.about-background {
-    @apply absolute
-           inset-0
-           z-[-1]
-           opacity-5
-           overflow-hidden
-           pointer-events-none;
-}
-
 
 /* ========================================
    MOUSE / DIVIDER
@@ -663,129 +398,383 @@
            mt-2;
 }
 
-
-/* ========================================
-   SECTION TITLE
-======================================== */
-
-.about-title-box {
-    @apply inline-block
-           border-2
-           border-[#26D9B5]
-           rounded-tl-xl
-           rounded-br-xl
-           px-10
-           py-3
-           mb-16
-           relative;
+/* Container chứa các icon */
+.skill-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
-.about-title-box h2 {
-    @apply text-4xl
-           text-white
-           font-medium
-           tracking-wide;
+/* Định dạng thẻ a làm nút bấm hình tròn */
+.skill-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  
+  /* Hiệu ứng chuyển động mượt */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
-/* ========================================
-   ABOUT CONTENT
-======================================== */
-
-.about-content {
-    @apply flex
-           flex-col
-           lg:flex-row
-           gap-12
-           items-center;
+/* Hiệu ứng phóng to khi hover */
+.skill-icon:hover {
+  transform: scale(1.15); /* Phóng to 15% */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Tạo hiệu ứng nổi lên nhẹ */
 }
 
 
-/* ========================================
-   LEFT TEXT BOX
-======================================== */
 
-.about-text-box {
-    @apply bg-[#33383f]
-           rounded-[24px]
-           p-10
-           flex-1
-           shadow-lg
-           font-mono
-           relative;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   Navbar
+========================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    padding: 1.5rem 1.5rem;
+    background: rgb(33 36 41 / 90%);
+    backdrop-filter: blur(12px);
+}
+
+.site-logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.site-logo span,
+.brand-icon {
+    color: #26D9B5;
+}
+
+.site-logo span {
+    margin-right: 0.5rem;
+}
+
+.nav-link {
+    color: #9ca3af;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #fff;
+}
+
+.github-link {
+    align-items: center;
+}
+
+.github-link span {
+    font-size: 0.75rem;
+}
+
+.search-trigger,
+.theme-toggle,
+.menu-toggle {
+    color: #9ca3af;
+    transition: color 0.2s ease;
+}
+
+.search-trigger:hover,
+.theme-toggle:hover,
+.menu-toggle:hover {
+    color: #fff;
+}
+
+.menu-icon {
+    font-size: 1.25rem;
+}
+
+@media (min-width: 1024px) {
+    .site-header {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
 }
 
 
-/* Code tag */
 
-.about-code-tag {
-    @apply text-[#26D9B5]
-           text-xs
-           block
-           mb-4;
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   Hero Section
+========================= */
+
+.hero-section {
+    /* Giữ section-wrapper làm container chính */
 }
 
-.about-code-end {
-    @apply mt-4
-           mb-0;
+.hero-title {
+    margin-bottom: 3rem;
+    color: #26D9B5;
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.profile-avatar {
+    width: 6rem;
+    height: 6rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border: 2px solid #26D9B5;
+    border-radius: 9999px;
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.profile-role {
+    margin-bottom: 1.5rem;
+    color: #9ca3af;
+    font-size: 0.75rem;
+}
+
+.profile-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    color: #d1d5db;
+    font-family: monospace;
+    font-size: 0.75rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.brand-icon,
+.brand-text {
+    color: #26D9B5;
+}
+
+.copy-email {
+    color: inherit;
+}
+
+.tech-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.cv-button {
+    width: 100%;
+    text-align: center;
+}
+
+.hero-intro {
+    font-family: monospace;
+}
+
+.code-label {
+    margin-bottom: 0.5rem;
+    color: #26D9B5;
+    font-size: 0.75rem;
+}
+
+.closing-label {
+    margin-bottom: 1rem;
+}
+
+.hero-heading {
+    margin-bottom: 0.5rem;
+    font-family: sans-serif;
+    font-size: 2.25rem;
+    line-height: 1.25;
+}
+
+.typing-text {
+    border-right: 2px solid #26D9B5;
+}
+
+.hero-description {
+    margin-bottom: 1.5rem;
+    color: #d1d5db;
+    font-size: 0.875rem;
+    line-height: 1.625;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #26D9B5;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+}
+
+.contact-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background: #3a3f47;
+}
+
+.stats-card {
+    font-family: monospace;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.stat-number {
+    color: #26D9B5;
+    font-size: 1.875rem;
+    font-weight: 700;
+}
+
+.stat-label {
+    color: #d1d5db;
+    font-size: 0.75rem;
 }
 
 
-/* Hello */
+/* =========================
+   Responsive
+========================= */
 
-.about-text-box h3 {
-    @apply text-[#26D9B5]
-           text-[32px]
-           font-bold
-           mb-6
-           font-sans
-           tracking-wide;
+@media (min-width: 1024px) {
+    .hero-title {
+        font-size: 4.5rem;
+    }
+
+    .hero-heading {
+        font-size: 3rem;
+    }
 }
 
 
-/* Paragraph */
 
-.about-text-box p {
-    @apply text-gray-300
-           text-[13px]
-           mb-5
-           leading-[1.8];
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   About Section
+========================= */
+
+.section-title-wrap {
+    width: fit-content;
+    margin-bottom: 2rem;
+    padding: 0.5rem 2rem;
+    border: 2px solid #26D9B5;
+    border-radius: 0.75rem;
 }
 
-
-/* Highlight */
-
-.about-text-box .highlight {
-    @apply text-[#26D9B5];
+.section-title-wrap h2 {
+    font-size: 1.875rem;
+    font-weight: 500;
 }
 
-
-/* Blog link */
-
-.about-text-box a {
-    @apply text-[#26D9B5]
-           hover:underline;
+.about-card {
+    padding: 2rem;
+    border-radius: 1.5rem;
+    background: #33383f;
+    font-family: monospace;
 }
 
+.about-card h3 {
+    margin-bottom: 1rem;
+    color: #26D9B5;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
 
-/* ========================================
-   RIGHT IMAGE
-======================================== */
+.about-card p {
+    color: #d1d5db;
+    font-size: 0.875rem;
+    line-height: 1.625;
+}
+
+.about-card p:first-of-type {
+    margin-bottom: 1rem;
+}
+
+.about-card p span {
+    color: #26D9B5;
+}
 
 .about-image {
-    @apply w-full
-           lg:w-[380px]
-           h-[450px]
-           rounded-[24px]
-           overflow-hidden
-           shadow-2xl
-           flex-shrink-0;
+    width: 100%;
+    height: 20rem;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 1.5rem;
 }
 
 .about-image img {
-    @apply w-full
-           h-full
-           object-cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (min-width: 1024px) {
+    .about-image {
+        width: 20rem;
+    }
 }
 
 
@@ -799,265 +788,67 @@
 
 
 
+/* =========================
+   Skills Section
+========================= */
 
-
-/* ========================================
-   SKILLS SECTION
-======================================== */
-
-.skills-section {
-    @apply mt-48
-           relative
-           w-full
-           max-w-5xl
-           mx-auto
-           px-10
-           text-center
-           scroll-mt-24;
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    border-left: 8px solid #43d4c0;
+    border-radius: 0.25rem;
+    background: #bbf6ec;
+    color: #000;
 }
 
-
-
-
-
-/* ========================================
-   MOUSE / DIVIDER
-======================================== */
-
-.skills-divider {
-    @apply flex
-           flex-col
-           items-center
-           mb-10;
+.skill-card > i {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
 }
 
-.skills-divider i {
-    @apply text-[#26D9B5]
-           text-2xl
-           mb-3;
+.skill-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
 }
 
-/* ========================================
-   TITLE
-======================================== */
-
-.skills-title-wrapper {
-    @apply inline-block
-           relative;
+.skill-card p {
+    font-size: 0.75rem;
+    font-weight: 500;
 }
 
-.skills-title-wrapper h2 {
-    @apply text-[44px]
-           text-[#26D9B5]
-           font-medium
-           mb-1
-           relative
-           z-10
-           tracking-wide;
+.skill-icons {
+    /* Layout được giữ bằng Tailwind */
 }
-
-
-/* ========================================
-   TITLE LINE
-======================================== */
-
-.skills-title-line {
-    @apply flex
-           items-center
-           justify-center
-           w-full
-           relative
-           z-10
-           mt-1;
-}
-
-.skills-title-line div {
-    @apply h-[2px]
-           flex-1
-           bg-[#26D9B5];
-}
-
-.skills-title-line span {
-    @apply w-2
-           h-2
-           rounded-full
-           bg-[#26D9B5];
-}
-
-
-/* ========================================
-   DESCRIPTION
-======================================== */
-
-.skills-description {
-    @apply text-gray-300
-           text-[13px]
-           mt-6
-           mb-20
-           font-mono
-           tracking-wide;
-}
-
-
-/* ========================================
-   DEVELOPMENT BOXES
-======================================== */
-
-.development-boxes {
-    @apply flex
-           flex-col
-           lg:flex-row
-           justify-center
-           items-center
-           gap-12
-           mb-20;
-}
-
-
-/* Development Box */
-
-.development-box {
-    @apply bg-[#bbf6ec]
-           text-black
-           w-[300px]
-           py-8
-           rounded-[4px]
-           border-l-[16px]
-           border-[#43d4c0]
-           shadow-xl
-           flex
-           flex-col
-           items-center;
-}
-
-
-/* Development icon */
-
-.development-box i {
-    @apply text-3xl
-           mb-4
-           text-[#2C3137];
-}
-
-
-/* Development title */
-
-.development-box h3 {
-    @apply font-bold
-           text-lg
-           tracking-wide;
-}
-
-
-/* Development description */
-
-.development-box p {
-    @apply text-[11px]
-           text-[#2C3137]
-           font-medium
-           mt-2
-           tracking-widest;
-}
-
-/* ========================================
-   SKILL BADGES
-======================================== */
-
-.skill-badges {
-    @apply flex
-           flex-wrap
-           justify-center
-           gap-10
-           lg:gap-16
-           mt-10;
-}
-
-
-/* Individual badge */
-
-.skill-badge {
-    @apply flex
-           flex-col
-           items-center
-           gap-5;
-}
-
-
-/* Circle */
 
 .skill-icon {
-    @apply w-24
-           h-24
-           rounded-full
-           flex
-           items-center
-           justify-center
-           text-white
-           text-5xl
-           shadow-[0_4px_15px_rgba(0,0,0,0.5)]
-           border-4
-           border-[#2C3137];
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    font-size: 1.875rem;
 }
 
-
-/* ========================================
-   SKILL COLORS
-======================================== */
-
-/* HTML */
-
-.html-icon {
-    @apply bg-[#E44D26];
+.skill-html {
+    background: #E44D26;
 }
 
-.html-text {
-    @apply text-[#E44D26]
-           font-bold
-           tracking-widest
-           text-[15px];
+.skill-css {
+    background: #264DE4;
 }
 
-
-/* CSS */
-
-.css-icon {
-    @apply bg-[#264DE4];
+.skill-js {
+    background: #F7DF1E;
+    color: #000;
 }
 
-.css-text {
-    @apply text-[#264DE4]
-           font-bold
-           tracking-widest
-           text-[15px];
-}
-
-
-/* JavaScript */
-
-.js-icon {
-    @apply bg-[#F7DF1E]
-           text-black;
-}
-
-.js-text {
-    @apply text-[#F7DF1E]
-           font-bold
-           tracking-widest
-           text-[15px];
-}
-
-
-/* React */
-
-.react-icon {
-    @apply bg-[#00D8FF];
-}
-
-.react-text {
-    @apply text-[#00D8FF]
-           font-bold
-           tracking-widest
-           text-[15px];
+.skill-cpp {
+    background: #00599C;
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 
 
@@ -1072,376 +863,50 @@
 
 
 
+/* =========================
+   Works Section
+========================= */
 
-
-
-
-/* ========================================
-   WORKS SECTION
-======================================== */
-
-.works-section {
-    @apply mt-48
-           relative
-           w-full
-           max-w-5xl
-           mx-auto
-           px-10
-           text-center
-           scroll-mt-24;
+.project-item {
+    overflow: hidden;
+    border: 1px solid #374151;
+    border-radius: 1rem;
+    background: #2C3137;
 }
 
-
-/* ========================================
-   BACKGROUND
-======================================== */
-
-.works-background {
-    @apply absolute
-           inset-0
-           z-[-1]
-           opacity-5
-           pointer-events-none
-           bg-[url('https://www.transparenttextures.com/patterns/black-linen.png')];
+.project-image {
+    height: 12rem;
+    overflow: hidden;
 }
 
-
-/* ========================================
-   MOUSE / DIVIDER
-======================================== */
-
-.works-divider {
-    @apply flex
-           flex-col
-           items-center
-           mb-10;
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.works-divider i {
-    @apply text-[#26D9B5]
-           text-2xl
-           mb-3;
+.project-content {
+    padding: 1.5rem;
 }
 
-
-/* ========================================
-   TITLE
-======================================== */
-
-.works-title-wrapper {
-    @apply inline-block
-           relative;
+.project-content span {
+    color: #26D9B5;
+    font-family: monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
 }
 
-.works-title-wrapper h2 {
-    @apply text-[44px]
-           text-[#26D9B5]
-           font-medium
-           mb-1
-           relative
-           z-10
-           tracking-wide;
+.project-content h3 {
+    margin: 0.5rem 0;
+    font-size: 1.25rem;
+    font-weight: 700;
 }
 
-
-/* ========================================
-   TITLE LINE
-======================================== */
-
-.works-title-line {
-    @apply flex
-           items-center
-           justify-center
-           w-full
-           relative
-           z-10
-           mt-1;
-}
-
-.works-title-line span {
-    @apply w-2
-           h-2
-           rounded-full
-           bg-[#26D9B5];
-}
-
-.works-title-line div {
-    @apply h-[2px]
-           flex-1
-           bg-[#26D9B5];
-}
-
-
-/* ========================================
-   DESCRIPTION
-======================================== */
-
-.works-description {
-    @apply text-gray-300
-           text-[13px]
-           mt-6
-           mb-24
-           font-mono
-           tracking-wide;
-}
-
-
-/* ========================================
-   WORKS SLIDER
-======================================== */
-
-.works-slider {
-    @apply relative
-           flex
-           items-center
-           justify-center
-           mb-20
-           w-full;
-}
-
-
-/* ========================================
-   ARROWS
-======================================== */
-
-.works-arrow {
-    @apply absolute
-           w-12
-           h-12
-           bg-[#363b42]
-           rounded-full
-           text-white
-           flex
-           items-center
-           justify-center
-           hover:bg-gray-600
-           transition
-           shadow-lg
-           z-30;
-}
-
-.works-arrow-left {
-    @apply left-0;
-}
-
-.works-arrow-right {
-    @apply right-0;
-}
-
-.works-arrow i {
-    @apply text-sm;
-}
-
-
-/* ========================================
-   SCREENS DISPLAY
-======================================== */
-
-.screens-display {
-    @apply relative
-           flex
-           items-end
-           justify-center
-           w-full
-           max-w-4xl
-           px-20;
-}
-
-
-/* ========================================
-   VERTICAL MONITOR
-======================================== */
-
-.vertical-monitor {
-    @apply w-[200px]
-           h-[350px]
-           bg-gray-800
-           border-[6px]
-           border-gray-600
-           rounded
-           relative
-           z-10
-           translate-x-16
-           translate-y-6
-           shadow-2xl
-           flex
-           items-center
-           justify-center
-           overflow-hidden;
-}
-
-.vertical-monitor img {
-    @apply w-full
-           h-full
-           object-cover
-           opacity-90;
-}
-
-
-/* Vertical monitor base */
-
-.vertical-monitor-base {
-    @apply absolute
-           -bottom-6
-           w-16
-           h-8
-           bg-gray-700;
-}
-
-
-/* ========================================
-   DESKTOP MONITOR
-======================================== */
-
-.desktop-monitor {
-    @apply w-[500px]
-           h-[340px]
-           bg-gray-200
-           rounded-[20px]
-           p-2
-           relative
-           z-20
-           shadow-[0_20px_50px_rgba(0,0,0,0.5)]
-           flex
-           flex-col
-           items-center;
-}
-
-
-/* ========================================
-   VIEW WEBSITE
-======================================== */
-
-.view-website {
-    @apply absolute
-           -top-10
-           right-10
-           flex
-           items-center
-           gap-2
-           text-[#26D9B5]
-           font-mono
-           text-sm
-           tracking-wide
-           z-30
-           cursor-pointer
-           hover:text-white
-           transition;
-}
-
-.view-website span {
-    @apply border-b
-           border-[#26D9B5]
-           pb-1;
-}
-
-.view-website i {
-    @apply text-lg;
-}
-
-
-/* ========================================
-   DESKTOP SCREEN
-======================================== */
-
-.desktop-screen {
-    @apply w-full
-           h-full
-           bg-white
-           rounded-xl
-           overflow-hidden
-           border
-           border-gray-300
-           flex
-           flex-col;
-}
-
-
-/* Website content */
-
-.website-content {
-    @apply bg-gray-100
-           p-6
-           flex-1
-           relative;
-}
-
-
-/* Website title */
-
-.website-content h4 {
-    @apply text-black
-           font-extrabold
-           text-[28px]
-           tracking-tight
-           mb-2
-           z-10
-           relative;
-}
-
-
-/* Explore button */
-
-.website-content p {
-    @apply text-blue-500
-           text-[10px]
-           font-bold
-           mb-4
-           relative
-           z-10
-           inline-block
-           bg-blue-100
-           px-3
-           py-1
-           rounded-full;
-}
-
-
-/* Website image */
-
-.website-content img {
-    @apply absolute
-           inset-0
-           w-full
-           h-full
-           object-cover
-           opacity-70;
-}
-
-
-/* ========================================
-   MONITOR STAND
-======================================== */
-
-.monitor-stand {
-    @apply absolute
-           -bottom-10
-           w-24
-           h-10
-           bg-gray-300
-           flex
-           flex-col
-           items-center;
-}
-
-
-/* Stand neck */
-
-.monitor-stand-neck {
-    @apply w-full
-           h-full
-           bg-gray-300;
-}
-
-
-/* Stand bottom */
-
-.monitor-stand-base {
-    @apply w-40
-           h-3
-           bg-gray-400
-           rounded-full
-           mt-1;
+.project-content a {
+    color: #26D9B5;
+    font-family: monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
 }
 
 
@@ -1455,282 +920,50 @@
 
 
 
+/* =========================
+   Blogs Section
+========================= */
 
-
-
-
-
-
-/* ========================================
-   BLOGS SECTION
-======================================== */
-
-.blogs-section {
-    @apply mt-48
-           relative
-           w-full
-           max-w-4xl
-           mx-auto
-           px-10
-           text-center
-           scroll-mt-24;
+.blog-card {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border: 1px solid #374151;
+    border-radius: 1rem;
+    background: #2C3137;
 }
 
-
-/* ========================================
-   MOUSE / DIVIDER
-======================================== */
-
-.blogs-divider {
-    @apply flex
-           flex-col
-           items-center
-           mb-10;
+.blog-image {
+    width: 100%;
+    height: 10rem;
+    border-radius: 0.75rem;
+    object-fit: cover;
 }
-
-.blogs-divider i {
-    @apply text-[#26D9B5]
-           text-2xl
-           mb-3;
-}
-
-
-/* ========================================
-   TITLE
-======================================== */
-
-.blogs-title-wrapper {
-    @apply inline-block
-           relative;
-}
-
-.blogs-title-wrapper h2 {
-    @apply text-[44px]
-           text-[#26D9B5]
-           font-medium
-           mb-1
-           relative
-           z-10
-           tracking-wide;
-}
-
-
-/* ========================================
-   TITLE LINE
-======================================== */
-
-.blogs-title-line {
-    @apply flex
-           items-center
-           justify-center
-           w-full
-           relative
-           z-10
-           mt-1;
-}
-
-.blogs-title-line span {
-    @apply w-2
-           h-2
-           rounded-full
-           bg-[#26D9B5];
-}
-
-.blogs-title-line div {
-    @apply h-[2px]
-           flex-1
-           bg-[#26D9B5];
-}
-
-
-/* ========================================
-   DESCRIPTION
-======================================== */
-
-.blogs-description {
-    @apply text-gray-300
-           text-[13px]
-           mt-6
-           mb-16
-           font-mono
-           tracking-wide;
-}
-
-
-/* ========================================
-   DIVIDER
-======================================== */
-
-.blogs-divider-line {
-    @apply border-gray-500
-           mb-12
-           opacity-50;
-}
-
-.blogs-divider-bottom {
-    @apply mt-12
-           mb-16;
-}
-
-
-/* ========================================
-   BLOG ITEM
-======================================== */
-
-.blog-item {
-    @apply flex
-           flex-col
-           md:flex-row
-           text-left
-           items-center
-           gap-10;
-}
-
-
-/* ========================================
-   BLOG THUMBNAIL
-======================================== */
-
-.blog-thumbnail {
-    @apply w-full
-           md:w-[260px]
-           h-[220px]
-           object-cover
-           rounded-sm
-           shadow-md
-           flex-shrink-0;
-}
-
-
-/* ========================================
-   BLOG CONTENT
-======================================== */
-
-.blog-content {
-    @apply flex-1
-           py-4;
-}
-
-
-/* Blog title */
 
 .blog-content h3 {
-    @apply text-[#26D9B5]
-           text-[28px]
-           font-medium
-           mb-3
-           tracking-wide;
+    margin-bottom: 0.5rem;
+    color: #26D9B5;
+    font-size: 1.125rem;
+    font-weight: 700;
 }
 
-
-/* Blog description */
-
-.blog-content > p {
-    @apply text-gray-300
-           text-[13px]
-           mb-4
-           leading-[1.8]
-           pr-10;
+.blog-content p {
+    margin-bottom: 0.75rem;
+    color: #d1d5db;
+    font-size: 0.75rem;
+    line-height: 1.625;
 }
 
-
-/* ========================================
-   READ MORE
-======================================== */
-
-.blog-read-more {
-    @apply text-[#26D9B5]
-           text-xs
-           font-mono
-           underline
-           decoration-[#26D9B5]
-           underline-offset-4
-           mb-8
-           inline-block
-           hover:text-white
-           transition;
+.blog-content a {
+    color: #26D9B5;
+    font-family: monospace;
+    font-size: 0.75rem;
+    text-decoration: underline;
 }
 
-
-/* ========================================
-   BLOG META
-======================================== */
-
-.blog-meta {
-    @apply flex
-           flex-wrap
-           items-center
-           gap-4
-           text-[10px]
-           text-gray-300
-           font-mono
-           mt-4;
-}
-
-
-/* Category */
-
-.blog-category {
-    @apply bg-gray-600
-           text-gray-200
-           px-4
-           py-1
-           rounded-full
-           border
-           border-gray-500;
-}
-
-
-/* Metadata strong */
-
-.blog-meta strong {
-    @apply text-white;
-}
-
-
-/* ========================================
-   BUTTONS
-======================================== */
-
-.blog-buttons {
-    @apply flex
-           items-center
-           justify-center
-           gap-6
-           pb-10;
-}
-
-
-/* View More */
-
-.view-more-btn {
-    @apply bg-[#26D9B5]
-           text-[#2C3137]
-           px-8
-           py-[10px]
-           rounded-full
-           text-sm
-           font-bold
-           hover:bg-teal-400
-           transition
-           tracking-wide;
-}
-
-
-/* Subscribe */
-
-.subscribe-btn {
-    @apply border
-           border-white
-           text-white
-           px-8
-           py-[10px]
-           rounded-full
-           text-sm
-           font-medium
-           hover:bg-gray-700
-           transition
-           tracking-wide;
+@media (min-width: 768px) {
+    .blog-image {
+        width: 14rem;
+    }
 }
 
 
@@ -1742,356 +975,80 @@
 
 
 
-
-
-
-/* ========================================
-   CONTACT SECTION
-======================================== */
-
-.contact-section {
-    @apply mt-32
-           relative
-           w-full
-           max-w-4xl
-           mx-auto
-           px-10
-           text-center
-           pb-20
-           scroll-mt-24;
-}
-
-
-/* ========================================
-   DIVIDER
-======================================== */
-
-.contact-divider {
-    @apply flex
-           flex-col
-           items-center
-           mb-10;
-}
-
-.contact-divider i {
-    @apply text-[#26D9B5]
-           text-2xl
-           mb-3;
-}
-
-.contact-divider-line {
-    @apply w-[1px]
-           h-14
-           border-l
-           border-dashed
-           border-white;
-}
-
-.contact-divider-diamond {
-    @apply w-[6px]
-           h-[6px]
-           bg-white
-           rotate-45
-           mt-2;
-}
-
-
-/* ========================================
-   CONTACT TITLE
-======================================== */
-
-.contact-title {
-    @apply inline-block
-           relative;
-}
-
-.contact-title h2 {
-    @apply text-[44px]
-           text-[#26D9B5]
-           font-medium
-           mb-1
-           relative
-           z-10
-           tracking-wide;
-}
-
-
-/* ========================================
-   TITLE LINE
-======================================== */
-
-.contact-title-line {
-    @apply flex
-           items-center
-           justify-center
-           w-full
-           relative
-           z-10
-           mt-1;
-}
-
-.contact-title-line span {
-    @apply w-2
-           h-2
-           rounded-full
-           bg-[#26D9B5];
-}
-
-.contact-title-line div {
-    @apply h-[2px]
-           flex-1
-           bg-[#26D9B5];
-}
-
-
-/* ========================================
-   DESCRIPTION
-======================================== */
-
-.contact-description {
-    @apply text-gray-300
-           text-[13px]
-           mt-6
-           mb-20
-           font-mono
-           tracking-wide;
-}
-
-
-/* ========================================
-   MESSAGE BOX
-======================================== */
-
-.message-box {
-    @apply inline-block
-           border-[1.5px]
-           border-[#26D9B5]
-           rounded-tl-xl
-           rounded-br-xl
-           px-16
-           py-4
-           mb-24
-           cursor-pointer
-           transition
-           hover:bg-[#26D9B5]
-}
-
-.message-box h3 {
-    @apply text-[22px]
-           text-[#26D9B5]
-           font-mono
-           tracking-wider
-           transition
-}
-
-
-/* ========================================
-   FORM
-======================================== */
+/* =========================
+   Contact Section
+========================= */
 
 .contact-form {
-    @apply text-left
-           w-full
-           max-w-3xl
-           mx-auto
-           font-mono;
+    padding: 2rem;
+    border: 1px solid #374151;
+    border-radius: 1rem;
+    background: #2C3137;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    font-family: monospace;
 }
 
-
-/* ========================================
-   NAME + EMAIL
-======================================== */
-
-.contact-fields {
-    @apply flex
-           gap-16
-           mb-16;
+.contact-form label {
+    display: block;
+    color: #26D9B5;
+    font-size: 0.75rem;
+    font-weight: 700;
 }
 
-.contact-field {
-    @apply flex-1;
+.form-group {
+    margin-bottom: 1rem;
 }
 
-
-/* ========================================
-   LABEL
-======================================== */
-
-.contact-field label,
-.contact-message label {
-    @apply block
-           text-[#26D9B5]
-           text-xs
-           mb-3
-           tracking-wide;
+.message-group {
+    margin-bottom: 1.5rem;
 }
-
-
-/* ========================================
-   INPUT
-======================================== */
-
-.contact-field input,
-.contact-message input {
-    @apply w-full
-           bg-transparent
-           border-b
-           border-gray-500
-           text-white
-           py-2
-           outline-none
-           text-sm
-           transition
-           placeholder-gray-300
-           focus:border-[#26D9B5];
-}
-
-
-/* ========================================
-   MESSAGE
-======================================== */
-
-.contact-message {
-    @apply mb-20;
-}
-
-
-/* ========================================
-   SUBMIT
-======================================== */
 
 .contact-submit {
-    @apply text-center;
+    width: 100%;
 }
 
-.contact-submit button {
-    @apply bg-[#26D9B5]
-           text-[#2C3137]
-           px-8
-           py-3
-           rounded-full
-           text-sm
-           font-bold
-           flex
-           items-center
-           justify-center
-           gap-3
-           mx-auto
-           tracking-wide
-           transition
-           hover:bg-teal-400;
-}
-
-.contact-submit button i {
-    @apply text-lg;
+.form-status {
+    margin-top: 1rem;
+    color: inherit;
+    font-size: 0.75rem;
+    font-weight: 700;
 }
 
 
-
-
-
-
-
-
-
-
-/* ========================================
-   FOOTER
-======================================== */
+/* =========================
+   Footer
+========================= */
 
 .site-footer {
-    @apply w-full
-           border-t
-           border-[#3a3f47]
-           mt-10
-           py-8
-           px-16
-           flex
-           justify-between
-           items-center
-           text-[11px]
-           text-gray-400
-           font-sans
-           tracking-wide;
+    border-top: 1px solid #1f2937;
+    padding: 1.5rem;
+    color: #9ca3af;
+    font-family: monospace;
+    font-size: 0.75rem;
+}
+
+.footer-github {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background: #26D9B5;
+    color: #212429;
 }
 
 
-/* ========================================
-   COPYRIGHT
-======================================== */
+/* =========================
+   Search Overlay
+========================= */
 
-.footer-copyright {
-    @apply text-gray-400;
-}
-
-
-/* ========================================
-   PRIVACY / TERMS
-======================================== */
-
-.footer-links {
-    @apply flex
-           items-center
-           gap-10;
-}
-
-.footer-links a {
-    @apply text-gray-400
-           no-underline
-           transition
-           hover:text-white;
-}
-
-
-/* ========================================
-   SOCIAL
-======================================== */
-
-.footer-social {
-    @apply flex
-           items-center
-           gap-4;
-}
-
-
-/* ========================================
-   SOCIAL ICON
-======================================== */
-
-.footer-social-icon {
-    @apply w-7
-           h-7
-           rounded-full
-           bg-[#bbf6ec]
-           text-[#2C3137]
-           flex
-           items-center
-           justify-center
-           cursor-pointer
-           transition
-           hover:bg-white;
-}
-
-.footer-social-icon i {
-    @apply text-[13px];
-}
-
-
-/* ========================================
-   DESIGNER
-======================================== */
-
-.footer-designer {
-    @apply text-gray-400;
-}
-
-.footer-designer a {
-    @apply text-[#26D9B5]
-           no-underline
-           transition
-           hover:text-white
-           hover:underline
-           decoration-[#26D9B5];
+.search-label {
+    margin-bottom: 0.5rem;
+    color: #26D9B5;
+    font-family: monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
 }
 
 
@@ -2100,61 +1057,93 @@
 
 
 
+/* =========================
+   Blogs Page
+========================= */
 
+.blogs-main {
+    max-width: 56rem;
+    margin: 3rem auto 0;
+    padding: 0 1.5rem;
+}
 
+.blogs-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
 
+.blogs-header h1 {
+    margin-bottom: 0.5rem;
+    color: #26D9B5;
+    font-family: monospace;
+    font-size: 2.25rem;
+    font-weight: 700;
+}
 
-/* ========================================
-   FOOTER RESPONSIVE
-======================================== */
+.blogs-header p {
+    color: #9ca3af;
+    font-family: monospace;
+    font-size: 0.75rem;
+}
 
-@media (max-width: 1100px) {
+.blog-filter {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border: 1px solid #374151;
+    border-radius: 1rem;
+    background: #2C3137;
+}
 
-    .site-footer {
-        @apply px-8
-               flex-wrap
-               justify-center
-               gap-6;
-    }
-
+.blogs-footer {
+    border-top: 1px solid #1f2937;
+    padding: 1.5rem;
+    color: #9ca3af;
+    font-family: monospace;
+    font-size: 0.75rem;
+    text-align: center;
 }
 
 
-@media (max-width: 768px) {
-
-    .site-footer {
-        @apply px-5
-               py-8
-               flex-col
-               justify-center
-               gap-5
-               text-center;
-    }
 
 
-    .footer-links {
-        @apply gap-6;
-    }
 
 
-    .footer-social {
-        @apply gap-3;
-    }
+/* =========================
+   Blog Detail Page
+========================= */
 
+.blog-back-link {
+    color: #9ca3af;
+    font-family: monospace;
+    font-size: 0.75rem;
+    transition: color 0.2s ease;
 }
 
+.blog-back-link:hover {
+    color: #fff;
+}
 
-@media (max-width: 480px) {
+.blog-detail-main {
+    max-width: 48rem;
+    margin: 2rem auto 0;
+    padding: 0 1.5rem;
+}
 
-    .site-footer {
-        @apply px-4;
-    }
+.blog-loading {
+    padding: 4rem 0;
+    color: #9ca3af;
+    font-family: monospace;
+    text-align: center;
+}
 
-    .footer-links {
-        @apply flex-col
-               gap-3;
-    }
-
+.blog-detail-footer {
+    margin-top: 4rem;
+    border-top: 1px solid #1f2937;
+    padding: 1.5rem;
+    color: #9ca3af;
+    font-family: monospace;
+    font-size: 0.75rem;
+    text-align: center;
 }
 
 
@@ -2167,98 +1156,72 @@
 
 
 
+/* =========================
+   Project detail and cpp Page
+========================= */
 
-
-/* ========================================
-   BLOG MAIN
-======================================== */
-
-.blog-main {
-    @apply mx-auto
-           w-full
-           max-w-4xl
-           px-5
-           py-10;
+.project-back-link {
+    color: #9ca3af;
+    font-family: monospace;
+    font-size: 0.75rem;
+    transition: color 0.2s ease;
 }
 
-
-/* ========================================
-   BLOG HEADER
-======================================== */
-
-.blog-header {
-    @apply mb-8;
+.project-back-link:hover {
+    color: #fff;
 }
 
-
-/* ========================================
-   BLOG TITLE
-======================================== */
-
-.blog-title {
-    @apply text-3xl
-           sm:text-4xl
-           lg:text-[40px]
-           font-bold
-           leading-tight
-           text-brand-600;
+.project-detail-main {
+    max-width: 48rem;
+    margin: 3rem auto 0;
+    padding: 0 1.5rem;
 }
 
-
-/* ========================================
-   BLOG IMAGE
-======================================== */
-
-.blog-cover {
-    @apply mt-6
-           w-full
-           max-h-[450px]
-           rounded-lg
-           object-cover;
+.project-category {
+    color: #26D9B5;
+    font-family: monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
 }
 
-
-.nav-item {
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
-.nav-tooltip {
-  position: absolute;
-  left: 100%;
-  margin-left: 15px;
-  background-color: #26D9B5;
-  color: #2C3137;
-  padding: 4px 10px;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: bold;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-  pointer-events: none; /* Tránh cản trở việc click */
+.project-title {
+    margin: 1rem 0;
+    font-size: 1.875rem;
+    font-weight: 700;
 }
 
-/* Mũi tên chỉ vào icon của Tooltip */
- .nav-tooltip::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: 100%;
-    margin-top: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent #26D9B5 transparent transparent;
+.project-cover {
+    height: 16rem;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    border: 1px solid #374151;
+    border-radius: 1rem;
 }
 
-.nav-item:hover .nav-tooltip {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(5px);
+.project-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* Class active cho ScrollSpy (đổi màu icon khi cuộn tới) */
-.nav-item.active i {
-  color: #26D9B5 !important;
+.project-description {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    border: 1px solid #374151;
+    border-radius: 1rem;
+    background: #2C3137;
+    color: #d1d5db;
+    font-size: 0.875rem;
+}
+
+.project-description h2 {
+    color: #26D9B5;
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+.project-description p {
+    margin: 0;
 }

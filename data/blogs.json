@@ -1,0 +1,116 @@
+[
+  {
+    "id": "post-1",
+    "title": "Tối ưu hóa chỉ số Core Web Vitals và đạt 100 điểm Google Lighthouse",
+    "category": "Performance",
+    "tags": ["Performance", "SEO", "Lighthouse"],
+    "date": "2026-08-10",
+    "readTime": "5 min read",
+    "author": "SinanTokmak",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
+    "summary": "Hướng dẫn chi tiết cách giảm LCP dưới 2.5s, hạn chế CLS bằng aspect-ratio và tối ưu hóa tài nguyên tải trang.",
+    "content": {
+      "intro": "Trong kỷ nguyên web hiện đại, tốc độ tải trang và trải nghiệm người dùng là yếu tố sống còn quyết định thứ hạng tìm kiếm trên Google.",
+      "section1_title": "1. Khắc phục vấn đề LCP (Largest Contentful Paint)",
+      "section1_body": "LCP đo lường thời gian hiển thị phần tử nội dung lớn nhất trên màn hình. Để giữ LCP dưới 2.5s, chúng ta cần nén hình ảnh sang định dạng WebP/AVIF, sử dụng CDN và ưu tiên tải các khối CSS quan trọng (Critical CSS).",
+      "section2_title": "2. Triệt tiêu hiện tượng xê dịch bố cục (CLS)",
+      "section2_body": "Khai báo kích thước cố định hoặc sử dụng thuộc tính CSS aspect-ratio cho tất cả hình ảnh và video để trình duyệt giữ sẵn khung chứa trước khi tải xong dữ liệu.",
+      "summary_text": "Bằng cách kết hợp các kỹ thuật trên, website có thể duy trì điểm số Lighthouse Performance và Best Practices ở mức 95-100 điểm một cách ổn định."
+    }
+  },
+  {
+    "id": "post-2",
+    "title": "Xây dựng hệ thống Design Tokens và Dark Mode bền vững với CSS Variables",
+    "category": "Frontend",
+    "tags": ["Frontend", "CSS", "Tailwind"],
+    "date": "2026-08-12",
+    "readTime": "4 min read",
+    "author": "SinanTokmak",
+    "image": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80",
+    "summary": "Cách trích xuất màu sắc, khoảng cách từ Figma Dev Mode sang biến CSS và lưu trạng thái theme qua LocalStorage.",
+    "content": {
+      "intro": "Việc quản lý giao diện phức tạp đòi hỏi một hệ thống Design Tokens nhất quán giữa nhà thiết kế và lập trình viên.",
+      "section1_title": "1. Khai báo bộ biến CSS Tokens ở :root",
+      "section1_body": "Định nghĩa toàn bộ màu sắc, typography và border-radius trong thẻ :root giúp bạn thay đổi toàn bộ chủ đề giao diện chỉ trong một dòng lệnh.",
+      "section2_title": "2. Đồng bộ Dark Theme với LocalStorage",
+      "section2_body": "Sử dụng JavaScript đọc thuộc tính prefers-color-scheme từ hệ điều hành và ghi nhớ lựa chọn người dùng vào LocalStorage để không bị nháy sáng khi F5 trang web.",
+      "summary_text": "Hệ thống CSS Variables kết hợp Tailwind CSS giúp mã nguồn ngắn gọn và dễ bảo trì hơn rất nhiều."
+    }
+  },
+  {
+    "id": "post-3",
+    "title": "Hướng dẫn thực chiến Web Accessibility (A11y) theo chuẩn WCAG 2.2",
+    "category": "Accessibility",
+    "tags": ["Accessibility", "A11y", "HTML5"],
+    "date": "2026-08-14",
+    "readTime": "6 min read",
+    "author": "SinanTokmak",
+    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80",
+    "summary": "Kỹ thuật bẫy focus modal, xử lý phím ESC, thuộc tính ARIA và kiểm tra độ tương phản màu sắc đạt chuẩn WCAG AA.",
+    "content": {
+      "intro": "Khả năng tiếp cận Web không chỉ dành cho người khiếm thị mà còn giúp tất cả người dùng điều hướng website hoàn toàn bằng bàn phím.",
+      "section1_title": "1. Bẫy Focus (Focus Trap) trong Modal Overlay",
+      "section1_body": "Khi mở modal tìm kiếm, con trỏ phím Tab phải được khóa bên trong cửa sổ popup và phím Escape phải đóng modal đồng thời trả focus về nút bấm kích hoạt ban đầu.",
+      "section2_title": "2. Tương phản màu sắc tối thiểu 4.5:1",
+      "section2_body": "Màu chữ trên nền phải đạt tỷ lệ tương phản tối thiểu 4.5:1 đối với văn bản thông thường theo tiêu chuẩn WCAG mức AA.",
+      "summary_text": "Tối ưu Accessibility giúp website tiếp cận được tệp người dùng rộng lớn hơn và nâng cao điểm chất lượng dự án."
+    }
+  },
+  {
+    "id": "post-4",
+    "title": "Tư duy tối ưu hóa bộ nhớ và cấu trúc dữ liệu trong C++ hiện đại",
+    "category": "Programming",
+    "tags": ["C++", "Algorithms", "Backend"],
+    "date": "2026-08-15",
+    "readTime": "7 min read",
+    "author": "SinanTokmak",
+    "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80",
+    "summary": "Phân tích cách quản lý con trỏ thông minh (Smart Pointers), tối ưu bộ nhớ heap/stack và tư duy giải thuật trong C++.",
+    "content": {
+      "intro": "Lập trình C++ rèn luyện tư duy giải thuật sâu sắc, hiểu rõ cách dữ liệu được tổ chức dưới tầng phần cứng và RAM.",
+      "section1_title": "1. Quản lý tài nguyên an toàn với RAII và Smart Pointers",
+      "section1_body": "Sử dụng std::unique_ptr và std::shared_ptr giúp loại bỏ hoàn toàn nguy cơ rò rỉ bộ nhớ (memory leak) so với con trỏ thô.",
+      "section2_title": "2. Lựa chọn cấu trúc dữ liệu tối ưu O(1) vs O(log N)",
+      "section2_body": "Hiểu rõ khi nào nên dùng std::vector (cache locality) thay vì std::list giúp tốc độ duyệt mảng nhanh hơn gấp nhiều lần.",
+      "summary_text": "Tư duy giải thuật vững vàng từ C++ tạo nền tảng vững chắc khi tiếp cận bất kỳ ngôn ngữ lập trình nào khác."
+    }
+  },
+  {
+    "id": "post-5",
+    "title": "Làm chủ JavaScript ES6+: Từ Destructuring đến Async/Await và Fetch API",
+    "category": "Frontend",
+    "tags": ["Frontend", "JavaScript", "ES6"],
+    "date": "2026-08-16",
+    "readTime": "5 min read",
+    "author": "SinanTokmak",
+    "image": "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?auto=format&fit=crop&w=600&q=80",
+    "summary": "Những tính năng cốt lõi của JavaScript hiện đại giúp bạn viết mã nguồn sạch sẽ, bất đồng bộ không còn là nỗi ám ảnh.",
+    "content": {
+      "intro": "JavaScript ES6+ mang lại cú pháp hiện đại và trực quan, giúp việc xử lý dữ liệu từ REST API trở nên nhẹ nhàng hơn.",
+      "section1_title": "1. Xử lý API an toàn với Async/Await và Try/Catch",
+      "section1_body": "Luôn bao bọc hàm fetch() trong khối try/catch và kiểm tra res.ok để bắt lỗi mạng kịp thời, tránh hiện tượng màn hình trắng.",
+      "section2_title": "2. Tận dụng Array Methods (filter, map, reduce)",
+      "section2_body": "Sử dụng các hàm thuần khiết (pure functions) để xử lý logic lọc và sắp xếp dữ liệu tách biệt hoàn toàn khỏi thao tác DOM.",
+      "summary_text": "Viết mã JavaScript theo mô-đun hóa giúp việc kiểm thử và mở rộng ứng dụng trở nên dễ dàng."
+    }
+  },
+  {
+    "id": "post-6",
+    "title": "Hành trình từ sinh viên CNTT đến Fresher Software Engineer",
+    "category": "Career",
+    "tags": ["Career", "Interview", "Git"],
+    "date": "2026-08-18",
+    "readTime": "4 min read",
+    "author": "SinanTokmak",
+    "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80",
+    "summary": "Kinh nghiệm chuẩn bị CV, xây dựng Portfolio cá nhân và chuẩn bị cho các vòng phỏng vấn kỹ thuật.",
+    "content": {
+      "intro": "Bước chuyển từ môi trường học đường sang doanh nghiệp đòi hỏi sinh viên không chỉ có kiến thức lý thuyết mà còn phải có sản phẩm thực tế.",
+      "section1_title": "1. Portfolio cá nhân là minh chứng năng lực tốt nhất",
+      "section1_body": "Một portfolio được deploy thật, có mã nguồn rõ ràng trên GitHub và lịch sử commit đều đặn sẽ tạo ấn tượng mạnh với nhà tuyển dụng.",
+      "section2_title": "2. Rèn luyện kỹ năng làm việc nhóm và Git Workflow",
+      "section2_body": "Kỹ năng phân chia nhánh Git, viết commit message rõ ràng và review code là tiêu chí hàng đầu trong môi trường chuyên nghiệp.",
+      "summary_text": "Hãy bắt đầu xây dựng dự án cá nhân ngay từ hôm nay để tích lũy kinh nghiệm thực chiến."
+    }
+  }
+]

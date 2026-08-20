@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Bài Viết - SinanTokmak</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="dist/output.css">
+    <style>
+      .reading-progress-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 4px;
+        background-color: var(--color-accent, #26D9B5);
+        width: 0%;
+        z-index: 1000;
+      }
+    </style>
+</head>
+<body class="dark font-sans relative">
+
+    <div id="reading-progress" class="reading-progress-bar"></div>
+
+    <header class="site-header flex items-center justify-between">
+
+        <div class="site-logo">
+            <a href="index.html" class="nav-link">
+                <span>&lt;C/&gt;</span> SinanTokmak
+            </a>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <a href="blogs.html" class="blog-back-link">
+                ← Danh sách Blogs
+            </a>
+
+            <button
+                type="button"
+                class="theme-toggle p-2"
+                aria-label="Theme"
+            >
+                <i class="fa-solid fa-sun brand-icon"></i>
+            </button>
+        </div>
+
+    </header>
+
+
+    <main id="blog-detail-container" class="blog-detail-main">
+        <p class="blog-loading">
+            Đang nạp bài viết...
+        </p>
+    </main>
+
+
+    <footer class="blog-detail-footer">
+        <p>© 2026 SinanTokmak. Đề tài 11 - Bài tập lớn Thiết kế Web.</p>
+    </footer>
+
+    <script src="js/javas.js"></script>
+    <script src="js/blog-detail.js"></script>
+</body>
+</html>

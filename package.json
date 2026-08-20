@@ -19,10 +19,8 @@
     "url": "https://github.com/2551050253y-spec/Portfolio-IT/issues"
   },
   "homepage": "https://github.com/2551050253y-spec/Portfolio-IT#readme",
-  "dependencies": {
-    "@tailwindcss/cli": "^4.3.3"
-  },
   "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
     "tailwindcss": "^4.3.3"
   }
 }
