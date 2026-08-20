@@ -1,11 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfolio - Nhom4: Nam, Y, Gia</title>
+    <!-- Cập nhật CDN Tailwind v4 để hỗ trợ cú pháp @theme -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Liên kết trực tiếp tới file output.css -->
+    <link rel="stylesheet" href="dist/output.css">
+    
 </head>
-<body>
+<body class="dark-mode">
+   <header class="main-header py-6 px-6 lg:px-16">
+       <div class="logo">
+    <span class="code-icon">&lt;C/&gt;</span>
+    <span class="logo-name">SinanTokmak</span>
+</div>
+
+     <!-- Menu Link -->
+<div class="nav-links">
+    <a href="#home" class="nav-link active">Home</a>
+    <a href="#blogs" class="nav-link">Blogs</a>
+</div>
+
+   <div class="search-box">
+    <input type="text" class="search-input" placeholder="">
+    <i class="fa-solid fa-search search-icon"></i>
+</div>
+
+       <!-- Menu Icons -->
+       <div class="nav-icons">
+    <div class="social-item">
+        <i class="fa-brands fa-instagram icon"></i>
+        <span>Instagram</span>
+    </div>
+
+    <div class="social-item">
+        <i class="fa-brands fa-discord icon"></i>
+        <span>Discord</span>
+    </div>
+
+    <div class="social-item">
+        <i class="fa-brands fa-github icon"></i>
+        <span>Github</span>
+    </div>
+</div>
+
     
 </body>
 </html>

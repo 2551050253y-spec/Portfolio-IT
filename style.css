@@ -60,7 +60,12 @@
 }
 
 /* Nền sáng */
-body {
+.light-mode {
+    background-color: #eaf2ee;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    color: #12211d;
+    padding-bottom: 2.5rem;
+    position: relative;
 
 }
 
@@ -2164,127 +2169,54 @@ body {
 
 
 
-/* ==============================
-    BLOG 2
-   ============================== */
-/*anhr blog2*/
-.blog2-thumb{
-   width: auto;
-  height: 300px;
-  object-fit: cover;
-  display: block;
-  margin: 15px 0 20px;
-}
+/* ========================================
+   BLOG MAIN
+======================================== */
 
-/* Tiêu đề bài viết */
-.blog2-title {
-  color: var(--color-brand-600);
-  font-size: 40px;
-  line-height: 1.2;
-  margin: 0 0 15px;
+.blog-main {
+    @apply mx-auto
+           w-full
+           max-w-4xl
+           px-5
+           py-10;
 }
 
 
-/* Tiêu đề H2 */
-.blog2-heading {
-  color: var(--color-brand-600);
-  font-size: 30px;
-  line-height: 1.3;
-  margin: 25px 0 10px;
-}
-/* Tiêu đề H3 */
-.blog2-subheading {
-  color: var(--color-accent-300);
-  font-size: 20px;
-  line-height: 1.4;
-  margin: 20px 0 8px;
-}
-/* Nội dung đoạn văn */
-.blog2-text {
-  color: var(--color-text );
-  font-size: 10px;
-  line-height: 1.5;
-  margin: 0 0 15px;
-}
+/* ========================================
+   BLOG HEADER
+======================================== */
 
-/* Danh sách */
-.blog2-list {
-  padding-left: 18px;
-  margin: 0 0 18px;
-}
-
-/* Từng dòng trong danh sách */
-.blog2-list li {
-  color: var(--color-muted-invert);
-  font-size: 24px;
-  line-height: 1.6;
-  margin-bottom: 7px;
-}
-
-/* Nội dung */
-  .blog2-text,
-  .blog2-list li {
-    font-size: 22px;
-  }
-
-  /* Thông tin bài viết */
-.blog2-meta {
-  display: flex;
-  gap: 15px;
-  padding: 10px 0;
-  border-top: 1px solid var(--color-muted);
-  color: var(--color-muted-invert);
-  font-size: 18px;
-}
-
-  /* Khung bảng */
-.blog2-table {
-  width: 100%;
-  overflow-x: auto;
-
-  margin: 15px 0 25px;
-}
-
-/* Bảng */
-.blog2-table table {
-  width: 100%;
-
-  border-collapse: collapse;
-
-  color: var(--color-muted-invert);
-  font-size: 11px;
+.blog-header {
+    @apply mb-8;
 }
 
 
-/* Ô bảng */
-.blog2-table th,
-.blog2-table td {
-  border: 1px solid var(--color-muted);
+/* ========================================
+   BLOG TITLE
+======================================== */
 
-  padding: 9px;
-
-  text-align: left;
-  line-height: 1.4;
+.blog-title {
+    @apply text-3xl
+           sm:text-4xl
+           lg:text-[40px]
+           font-bold
+           leading-tight
+           text-brand-600;
 }
 
 
-/* Tiêu đề bảng */
-.blog2-table th {
-  color: var(--color-brand-600);
+/* ========================================
+   BLOG IMAGE
+======================================== */
+
+.blog-cover {
+    @apply mt-6
+           w-full
+           max-h-[450px]
+           rounded-lg
+           object-cover;
 }
 
-
-/* Cuối bài viết */
-.blog2-footer {
-  color: var(--color-muted-invert);
-
-  border-top: 1px solid var(--color-muted);
-
-  padding-top: 15px;
-  margin-top: 30px;
-
-  font-size: 20px;
-}
 
 .nav-item {
             position: relative;
