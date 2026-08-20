@@ -342,3 +342,805 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .reveal { transition: none !important; opacity: 1 !important; transform: none !important; }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   Navbar
+========================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    padding: 1.5rem 1.5rem;
+    background: rgb(33 36 41 / 90%);
+    backdrop-filter: blur(12px);
+}
+
+.site-logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.site-logo span,
+.brand-icon {
+    color: #26D9B5;
+}
+
+.site-logo span {
+    margin-right: 0.5rem;
+}
+
+.nav-link {
+    color: #9ca3af;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #fff;
+}
+
+.github-link {
+    align-items: center;
+}
+
+.github-link span {
+    font-size: 0.75rem;
+}
+
+.search-trigger,
+.theme-toggle,
+.menu-toggle {
+    color: #9ca3af;
+    transition: color 0.2s ease;
+}
+
+.search-trigger:hover,
+.theme-toggle:hover,
+.menu-toggle:hover {
+    color: #fff;
+}
+
+.menu-icon {
+    font-size: 1.25rem;
+}
+
+@media (min-width: 1024px) {
+    .site-header {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   Hero Section
+========================= */
+
+.hero-section {
+    /* Giữ section-wrapper làm container chính */
+}
+
+.hero-title {
+    margin-bottom: 3rem;
+    color: #26D9B5;
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.profile-avatar {
+    width: 6rem;
+    height: 6rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border: 2px solid #26D9B5;
+    border-radius: 9999px;
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.profile-role {
+    margin-bottom: 1.5rem;
+    color: #9ca3af;
+    font-size: 0.75rem;
+}
+
+.profile-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    color: #d1d5db;
+    font-family: monospace;
+    font-size: 0.75rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.brand-icon,
+.brand-text {
+    color: #26D9B5;
+}
+
+.copy-email {
+    color: inherit;
+}
+
+.tech-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.cv-button {
+    width: 100%;
+    text-align: center;
+}
+
+.hero-intro {
+    font-family: monospace;
+}
+
+.code-label {
+    margin-bottom: 0.5rem;
+    color: #26D9B5;
+    font-size: 0.75rem;
+}
+
+.closing-label {
+    margin-bottom: 1rem;
+}
+
+.hero-heading {
+    margin-bottom: 0.5rem;
+    font-family: sans-serif;
+    font-size: 2.25rem;
+    line-height: 1.25;
+}
+
+.typing-text {
+    border-right: 2px solid #26D9B5;
+}
+
+.hero-description {
+    margin-bottom: 1.5rem;
+    color: #d1d5db;
+    font-size: 0.875rem;
+    line-height: 1.625;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #26D9B5;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+}
+
+.contact-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background: #3a3f47;
+}
+
+.stats-card {
+    font-family: monospace;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.stat-number {
+    color: #26D9B5;
+    font-size: 1.875rem;
+    font-weight: 700;
+}
+
+.stat-label {
+    color: #d1d5db;
+    font-size: 0.75rem;
+}
+
+
+/* =========================
+   Responsive
+========================= */
+
+@media (min-width: 1024px) {
+    .hero-title {
+        font-size: 4.5rem;
+    }
+
+    .hero-heading {
+        font-size: 3rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   About Section
+========================= */
+
+.section-title-wrap {
+    width: fit-content;
+    margin-bottom: 2rem;
+    padding: 0.5rem 2rem;
+    border: 2px solid #26D9B5;
+    border-radius: 0.75rem;
+}
+
+.section-title-wrap h2 {
+    font-size: 1.875rem;
+    font-weight: 500;
+}
+
+.about-card {
+    padding: 2rem;
+    border-radius: 1.5rem;
+    background: #33383f;
+    font-family: monospace;
+}
+
+.about-card h3 {
+    margin-bottom: 1rem;
+    color: #26D9B5;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.about-card p {
+    color: #d1d5db;
+    font-size: 0.875rem;
+    line-height: 1.625;
+}
+
+.about-card p:first-of-type {
+    margin-bottom: 1rem;
+}
+
+.about-card p span {
+    color: #26D9B5;
+}
+
+.about-image {
+    width: 100%;
+    height: 20rem;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 1.5rem;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (min-width: 1024px) {
+    .about-image {
+        width: 20rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   Skills Section
+========================= */
+
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    border-left: 8px solid #43d4c0;
+    border-radius: 0.25rem;
+    background: #bbf6ec;
+    color: #000;
+}
+
+.skill-card > i {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.skill-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.skill-card p {
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.skill-icons {
+    /* Layout được giữ bằng Tailwind */
+}
+
+.skill-icon {
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    font-size: 1.875rem;
+}
+
+.skill-html {
+    background: #E44D26;
+}
+
+.skill-css {
+    background: #264DE4;
+}
+
+.skill-js {
+    background: #F7DF1E;
+    color: #000;
+}
+
+.skill-cpp {
+    background: #00599C;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   Works Section
+========================= */
+
+.project-item {
+    overflow: hidden;
+    border: 1px solid #374151;
+    border-radius: 1rem;
+    background: #2C3137;
+}
+
+.project-image {
+    height: 12rem;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-content span {
+    color: #26D9B5;
+    font-family: monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.project-content h3 {
+    margin: 0.5rem 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.project-content a {
+    color: #26D9B5;
+    font-family: monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   Blogs Section
+========================= */
+
+.blog-card {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border: 1px solid #374151;
+    border-radius: 1rem;
+    background: #2C3137;
+}
+
+.blog-image {
+    width: 100%;
+    height: 10rem;
+    border-radius: 0.75rem;
+    object-fit: cover;
+}
+
+.blog-content h3 {
+    margin-bottom: 0.5rem;
+    color: #26D9B5;
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+.blog-content p {
+    margin-bottom: 0.75rem;
+    color: #d1d5db;
+    font-size: 0.75rem;
+    line-height: 1.625;
+}
+
+.blog-content a {
+    color: #26D9B5;
+    font-family: monospace;
+    font-size: 0.75rem;
+    text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+    .blog-image {
+        width: 14rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   Contact Section
+========================= */
+
+.contact-form {
+    padding: 2rem;
+    border: 1px solid #374151;
+    border-radius: 1rem;
+    background: #2C3137;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    font-family: monospace;
+}
+
+.contact-form label {
+    display: block;
+    color: #26D9B5;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.message-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-submit {
+    width: 100%;
+}
+
+.form-status {
+    margin-top: 1rem;
+    color: inherit;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+
+/* =========================
+   Footer
+========================= */
+
+.site-footer {
+    border-top: 1px solid #1f2937;
+    padding: 1.5rem;
+    color: #9ca3af;
+    font-family: monospace;
+    font-size: 0.75rem;
+}
+
+.footer-github {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background: #26D9B5;
+    color: #212429;
+}
+
+
+/* =========================
+   Search Overlay
+========================= */
+
+.search-label {
+    margin-bottom: 0.5rem;
+    color: #26D9B5;
+    font-family: monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+
+
+
+
+
+
+/* =========================
+   Blogs Page
+========================= */
+
+.blogs-main {
+    max-width: 56rem;
+    margin: 3rem auto 0;
+    padding: 0 1.5rem;
+}
+
+.blogs-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.blogs-header h1 {
+    margin-bottom: 0.5rem;
+    color: #26D9B5;
+    font-family: monospace;
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+.blogs-header p {
+    color: #9ca3af;
+    font-family: monospace;
+    font-size: 0.75rem;
+}
+
+.blog-filter {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border: 1px solid #374151;
+    border-radius: 1rem;
+    background: #2C3137;
+}
+
+.blogs-footer {
+    border-top: 1px solid #1f2937;
+    padding: 1.5rem;
+    color: #9ca3af;
+    font-family: monospace;
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+
+
+
+
+
+/* =========================
+   Blog Detail Page
+========================= */
+
+.blog-back-link {
+    color: #9ca3af;
+    font-family: monospace;
+    font-size: 0.75rem;
+    transition: color 0.2s ease;
+}
+
+.blog-back-link:hover {
+    color: #fff;
+}
+
+.blog-detail-main {
+    max-width: 48rem;
+    margin: 2rem auto 0;
+    padding: 0 1.5rem;
+}
+
+.blog-loading {
+    padding: 4rem 0;
+    color: #9ca3af;
+    font-family: monospace;
+    text-align: center;
+}
+
+.blog-detail-footer {
+    margin-top: 4rem;
+    border-top: 1px solid #1f2937;
+    padding: 1.5rem;
+    color: #9ca3af;
+    font-family: monospace;
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   Project detail and cpp Page
+========================= */
+
+.project-back-link {
+    color: #9ca3af;
+    font-family: monospace;
+    font-size: 0.75rem;
+    transition: color 0.2s ease;
+}
+
+.project-back-link:hover {
+    color: #fff;
+}
+
+.project-detail-main {
+    max-width: 48rem;
+    margin: 3rem auto 0;
+    padding: 0 1.5rem;
+}
+
+.project-category {
+    color: #26D9B5;
+    font-family: monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.project-title {
+    margin: 1rem 0;
+    font-size: 1.875rem;
+    font-weight: 700;
+}
+
+.project-cover {
+    height: 16rem;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    border: 1px solid #374151;
+    border-radius: 1rem;
+}
+
+.project-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-description {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    border: 1px solid #374151;
+    border-radius: 1rem;
+    background: #2C3137;
+    color: #d1d5db;
+    font-size: 0.875rem;
+}
+
+.project-description h2 {
+    color: #26D9B5;
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+.project-description p {
+    margin: 0;
+}

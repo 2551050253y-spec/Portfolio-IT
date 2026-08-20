@@ -4,60 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blogs - SinanTokmak</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="dist/output.css">
 </head>
 <body class="dark font-sans relative">
 
-    <header class="site-header flex justify-between items-center">
-       <div class="site-logo">
-           <a href="index.html" class="nav-link"><span>&lt;C/&gt;</span> SinanTokmak</a>
-       </div>
+    <header class="site-header flex items-center justify-between">
 
-       <nav class="hidden lg:flex gap-8">
-           <a href="index.html#home" class="nav-link">Home</a>
-           <a href="index.html#about" class="nav-link">About</a>
-           <a href="index.html#skills" class="nav-link">Skills</a>
-           <a href="index.html#works" class="nav-link">Works</a>
-           <a href="blogs.html" class="nav-link active">Blogs</a>
-           <a href="index.html#contact" class="nav-link">Contact</a>
-       </nav>
+    <div class="site-logo">
+        <a href="index.html" class="nav-link">
+            <span>&lt;C/&gt;</span> SinanTokmak
+        </a>
+    </div>
 
-       <div class="flex gap-4 items-center">
-           <button type="button" class="theme-toggle p-2" aria-label="Theme"><i class="fa-solid fa-sun text-[#26D9B5]"></i></button>
-           <a href="index.html" class="btn-primary text-xs">← Về trang chủ</a>
-       </div>
+    <nav class="hidden lg:flex gap-8">
+        <a href="index.html#home" class="nav-link">Home</a>
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="index.html#skills" class="nav-link">Skills</a>
+        <a href="index.html#works" class="nav-link">Works</a>
+        <a href="blogs.html" class="nav-link active">Blogs</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="flex items-center gap-4">
+        <button
+            type="button"
+            class="theme-toggle p-2"
+            aria-label="Theme"
+        >
+            <i class="fa-solid fa-sun brand-icon"></i>
+        </button>
+
+        <a href="index.html" class="btn-primary text-xs">
+            ← Về trang chủ
+        </a>
+    </div>
+
+</header>
+
+
+<main class="blogs-main">
+
+    <header class="blogs-header">
+        <h1>&lt;All Blogs/&gt;</h1>
+        <p>
+            Chia sẻ kiến thức lập trình, cấu trúc dữ liệu và tối ưu hóa hệ thống web.
+        </p>
     </header>
 
-    <main class="max-w-4xl mx-auto px-6 mt-12">
-        <header class="text-center mb-8">
-            <h1 class="text-4xl font-bold text-[#26D9B5] font-mono mb-2">&lt;All Blogs/&gt;</h1>
-            <p class="text-gray-400 text-xs font-mono">Chia sẻ kiến thức lập trình, cấu trúc dữ liệu và tối ưu hóa hệ thống web.</p>
-        </header>
+    <div class="blog-filter">
 
-        <div class="bg-[#2C3137] rounded-2xl p-6 mb-8 border border-gray-700">
-            <div class="search-input-wrapper mb-4">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" id="blog-search-input" class="form-input" placeholder="Tìm kiếm bài viết theo từ khóa..." autocomplete="off">
-            </div>
+        <div class="search-input-wrapper">
+            <i class="fa-solid fa-magnifying-glass"></i>
 
-            <div class="flex gap-2 flex-wrap" id="category-filters">
-                <button type="button" class="filter-btn active" data-category="all">Tất cả</button>
-                <button type="button" class="filter-btn" data-category="Frontend">Frontend</button>
-                <button type="button" class="filter-btn" data-category="Performance">Performance</button>
-                <button type="button" class="filter-btn" data-category="Accessibility">Accessibility</button>
-                <button type="button" class="filter-btn" data-category="Programming">C++</button>
-                <button type="button" class="filter-btn" data-category="Career">Career</button>
-            </div>
+            <input
+                type="text"
+                id="blog-search-input"
+                class="form-input"
+                placeholder="Tìm kiếm bài viết theo từ khóa..."
+                autocomplete="off"
+            >
         </div>
 
-        <div id="blogs-container" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8"></div>
-        <div id="pagination-controls" class="flex justify-center gap-2 pb-16 font-mono"></div>
-    </main>
+        <div class="flex gap-2 flex-wrap" id="category-filters">
+            <button type="button" class="filter-btn active" data-category="all">
+                Tất cả
+            </button>
 
-    <footer class="border-t border-gray-800 py-6 text-center text-xs font-mono text-gray-400">
-        <p>© 2026 SinanTokmak. Đề tài 11 - Bài tập lớn Thiết kế Web.</p>
-    </footer>
+            <button type="button" class="filter-btn" data-category="Frontend">
+                Frontend
+            </button>
+
+            <button type="button" class="filter-btn" data-category="Performance">
+                Performance
+            </button>
+
+            <button type="button" class="filter-btn" data-category="Accessibility">
+                Accessibility
+            </button>
+
+            <button type="button" class="filter-btn" data-category="Programming">
+                C++
+            </button>
+
+            <button type="button" class="filter-btn" data-category="Career">
+                Career
+            </button>
+        </div>
+
+    </div>
+
+    <div
+        id="blogs-container"
+        class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8"
+    ></div>
+
+    <div
+        id="pagination-controls"
+        class="flex justify-center gap-2 pb-16 font-mono"
+    ></div>
+
+</main>
+
+
+<footer class="blogs-footer">
+    <p>© 2026 SinanTokmak. Đề tài 11 - Bài tập lớn Thiết kế Web.</p>
+</footer>
 
     <script src="js/javas.js"></script>
     <script src="js/blogs.js"></script>
