@@ -4,13 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chi Tiết Bài Viết - SinanTokmak</title>
-    
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    
+    <link rel="stylesheet" href="dist/output.css">
     <style>
-      /* Thanh tiến trình đọc */
       .reading-progress-bar {
         position: fixed;
         top: 0;
@@ -19,41 +15,27 @@
         background-color: var(--color-accent, #26D9B5);
         width: 0%;
         z-index: 1000;
-        transition: width 0.1s ease-out;
       }
     </style>
 </head>
-<body class="dark font-sans text-gray-200 pb-10 relative">
-
-    <!-- Progress Bar -->
+<body class="dark font-sans relative">
     <div id="reading-progress" class="reading-progress-bar"></div>
 
-    <!-- Header -->
-    <header class="flex justify-between items-center py-6 px-6 lg:px-16 sticky top-0 bg-[#212429]/90 backdrop-blur-md z-40">
-       <div class="logo flex items-center text-xl tracking-wider">
-           <a href="index.html" class="flex items-center text-white text-decoration-none">
-             <span class="code-icon mr-2 text-2xl font-bold text-[#26D9B5]">&lt;C/&gt;</span> 
-             <span class="font-bold text-white text-lg">SinanTokmak</span>
-           </a>
+    <header class="site-header flex justify-between items-center">
+       <div class="site-logo">
+           <a href="index.html" class="nav-link"><span>&lt;C/&gt;</span> SinanTokmak</a>
        </div>
-
-       <div class="flex items-center gap-4">
-           <a href="blogs.html" class="text-xs font-mono text-gray-300 hover:text-[#26D9B5] transition">
-             ← Quay lại danh sách Blogs
-           </a>
-           <button type="button" class="theme-toggle text-gray-400 hover:text-white p-2" aria-label="Theme">
-               <i class="fa-solid fa-sun text-[#26D9B5]"></i>
-           </button>
+       <div class="flex gap-4 items-center">
+           <a href="blogs.html" class="nav-link text-xs font-mono">← Danh sách Blogs</a>
+           <button type="button" class="theme-toggle p-2" aria-label="Theme"><i class="fa-solid fa-sun text-[#26D9B5]"></i></button>
        </div>
     </header>
 
-    <!-- Main Content Dynamic Container -->
-    <main id="blog-detail-container" class="max-w-3xl mx-auto px-6 mt-10">
+    <main id="blog-detail-container" class="max-w-3xl mx-auto px-6 mt-8">
         <p class="text-center py-16 font-mono text-gray-400">Đang nạp bài viết...</p>
     </main>
 
-    <!-- Footer -->
-    <footer class="border-t border-gray-800 py-8 px-6 text-center text-xs text-gray-400 font-mono mt-20">
+    <footer class="border-t border-gray-800 py-6 text-center text-xs font-mono text-gray-400 mt-16">
         <p>© 2026 SinanTokmak. Đề tài 11 - Bài tập lớn Thiết kế Web.</p>
     </footer>
 

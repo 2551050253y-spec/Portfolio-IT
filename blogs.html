@@ -3,84 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Danh sách bài viết kỹ thuật Web, C++ và kinh nghiệm lập trình.">
-    <title>Blogs - Danh Sách Bài Viết | SinanTokmak</title>
-    
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <title>Blogs - SinanTokmak</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dist/output.css">
 </head>
-<body class="dark font-sans text-gray-200 pb-10 relative">
+<body class="dark font-sans relative">
 
-    <!-- Header Navigation -->
-    <header class="flex justify-between items-center py-6 px-6 lg:px-16 sticky top-0 bg-[#212429]/90 backdrop-blur-md z-40" data-site-header>
-       <div class="logo flex items-center text-xl tracking-wider">
-           <a href="index.html" class="flex items-center text-white text-decoration-none">
-             <span class="code-icon mr-2 text-2xl font-bold text-[#26D9B5]">&lt;C/&gt;</span> 
-             <span class="font-bold text-white text-lg">SinanTokmak</span>
-           </a>
+    <header class="site-header flex justify-between items-center">
+       <div class="site-logo">
+           <a href="index.html" class="nav-link"><span>&lt;C/&gt;</span> SinanTokmak</a>
        </div>
 
-       <nav class="nav-links hidden lg:flex items-center gap-10">
-           <a href="index.html#home" class="nav-link text-sm font-medium hover:text-[#26D9B5] transition">Home</a>
-           <a href="index.html#about" class="nav-link text-sm font-medium hover:text-[#26D9B5] transition">About</a>
-           <a href="index.html#skills" class="nav-link text-sm font-medium hover:text-[#26D9B5] transition">Skills</a>
-           <a href="index.html#works" class="nav-link text-sm font-medium hover:text-[#26D9B5] transition">Works</a>
-           <a href="blogs.html" class="nav-link active text-sm font-medium text-[#26D9B5]">Blogs</a>
-           <a href="index.html#contact" class="nav-link text-sm font-medium hover:text-[#26D9B5] transition">Contact</a>
+       <nav class="hidden lg:flex gap-8">
+           <a href="index.html#home" class="nav-link">Home</a>
+           <a href="index.html#about" class="nav-link">About</a>
+           <a href="index.html#skills" class="nav-link">Skills</a>
+           <a href="index.html#works" class="nav-link">Works</a>
+           <a href="blogs.html" class="nav-link active">Blogs</a>
+           <a href="index.html#contact" class="nav-link">Contact</a>
        </nav>
 
-       <div class="flex items-center gap-4">
-           <button type="button" class="theme-toggle text-gray-400 hover:text-white p-2" aria-label="Đổi giao diện">
-               <i class="fa-solid fa-sun text-[#26D9B5]"></i>
-           </button>
-           <a href="index.html" class="hidden sm:inline-block border border-gray-600 px-4 py-1.5 rounded-full text-xs font-mono text-gray-300 hover:border-[#26D9B5] hover:text-white transition">
-             ← Về trang chủ
-           </a>
+       <div class="flex gap-4 items-center">
+           <button type="button" class="theme-toggle p-2" aria-label="Theme"><i class="fa-solid fa-sun text-[#26D9B5]"></i></button>
+           <a href="index.html" class="btn-primary text-xs">← Về trang chủ</a>
        </div>
     </header>
 
-    <!-- Main Blog Area -->
-    <main class="max-w-5xl mx-auto px-6 mt-12">
-        <header class="text-center mb-12">
-            <h1 class="text-4xl lg:text-5xl font-bold text-[#26D9B5] mb-3 font-mono">&lt;All Blogs/&gt;</h1>
-            <p class="text-gray-400 text-sm font-mono">Chia sẻ kiến thức lập trình, cấu trúc dữ liệu và tối ưu hóa hệ thống web.</p>
+    <main class="max-w-4xl mx-auto px-6 mt-12">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-[#26D9B5] font-mono mb-2">&lt;All Blogs/&gt;</h1>
+            <p class="text-gray-400 text-xs font-mono">Chia sẻ kiến thức lập trình, cấu trúc dữ liệu và tối ưu hóa hệ thống web.</p>
         </header>
 
-        <!-- Search Bar & Tag Filter Controls -->
-        <div class="bg-[#2C3137] border border-gray-700 rounded-2xl p-6 mb-10 shadow-xl">
-            <!-- Live Search Input -->
-            <div class="relative mb-6">
-                <input type="text" id="blog-search-input" class="form-input pl-11" placeholder="Tìm kiếm bài viết theo tiêu đề, từ khóa..." autocomplete="off">
-                <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+        <div class="bg-[#2C3137] rounded-2xl p-6 mb-8 border border-gray-700">
+            <div class="search-input-wrapper mb-4">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="blog-search-input" class="form-input" placeholder="Tìm kiếm bài viết theo từ khóa..." autocomplete="off">
             </div>
 
-            <!-- Category Filter Tags -->
-            <div class="flex items-center gap-2 flex-wrap" id="category-filters">
-                <span class="text-xs font-mono text-gray-400 mr-2">Chủ đề:</span>
-                <button type="button" class="filter-btn active" data-category="all">Tất cả (All)</button>
+            <div class="flex gap-2 flex-wrap" id="category-filters">
+                <button type="button" class="filter-btn active" data-category="all">Tất cả</button>
                 <button type="button" class="filter-btn" data-category="Frontend">Frontend</button>
                 <button type="button" class="filter-btn" data-category="Performance">Performance</button>
                 <button type="button" class="filter-btn" data-category="Accessibility">Accessibility</button>
-                <button type="button" class="filter-btn" data-category="Programming">C++ / Logic</button>
+                <button type="button" class="filter-btn" data-category="Programming">C++</button>
                 <button type="button" class="filter-btn" data-category="Career">Career</button>
             </div>
         </div>
 
-        <!-- Dynamic Blog List Grid -->
-        <div id="blogs-container" class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <!-- Nội dung render động qua JavaScript -->
-            <p class="text-center text-gray-400 py-10 col-span-full">Đang tải danh sách bài viết...</p>
-        </div>
-
-        <!-- Pagination Controls -->
-        <div id="pagination-controls" class="flex justify-center items-center gap-3 font-mono text-xs pb-16">
-            <!-- Nút phân trang tạo động -->
-        </div>
+        <div id="blogs-container" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8"></div>
+        <div id="pagination-controls" class="flex justify-center gap-2 pb-16 font-mono"></div>
     </main>
 
-    <!-- Footer -->
-    <footer class="border-t border-gray-800 py-8 px-6 text-center text-xs text-gray-400 font-mono">
+    <footer class="border-t border-gray-800 py-6 text-center text-xs font-mono text-gray-400">
         <p>© 2026 SinanTokmak. Đề tài 11 - Bài tập lớn Thiết kế Web.</p>
     </footer>
 
