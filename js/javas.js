@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { title: "Web Developer Portfolio (Đề 11)", url: "project-detail.html", type: "Project" },
     { title: "Hệ thống xử lý dữ liệu C++", url: "project-cpp.html", type: "Project" },
     { title: "Tất cả bài viết (Blogs Page)", url: "blogs.html", type: "Page" },
-    { title: "Liên hệ hợp tác (Contact)", url: "index.html#contact", type: "Section" }
+    { title: "Liên hệ hợp tác (Contact)", url: "index.html#contact", type: "Section" },
     { title: "Bảng trạng thái thành phần (Design System)", url: "components.html", type: "Page" }
   ];
 
