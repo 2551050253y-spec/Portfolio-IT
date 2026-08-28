@@ -9,15 +9,22 @@
 </head>
 <body class="dark font-sans relative pb-16">
     <header class="site-header flex justify-between items-center">
-       <a href="index.html" class="site-logo"><span>&lt;C/&gt;</span> SinanTokmak</a>
-       <a href="index.html" class="nav-link text-xs font-mono">← Về trang chủ</a>
-    </header>
+       <div class="site-logo">
+           <a href="index.html" class="nav-link"><span>&lt;C/&gt;</span> SinanTokmak</a>
+       </div>
 
-    <main class="max-w-4xl mx-auto px-6 mt-10 space-y-12">
-        <header class="border-b border-gray-700 pb-4">
-            <h1 class="text-3xl font-bold text-[#26D9B5] font-mono">Bảng Trạng Thái Thành Phần (Design System)</h1>
-            <p class="text-xs text-gray-400 mt-1">Tài liệu trực quan hoá toàn bộ trạng thái nút bấm, thẻ nhập liệu và thẻ bài viết theo chuẩn Figma.</p>
-        </header>
+       <div class="flex gap-4 items-center">
+           <!-- Nút bật Search Overlay -->
+           <button type="button" class="search-trigger text-gray-400 hover:text-white" aria-label="Open search">
+               <i class="fa-solid fa-search"></i>
+           </button>
+           <!-- Nút đổi Theme -->
+           <button type="button" class="theme-toggle p-2" aria-label="Theme">
+               <i class="fa-solid fa-sun text-[#26D9B5]"></i>
+           </button>
+           <a href="index.html" class="btn-primary text-xs">← Về trang chủ</a>
+       </div>
+    </header>
 
         <!-- 1. Trạng thái nút bấm -->
         <section class="space-y-4">
