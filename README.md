@@ -11,9 +11,9 @@
 . Trang web tập trung giới thiệu bản thân, trình bày các kỹ năng, dự án đã thực hiện, chia sẻ bài viết (blog) và cung cấp kênh liên hệ
 
 ## 👥 Thành viên nhóm 4 & Phân công công việc
-1. **Ngô Thanh Ý | 2551050253 (Trưởng nhóm):**
-2. **Nguyễn Lâm Nhựt Nam | 2551050146:**
-3. **Trần Nguyễn Hoàng Gia | 2551050058:** 
+1. **Ngô Thanh Ý | 2551050253 (Trưởng nhóm)**
+2. **Nguyễn Lâm Nhựt Nam | 2551050146**
+3. **Trần Nguyễn Hoàng Gia | 2551050058** 
 
 
 ## Những công nghệ và tính năng có trong trang WEB
