@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design System & Component States - SinanTokmak</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="dist/output.css">
+</head>
+<body class="dark font-sans relative pb-16">
+    <header class="site-header flex justify-between items-center">
+       <a href="index.html" class="site-logo"><span>&lt;C/&gt;</span> SinanTokmak</a>
+       <a href="index.html" class="nav-link text-xs font-mono">← Về trang chủ</a>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 mt-10 space-y-12">
+        <header class="border-b border-gray-700 pb-4">
+            <h1 class="text-3xl font-bold text-[#26D9B5] font-mono">Bảng Trạng Thái Thành Phần (Design System)</h1>
+            <p class="text-xs text-gray-400 mt-1">Tài liệu trực quan hoá toàn bộ trạng thái nút bấm, thẻ nhập liệu và thẻ bài viết theo chuẩn Figma.</p>
+        </header>
+
+        <!-- 1. Trạng thái nút bấm -->
+        <section class="space-y-4">
+            <h2 class="text-lg font-bold text-white">1. Trạng thái Button</h2>
+            <div class="flex flex-wrap gap-4 items-center">
+                <button class="btn-primary">Mặc định (Primary)</button>
+                <button class="filter-btn active">Filter Active</button>
+                <button class="filter-btn">Filter Inactive</button>
+                <button class="btn-primary opacity-50 cursor-not-allowed" disabled>Bị khóa (Disabled)</button>
+            </div>
+        </section>
+
+        <!-- 2. Trạng thái Form Input -->
+        <section class="space-y-4">
+            <h2 class="text-lg font-bold text-white">2. Trạng thái Ô Nhập Liệu (Input States)</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono">
+                <div>
+                    <label class="text-xs text-gray-400 block mb-1">Bình thường (Default)</label>
+                    <input type="text" class="form-input" placeholder="Nhập văn bản...">
+                </div>
+                <div>
+                    <label class="text-xs text-emerald-400 block mb-1">Hợp lệ (Valid / Focused)</label>
+                    <input type="text" class="form-input" value="user@domain.com" aria-invalid="false">
+                </div>
+                <div>
+                    <label class="text-xs text-rose-400 block mb-1">Báo lỗi (Error State)</label>
+                    <input type="text" class="form-input" value="sai_dinh_dang" aria-invalid="true">
+                    <span class="field-error">Email không đúng định dạng.</span>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="js/javas.js"></script>
+</body>
+</html>
