@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="dist/output.css">
 </head>
 <body class="dark font-sans relative pb-16">
+    <!-- Header -->
     <header class="site-header flex justify-between items-center">
        <div class="site-logo">
            <a href="index.html" class="nav-link"><span>&lt;C/&gt;</span> SinanTokmak</a>
@@ -15,16 +16,23 @@
 
        <div class="flex gap-4 items-center">
            <!-- Nút bật Search Overlay -->
-           <button type="button" class="search-trigger text-gray-400 hover:text-white" aria-label="Open search">
+           <button type="button" class="search-trigger text-gray-400 hover:text-white cursor-pointer p-2" aria-label="Open search">
                <i class="fa-solid fa-search"></i>
            </button>
            <!-- Nút đổi Theme -->
-           <button type="button" class="theme-toggle p-2" aria-label="Theme">
+           <button type="button" class="theme-toggle p-2 cursor-pointer" aria-label="Theme">
                <i class="fa-solid fa-sun text-[#26D9B5]"></i>
            </button>
            <a href="index.html" class="btn-primary text-xs">← Về trang chủ</a>
        </div>
     </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-6 mt-10 space-y-12">
+        <header class="border-b border-gray-700 pb-4">
+            <h1 class="text-3xl font-bold text-[#26D9B5] font-mono">Bảng Trạng Thái Thành Phần (Design System)</h1>
+            <p class="text-xs text-gray-400 mt-1">Trực quan hoá toàn bộ trạng thái nút bấm, ô nhập liệu và thẻ component theo chuẩn Figma.</p>
+        </header>
 
         <!-- 1. Trạng thái nút bấm -->
         <section class="space-y-4">
@@ -37,7 +45,7 @@
             </div>
         </section>
 
-       <!-- 2. Trạng thái Form Input -->
+        <!-- 2. Trạng thái Form Input -->
         <section class="space-y-4">
             <h2 class="text-lg font-bold text-white">2. Trạng thái Ô Nhập Liệu (Input States)</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono">
@@ -57,6 +65,20 @@
             </div>
         </section>
     </main>
+
+    <!-- Khối Overlay Search Modal bắt buộc để JS kích hoạt -->
+    <div id="search-overlay" class="search-overlay" role="dialog" aria-modal="true" aria-labelledby="search-title" hidden>
+        <div class="search-panel">
+            <button type="button" class="search-close cursor-pointer" aria-label="Close search"><i class="fa-solid fa-xmark"></i></button>
+            <p id="search-title" class="text-xs font-mono text-[#26D9B5] uppercase font-bold mb-2">Search Portfolio</p>
+            <input id="site-search" type="search" placeholder="Nhập từ khóa (HTML, C++, Blogs...)" class="form-input" autocomplete="off">
+            <div id="search-results" class="mt-4 max-h-48 overflow-y-auto text-xs text-gray-400">
+                <p class="text-center py-2">Nhập từ khóa và bấm Enter để tìm kiếm...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Logic -->
     <script src="js/javas.js"></script>
 </body>
 </html>
