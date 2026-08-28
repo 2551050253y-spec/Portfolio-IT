@@ -12,8 +12,8 @@
 
 ## 👥 Thành viên nhóm 4 & Phân công công việc
 1. **Ngô Thanh Ý | 2551050253 (Trưởng nhóm):**
-2. **Nguyễn Lâm Nhựt Nam | 2551050:**  
-3. **Trần Nguyễn Hoàng Gia | 2551050:** 
+2. **Nguyễn Lâm Nhựt Nam | 2551050146:**
+3. **Trần Nguyễn Hoàng Gia | 2551050058:** 
 
 
 ## Những công nghệ và tính năng có trong trang WEB
@@ -41,4 +41,4 @@ Dự án được xây dựng tuân thủ đúng các chuẩn đầu ra công ng
 4 Kiểm tra hợp lệ Form liên hệ (Form Validation): Kiểm tra tính hợp lệ của dữ liệu đầu vào (bắt buộc nhập, định dạng Email chuẩn, số điện thoại đúng quy chuẩn) kèm theo hiển thị thông báo lỗi trực quan và thông báo gửi thành công.
 
   
->>>>>>> gia
+
