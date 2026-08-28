@@ -152,6 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { title: "Hệ thống xử lý dữ liệu C++", url: "project-cpp.html", type: "Project" },
     { title: "Tất cả bài viết (Blogs Page)", url: "blogs.html", type: "Page" },
     { title: "Liên hệ hợp tác (Contact)", url: "index.html#contact", type: "Section" }
+    { title: "Bảng trạng thái thành phần (Design System)", url: "components.html", type: "Page" }
   ];
 
   function performSearch(query) {
@@ -378,7 +379,7 @@ const projects = [
     category: "Web & Dashboard App",
     title: "Analytics & Admin Dashboard App",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
-    link: "project-dashboard.html"
+    link: "project.html"
   }
 ];
 
