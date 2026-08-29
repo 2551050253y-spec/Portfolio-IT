@@ -7,6 +7,14 @@
 - **Link thiết kế Figma:** [https://www.figma.com/community/file/1308624569713896610/web-developer-portfolio-website-template]
 - **Link Live Website:** (https://github.com/2551050253y-spec/Portfolio-IT.git)
 - **Link Vercel:** (https://portfolio-it-delta.vercel.app/)
+- **Responsive Breakpoints:**
+
+📱 Mobile:  < 768px
+📱 Tablet:  ≥ 768px
+💻 Desktop: ≥ 1024px
+🖥️ Large Desktop: ≥ 1440px
+<img width="373" height="583" alt="image" src="https://github.com/user-attachments/assets/a0f6bfaf-8e3c-493b-a01e-db8498f96ffa" />
+
 - **Mô tả:** Website hoàn chỉnh được xây dựng dựa trên thiết kế Figma chuẩn, tối ưu responsive trên 3 thiết bị (Mobile, Tablet, Desktop).
 - Đây là website thuộc nhóm sản phẩm Landing & giới thiệu, đóng vai trò là một hồ sơ năng lực cá nhân
 . Trang web tập trung giới thiệu bản thân, trình bày các kỹ năng, dự án đã thực hiện, chia sẻ bài viết (blog) và cung cấp kênh liên hệ
