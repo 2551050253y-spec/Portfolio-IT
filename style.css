@@ -45,9 +45,7 @@ body {
   padding: 1.25rem 1.5rem;
   border-bottom: 1px solid var(--border-main);
 }
-@media (min-width: 1024px) {
-  .site-header { padding: 1.25rem 4rem; }
-}
+
 
 .site-logo {
   font-size: 1.25rem;
@@ -124,6 +122,35 @@ body {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   scroll-margin-top: 6rem;
+}
+
+/* =========================
+   Responsive - Section
+========================= */
+
+/* Tablet */
+@media (min-width: 768px) {
+    .section-wrapper {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .section-wrapper {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+    .section-wrapper {
+        max-width: 80rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
 }
 
 .section-title-wrap {
@@ -509,10 +536,32 @@ body {
     font-size: 1.25rem;
 }
 
+
+/* =========================
+   Responsive - Navbar
+========================= */
+
+/* Tablet */
+@media (min-width: 768px) {
+    .site-header {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+}
+
+/* Desktop */
 @media (min-width: 1024px) {
     .site-header {
         padding-left: 4rem;
         padding-right: 4rem;
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+    .site-header {
+        padding-left: 6rem;
+        padding-right: 6rem;
     }
 }
 
@@ -688,7 +737,26 @@ body {
 /* =========================
    Responsive
 ========================= */
+/* =========================
+   Responsive - Hero
+========================= */
 
+/* Tablet */
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 3.75rem;
+    }
+
+    .hero-heading {
+        font-size: 2.5rem;
+    }
+
+    .hero-description {
+        font-size: 0.9375rem;
+    }
+}
+
+/* Desktop */
 @media (min-width: 1024px) {
     .hero-title {
         font-size: 4.5rem;
@@ -696,6 +764,25 @@ body {
 
     .hero-heading {
         font-size: 3rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+    .hero-title {
+        font-size: 5rem;
+    }
+
+    .hero-heading {
+        font-size: 3.25rem;
+    }
+
+    .hero-description {
+        max-width: 42rem;
     }
 }
 
@@ -770,10 +857,28 @@ body {
     height: 100%;
     object-fit: cover;
 }
+/* =========================
+   Responsive - About
+========================= */
 
+/* Tablet */
+@media (min-width: 768px) {
+    .about-image {
+        width: 16rem;
+    }
+}
+
+/* Desktop */
 @media (min-width: 1024px) {
     .about-image {
         width: 20rem;
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+    .about-image {
+        width: 24rem;
     }
 }
 
@@ -959,10 +1064,28 @@ body {
     font-size: 0.75rem;
     text-decoration: underline;
 }
+/* =========================
+   Responsive - Blog
+========================= */
 
+/* Tablet */
 @media (min-width: 768px) {
     .blog-image {
         width: 14rem;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .blog-image {
+        width: 16rem;
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+    .blog-image {
+        width: 18rem;
     }
 }
 
