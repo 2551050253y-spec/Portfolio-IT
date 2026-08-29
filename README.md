@@ -6,14 +6,15 @@
 - **Đề tài:**  ĐỀ11 Porfolio lập trình viên
 - **Link thiết kế Figma:** [https://www.figma.com/community/file/1308624569713896610/web-developer-portfolio-website-template]
 - **Link Live Website:** (https://github.com/2551050253y-spec/Portfolio-IT.git)
+- **Link Vercel:** (https://portfolio-it-delta.vercel.app/)
 - **Mô tả:** Website hoàn chỉnh được xây dựng dựa trên thiết kế Figma chuẩn, tối ưu responsive trên 3 thiết bị (Mobile, Tablet, Desktop).
 - Đây là website thuộc nhóm sản phẩm Landing & giới thiệu, đóng vai trò là một hồ sơ năng lực cá nhân
 . Trang web tập trung giới thiệu bản thân, trình bày các kỹ năng, dự án đã thực hiện, chia sẻ bài viết (blog) và cung cấp kênh liên hệ
 
 ## 👥 Thành viên nhóm 4 & Phân công công việc
-1. **Ngô Thanh Ý | 2551050253 (Trưởng nhóm)**
-2. **Nguyễn Lâm Nhựt Nam | 2551050146**
-3. **Trần Nguyễn Hoàng Gia | 2551050058** 
+1. **Ngô Thanh Ý | 2551050253 (Trưởng nhóm)** : blogs.html, blog-detail.html và Fetch API đọc blogs.json, Live Search, Lọc Tag chủ đề, Phân trang 
+2. **Nguyễn Lâm Nhựt Nam | 2551050146** : components.html, project-cpp.html và Dark/Light Theme (LocalStorage), Search Modal (Esc), Form Validate, Scrollspy
+3. **Trần Nguyễn Hoàng Gia | 2551050058** : index.html, project-detail.html và Typing Effect, Hero Section, Responsive 4 mốc, HTML Semantic & SEO  
 
 
 ## Những công nghệ và tính năng có trong trang WEB
